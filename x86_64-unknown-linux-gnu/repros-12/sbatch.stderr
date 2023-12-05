@@ -1,0 +1,1725 @@
+
+The following have been reloaded with a version change:
+  1) gcc/4.8.5 => gcc/11.4.0
+
+Fuzzing on d1bd718d1f85b2654cca44061dcb1d51d86e178f
+warning: methods `generate_storage_live`, `generate_storage_dead`, and `generate_deinit` are never used
+   --> generate/src/generation/mod.rs:460:8
+    |
+425 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+460 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+470 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+480 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: method `make_choice_mut` is never used
+    --> generate/src/generation/mod.rs:1076:8
+     |
+996  | impl GenerationCtx {
+     | ------------------ method in this implementation
+...
+1076 |     fn make_choice_mut<T, F, R>(
+     |        ^^^^^^^^^^^^^^^
+
+warning: method `size` is never used
+  --> generate/src/mem/mod.rs:45:12
+   |
+39 | impl Run {
+   | -------- method in this implementation
+...
+45 |     pub fn size(&self) -> Size {
+   |            ^^^^
+
+warning: method `same_run` is never used
+  --> generate/src/mem/mod.rs:56:12
+   |
+55 | impl RunAndOffset {
+   | ----------------- method in this implementation
+56 |     pub fn same_run(&self, other: &Self) -> bool {
+   |            ^^^^^^^^
+
+warning: methods `runs_and_sizes` and `run` are never used
+  --> generate/src/mem/mod.rs:75:8
+   |
+74 | impl Allocation {
+   | --------------- methods in this implementation
+75 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+   |        ^^^^^^^^^^^^^^
+...
+81 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run {
+   |        ^^^
+
+warning: method `place_count` is never used
+   --> generate/src/ptable.rs:890:12
+    |
+148 | impl PlaceTable {
+    | --------------- method in this implementation
+...
+890 |     pub fn place_count(&self) -> usize {
+    |            ^^^^^^^^^^^
+
+warning: method `is_local` is never used
+   --> generate/src/ptable.rs:959:12
+    |
+901 | impl PlacePath {
+    | -------------- method in this implementation
+...
+959 |     pub fn is_local(&self) -> bool {
+    |            ^^^^^^^^
+
+warning: `generate` (bin "generate") generated 7 warnings
+    Finished release [optimized] target(s) in 0.86s
+parallel: Warning: No more file handles. 
+parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
+[2023-12-02T16:13:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/552.rs recursion too deep
+[2023-12-02T16:14:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/1173.rs recursion too deep
+[2023-12-02T16:17:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/1946.rs recursion too deep
+[2023-12-02T16:17:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/2153.rs recursion too deep
+[2023-12-02T16:20:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/3142.rs recursion too deep
+[2023-12-02T16:20:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/3186.rs recursion too deep
+[2023-12-02T16:21:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/3661.rs recursion too deep
+[2023-12-02T16:24:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/5033.rs recursion too deep
+[2023-12-02T16:26:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/5667.rs recursion too deep
+[2023-12-02T16:26:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/5718.rs recursion too deep
+[2023-12-02T16:27:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/5930.rs recursion too deep
+[2023-12-02T16:27:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/5979.rs recursion too deep
+[2023-12-02T16:27:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/6194.rs recursion too deep
+[2023-12-02T16:29:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/6676.rs recursion too deep
+[2023-12-02T16:29:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/6937.rs recursion too deep
+[2023-12-02T16:30:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/7171.rs recursion too deep
+[2023-12-02T16:32:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/7920.rs recursion too deep
+[2023-12-02T16:33:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/8230.rs recursion too deep
+[2023-12-02T16:33:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/8241.rs recursion too deep
+[2023-12-02T16:33:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/8244.rs recursion too deep
+[2023-12-02T16:33:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/8304.rs recursion too deep
+[2023-12-02T16:35:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/9240.rs recursion too deep
+[2023-12-02T16:37:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/9911.rs recursion too deep
+[2023-12-02T16:38:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/10387.rs recursion too deep
+[2023-12-02T16:39:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/10694.rs recursion too deep
+[2023-12-02T16:40:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/11118.rs recursion too deep
+[2023-12-02T16:41:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/11514.rs recursion too deep
+[2023-12-02T16:42:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/12173.rs recursion too deep
+[2023-12-02T16:44:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/12648.rs recursion too deep
+[2023-12-02T16:45:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/13096.rs recursion too deep
+[2023-12-02T16:47:32Z WARN  difftest] /scratch/tmp.38510665.wangqian/13794.rs recursion too deep
+[2023-12-02T16:47:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/13951.rs recursion too deep
+[2023-12-02T16:47:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/13968.rs recursion too deep
+[2023-12-02T16:49:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/14507.rs recursion too deep
+[2023-12-02T16:49:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/14716.rs recursion too deep
+[2023-12-02T16:50:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/14763.rs recursion too deep
+[2023-12-02T16:50:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/14843.rs recursion too deep
+[2023-12-02T16:51:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/15233.rs recursion too deep
+[2023-12-02T16:51:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/15318.rs recursion too deep
+[2023-12-02T16:52:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/15609.rs recursion too deep
+[2023-12-02T16:53:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/15998.rs recursion too deep
+[2023-12-02T16:55:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/16531.rs recursion too deep
+[2023-12-02T16:55:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/16796.rs recursion too deep
+[2023-12-02T16:56:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/16955.rs recursion too deep
+[2023-12-02T16:56:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/17264.rs recursion too deep
+[2023-12-02T16:56:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/17268.rs recursion too deep
+[2023-12-02T16:56:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/17285.rs recursion too deep
+[2023-12-02T16:57:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/17793.rs recursion too deep
+[2023-12-02T16:58:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/18102.rs recursion too deep
+[2023-12-02T16:58:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/18110.rs recursion too deep
+[2023-12-02T16:59:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/18475.rs recursion too deep
+[2023-12-02T16:59:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/18525.rs recursion too deep
+[2023-12-02T16:59:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/18557.rs recursion too deep
+[2023-12-02T17:00:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/18702.rs recursion too deep
+[2023-12-02T17:00:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/18870.rs recursion too deep
+[2023-12-02T17:04:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/20355.rs recursion too deep
+[2023-12-02T17:05:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/20857.rs recursion too deep
+[2023-12-02T17:09:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/22232.rs recursion too deep
+[2023-12-02T17:11:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/23046.rs recursion too deep
+[2023-12-02T17:11:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/23065.rs recursion too deep
+[2023-12-02T17:11:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/23123.rs recursion too deep
+[2023-12-02T17:12:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/23394.rs recursion too deep
+[2023-12-02T17:12:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/23401.rs recursion too deep
+[2023-12-02T17:12:35Z WARN  difftest] /scratch/tmp.38510665.wangqian/23436.rs recursion too deep
+[2023-12-02T17:15:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/24458.rs recursion too deep
+[2023-12-02T17:15:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/24485.rs recursion too deep
+[2023-12-02T17:17:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/25053.rs recursion too deep
+[2023-12-02T17:17:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/25147.rs recursion too deep
+[2023-12-02T17:19:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/25851.rs recursion too deep
+[2023-12-02T17:19:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/26216.rs recursion too deep
+[2023-12-02T17:20:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/26331.rs recursion too deep
+[2023-12-02T17:21:32Z WARN  difftest] /scratch/tmp.38510665.wangqian/26608.rs recursion too deep
+[2023-12-02T17:21:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/26965.rs recursion too deep
+[2023-12-02T17:25:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/28314.rs recursion too deep
+[2023-12-02T17:25:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/28395.rs recursion too deep
+[2023-12-02T17:27:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/28844.rs recursion too deep
+[2023-12-02T17:27:35Z WARN  difftest] /scratch/tmp.38510665.wangqian/29213.rs recursion too deep
+[2023-12-02T17:28:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/29370.rs recursion too deep
+[2023-12-02T17:29:32Z WARN  difftest] /scratch/tmp.38510665.wangqian/29853.rs recursion too deep
+[2023-12-02T17:30:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/30184.rs recursion too deep
+[2023-12-02T17:31:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/30695.rs recursion too deep
+[2023-12-02T17:32:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/30874.rs recursion too deep
+[2023-12-02T17:32:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/31105.rs recursion too deep
+[2023-12-02T17:34:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/31630.rs recursion too deep
+[2023-12-02T17:36:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/32200.rs recursion too deep
+[2023-12-02T17:37:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/32643.rs recursion too deep
+[2023-12-02T17:38:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/33163.rs recursion too deep
+[2023-12-02T17:43:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/34854.rs recursion too deep
+[2023-12-02T17:43:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/35019.rs recursion too deep
+[2023-12-02T17:43:56Z ERROR difftest] /scratch/tmp.38510665.wangqian/35142.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 4239003181923115974
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 14536012575485533279
+    
+[2023-12-02T17:44:12Z ERROR difftest] /scratch/tmp.38510665.wangqian/35304.rs didn't pass:
+    miri-unchecked, llvm-opt, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 16720818048580070971
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 4823444100920223850
+    
+[2023-12-02T17:44:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/35326.rs recursion too deep
+[2023-12-02T17:44:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/35401.rs recursion too deep
+[2023-12-02T17:46:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/36062.rs recursion too deep
+[2023-12-02T17:46:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/36085.rs recursion too deep
+[2023-12-02T17:46:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/36124.rs recursion too deep
+[2023-12-02T17:47:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/36484.rs recursion too deep
+[2023-12-02T17:48:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/36792.rs recursion too deep
+[2023-12-02T17:48:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/36837.rs recursion too deep
+[2023-12-02T17:48:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/36929.rs recursion too deep
+[2023-12-02T17:49:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/37276.rs recursion too deep
+[2023-12-02T17:49:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/37358.rs recursion too deep
+[2023-12-02T17:50:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/37528.rs recursion too deep
+[2023-12-02T17:51:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/37642.rs recursion too deep
+[2023-12-02T17:51:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/37811.rs recursion too deep
+[2023-12-02T17:52:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/38435.rs recursion too deep
+[2023-12-02T17:55:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/39143.rs recursion too deep
+[2023-12-02T17:55:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/39184.rs recursion too deep
+[2023-12-02T17:55:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/39367.rs recursion too deep
+[2023-12-02T17:55:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/39577.rs recursion too deep
+[2023-12-02T17:56:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/39754.rs recursion too deep
+[2023-12-02T17:56:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/39821.rs recursion too deep
+[2023-12-02T17:58:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/40437.rs recursion too deep
+[2023-12-02T17:58:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/40451.rs recursion too deep
+[2023-12-02T17:58:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/40647.rs recursion too deep
+[2023-12-02T18:00:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/41511.rs recursion too deep
+[2023-12-02T18:01:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/41754.rs recursion too deep
+[2023-12-02T18:01:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/41797.rs recursion too deep
+[2023-12-02T18:03:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/42484.rs recursion too deep
+[2023-12-02T18:04:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/42668.rs recursion too deep
+[2023-12-02T18:04:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/42781.rs recursion too deep
+[2023-12-02T18:06:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/43340.rs recursion too deep
+[2023-12-02T18:06:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/43621.rs recursion too deep
+[2023-12-02T18:07:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/44105.rs recursion too deep
+[2023-12-02T18:07:24Z ERROR difftest] /scratch/tmp.38510665.wangqian/44108.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 4831747173305763516
+    llvm-opt, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 2505111047345584964
+    
+[2023-12-02T18:08:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/44338.rs recursion too deep
+[2023-12-02T18:08:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/44482.rs recursion too deep
+[2023-12-02T18:09:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/44693.rs recursion too deep
+[2023-12-02T18:10:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/45175.rs recursion too deep
+[2023-12-02T18:10:47Z ERROR difftest] /scratch/tmp.38510665.wangqian/45290.rs didn't pass:
+    cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 14289279934991662175
+    llvm-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 680052880077065912
+    
+[2023-12-02T18:11:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/45536.rs recursion too deep
+[2023-12-02T18:11:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/45609.rs recursion too deep
+[2023-12-02T18:12:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/45870.rs recursion too deep
+[2023-12-02T18:15:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/46852.rs recursion too deep
+[2023-12-02T18:15:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/47060.rs recursion too deep
+[2023-12-02T18:15:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/47108.rs recursion too deep
+[2023-12-02T18:16:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/47220.rs recursion too deep
+[2023-12-02T18:16:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/47244.rs recursion too deep
+[2023-12-02T18:17:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/47704.rs recursion too deep
+[2023-12-02T18:17:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/47729.rs recursion too deep
+[2023-12-02T18:18:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/47937.rs recursion too deep
+[2023-12-02T18:19:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/48556.rs recursion too deep
+[2023-12-02T18:20:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/48674.rs recursion too deep
+[2023-12-02T18:21:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/49081.rs recursion too deep
+[2023-12-02T18:25:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/50733.rs recursion too deep
+[2023-12-02T18:27:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/51349.rs recursion too deep
+[2023-12-02T18:30:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/52718.rs recursion too deep
+[2023-12-02T18:30:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/52788.rs recursion too deep
+[2023-12-02T18:32:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/53483.rs recursion too deep
+[2023-12-02T18:34:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/53980.rs recursion too deep
+[2023-12-02T18:35:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/54154.rs recursion too deep
+[2023-12-02T18:35:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/54320.rs recursion too deep
+[2023-12-02T18:35:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/54321.rs recursion too deep
+[2023-12-02T18:35:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/54382.rs recursion too deep
+[2023-12-02T18:37:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/55199.rs recursion too deep
+[2023-12-02T18:37:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/55260.rs recursion too deep
+[2023-12-02T18:38:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/55385.rs recursion too deep
+[2023-12-02T18:38:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/55425.rs recursion too deep
+[2023-12-02T18:38:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/55481.rs recursion too deep
+[2023-12-02T18:40:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/56005.rs recursion too deep
+[2023-12-02T18:40:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/56107.rs recursion too deep
+[2023-12-02T18:40:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/56154.rs recursion too deep
+[2023-12-02T18:40:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/56210.rs recursion too deep
+[2023-12-02T18:42:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/56902.rs recursion too deep
+[2023-12-02T18:43:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/57411.rs recursion too deep
+[2023-12-02T18:46:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/58294.rs recursion too deep
+[2023-12-02T18:46:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/58435.rs recursion too deep
+[2023-12-02T18:50:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/59802.rs recursion too deep
+[2023-12-02T18:51:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/59835.rs recursion too deep
+[2023-12-02T18:51:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/60142.rs recursion too deep
+[2023-12-02T18:52:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/60267.rs recursion too deep
+[2023-12-02T18:52:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/60317.rs recursion too deep
+[2023-12-02T18:53:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/60705.rs recursion too deep
+[2023-12-02T18:53:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/60969.rs recursion too deep
+[2023-12-02T18:54:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/61132.rs recursion too deep
+[2023-12-02T18:54:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/61268.rs recursion too deep
+[2023-12-02T18:55:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/61402.rs recursion too deep
+[2023-12-02T18:55:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/61712.rs recursion too deep
+[2023-12-02T18:56:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/61886.rs recursion too deep
+[2023-12-02T18:56:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/61994.rs recursion too deep
+[2023-12-02T18:58:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/62536.rs recursion too deep
+[2023-12-02T18:58:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/62661.rs recursion too deep
+[2023-12-02T18:58:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/62721.rs recursion too deep
+[2023-12-02T18:59:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/63164.rs recursion too deep
+[2023-12-02T19:00:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/63269.rs recursion too deep
+[2023-12-02T19:00:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/63471.rs recursion too deep
+[2023-12-02T19:03:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/64260.rs recursion too deep
+[2023-12-02T19:03:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/64302.rs recursion too deep
+[2023-12-02T19:03:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/64537.rs recursion too deep
+[2023-12-02T19:03:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/64617.rs recursion too deep
+[2023-12-02T19:05:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/64926.rs recursion too deep
+[2023-12-02T19:05:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/65088.rs recursion too deep
+[2023-12-02T19:06:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/65206.rs recursion too deep
+[2023-12-02T19:07:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/65573.rs recursion too deep
+[2023-12-02T19:07:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/65725.rs recursion too deep
+[2023-12-02T19:08:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/66135.rs recursion too deep
+[2023-12-02T19:10:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/66732.rs recursion too deep
+[2023-12-02T19:10:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/66782.rs recursion too deep
+[2023-12-02T19:11:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/66874.rs recursion too deep
+[2023-12-02T19:11:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/67236.rs recursion too deep
+[2023-12-02T19:12:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/67423.rs recursion too deep
+[2023-12-02T19:13:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/67777.rs recursion too deep
+[2023-12-02T19:14:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/68134.rs recursion too deep
+[2023-12-02T19:16:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/68980.rs recursion too deep
+[2023-12-02T19:18:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/69413.rs recursion too deep
+[2023-12-02T19:22:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/70609.rs recursion too deep
+[2023-12-02T19:21:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/70630.rs recursion too deep
+[2023-12-02T19:23:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/71196.rs recursion too deep
+[2023-12-02T19:24:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/71272.rs recursion too deep
+[2023-12-02T19:24:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/71474.rs recursion too deep
+[2023-12-02T19:25:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/71666.rs recursion too deep
+[2023-12-02T19:26:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/71947.rs recursion too deep
+[2023-12-02T19:26:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/71961.rs recursion too deep
+[2023-12-02T19:26:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/72004.rs recursion too deep
+[2023-12-02T19:29:15Z ERROR difftest] /scratch/tmp.38510665.wangqian/73165.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 18446629219950448948
+    miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 16767985583883527949
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 695008424954979419
+    
+[2023-12-02T19:31:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/73717.rs recursion too deep
+[2023-12-02T19:32:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/74109.rs recursion too deep
+[2023-12-02T19:33:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/74562.rs recursion too deep
+[2023-12-02T19:33:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/74667.rs recursion too deep
+[2023-12-02T19:34:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/75100.rs recursion too deep
+[2023-12-02T19:35:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/75359.rs recursion too deep
+[2023-12-02T19:35:48Z ERROR difftest] /scratch/tmp.38510665.wangqian/75610.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt-only produced the following output:
+    stdout:
+    hash: 5859395807036174153
+    llvm-opt produced the following output:
+    stdout:
+    hash: 6182187421896926480
+    
+[2023-12-02T19:37:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/75824.rs recursion too deep
+[2023-12-02T19:36:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/75827.rs recursion too deep
+[2023-12-02T19:36:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/75849.rs recursion too deep
+[2023-12-02T19:36:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/75882.rs recursion too deep
+[2023-12-02T19:37:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/75997.rs recursion too deep
+[2023-12-02T19:37:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/76291.rs recursion too deep
+[2023-12-02T19:38:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/76505.rs recursion too deep
+[2023-12-02T19:39:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/76773.rs recursion too deep
+[2023-12-02T19:40:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/77084.rs recursion too deep
+[2023-12-02T19:41:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/77420.rs recursion too deep
+[2023-12-02T19:43:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/78306.rs recursion too deep
+[2023-12-02T19:44:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/78384.rs recursion too deep
+[2023-12-02T19:49:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/80039.rs recursion too deep
+[2023-12-02T19:49:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/80040.rs recursion too deep
+[2023-12-02T19:50:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/80222.rs recursion too deep
+[2023-12-02T19:50:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/80312.rs recursion too deep
+[2023-12-02T19:50:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/80344.rs recursion too deep
+[2023-12-02T19:51:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/80745.rs recursion too deep
+[2023-12-02T19:52:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/81059.rs recursion too deep
+[2023-12-02T19:54:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/81551.rs recursion too deep
+[2023-12-02T19:55:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/82045.rs recursion too deep
+[2023-12-02T19:55:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/82146.rs recursion too deep
+[2023-12-02T19:55:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/82158.rs recursion too deep
+[2023-12-02T19:56:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/82299.rs recursion too deep
+[2023-12-02T19:58:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/83078.rs recursion too deep
+[2023-12-02T19:58:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/83116.rs recursion too deep
+[2023-12-02T20:00:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/83894.rs recursion too deep
+[2023-12-02T20:01:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/84205.rs recursion too deep
+[2023-12-02T20:02:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/84423.rs recursion too deep
+[2023-12-02T20:03:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/84590.rs recursion too deep
+[2023-12-02T20:05:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/85422.rs recursion too deep
+[2023-12-02T20:07:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/86021.rs recursion too deep
+[2023-12-02T20:07:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/86036.rs recursion too deep
+[2023-12-02T20:08:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/86441.rs recursion too deep
+[2023-12-02T20:10:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/87105.rs recursion too deep
+[2023-12-02T20:11:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/87389.rs recursion too deep
+[2023-12-02T20:13:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/87953.rs recursion too deep
+[2023-12-02T20:13:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/87997.rs recursion too deep
+[2023-12-02T20:14:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/88304.rs recursion too deep
+[2023-12-02T20:14:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/88308.rs recursion too deep
+[2023-12-02T20:14:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/88475.rs recursion too deep
+[2023-12-02T20:15:57Z ERROR difftest] /scratch/tmp.38510665.wangqian/89024.rs didn't pass:
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 18318040473896148826
+    llvm-opt produced the following output:
+    stdout:
+    hash: 15204533269891628189
+    
+[2023-12-02T20:17:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/89404.rs recursion too deep
+[2023-12-02T20:19:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/90290.rs recursion too deep
+[2023-12-02T20:21:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/90739.rs recursion too deep
+[2023-12-02T20:24:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/91705.rs recursion too deep
+[2023-12-02T20:23:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/91781.rs recursion too deep
+[2023-12-02T20:24:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/91947.rs recursion too deep
+[2023-12-02T20:24:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/92041.rs recursion too deep
+[2023-12-02T20:24:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/92065.rs recursion too deep
+[2023-12-02T20:25:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/92131.rs recursion too deep
+[2023-12-02T20:25:34Z ERROR difftest] /scratch/tmp.38510665.wangqian/92437.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt produced the following output:
+    stdout:
+    hash: 14013689791670518831
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 12905980168689778143
+    
+[2023-12-02T20:28:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/93121.rs recursion too deep
+[2023-12-02T20:28:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/93320.rs recursion too deep
+[2023-12-02T20:30:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/93837.rs recursion too deep
+[2023-12-02T20:30:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/94005.rs recursion too deep
+[2023-12-02T20:31:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/94122.rs recursion too deep
+[2023-12-02T20:31:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/94136.rs recursion too deep
+[2023-12-02T20:31:35Z WARN  difftest] /scratch/tmp.38510665.wangqian/94338.rs recursion too deep
+[2023-12-02T20:35:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/95548.rs recursion too deep
+[2023-12-02T20:35:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/95566.rs recursion too deep
+[2023-12-02T20:36:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/95888.rs recursion too deep
+[2023-12-02T20:37:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/96038.rs recursion too deep
+[2023-12-02T20:37:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/96254.rs recursion too deep
+[2023-12-02T20:37:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/96255.rs recursion too deep
+[2023-12-02T20:37:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/96323.rs recursion too deep
+[2023-12-02T20:41:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/97495.rs recursion too deep
+[2023-12-02T20:41:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/97660.rs recursion too deep
+[2023-12-02T20:43:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/98227.rs recursion too deep
+[2023-12-02T20:43:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/98319.rs recursion too deep
+[2023-12-02T20:43:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/98388.rs recursion too deep
+[2023-12-02T20:45:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/99170.rs recursion too deep
+[2023-12-02T20:46:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/99224.rs recursion too deep
+[2023-12-02T20:46:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/99306.rs recursion too deep
+[2023-12-02T20:47:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/99545.rs recursion too deep
+[2023-12-02T20:50:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/100415.rs recursion too deep
+[2023-12-02T20:50:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/100589.rs recursion too deep
+[2023-12-02T20:53:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/101200.rs recursion too deep
+[2023-12-02T20:53:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/101527.rs recursion too deep
+[2023-12-02T20:53:35Z WARN  difftest] /scratch/tmp.38510665.wangqian/101603.rs recursion too deep
+[2023-12-02T20:54:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/101684.rs recursion too deep
+[2023-12-02T20:56:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/102244.rs recursion too deep
+[2023-12-02T20:56:06Z ERROR difftest] /scratch/tmp.38510665.wangqian/102396.rs didn't pass:
+    cranelift-opt-only, llvm-opt, miri-unchecked produced the following output:
+    stdout:
+    hash: 17130808725954594284
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 16142948348710152557
+    
+[2023-12-02T20:56:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/102467.rs recursion too deep
+[2023-12-02T20:59:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/103097.rs recursion too deep
+[2023-12-02T21:00:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/103497.rs recursion too deep
+[2023-12-02T21:01:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/103871.rs recursion too deep
+[2023-12-02T21:01:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/104006.rs recursion too deep
+[2023-12-02T21:02:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/104224.rs recursion too deep
+[2023-12-02T21:09:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/106395.rs recursion too deep
+[2023-12-02T21:09:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/106546.rs recursion too deep
+[2023-12-02T21:10:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/106637.rs recursion too deep
+[2023-12-02T21:10:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/106697.rs recursion too deep
+[2023-12-02T21:12:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/107331.rs recursion too deep
+[2023-12-02T21:13:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/107775.rs recursion too deep
+[2023-12-02T21:14:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/107907.rs recursion too deep
+[2023-12-02T21:15:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/108135.rs recursion too deep
+[2023-12-02T21:17:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/109050.rs recursion too deep
+[2023-12-02T21:17:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/109183.rs recursion too deep
+[2023-12-02T21:18:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/109369.rs recursion too deep
+[2023-12-02T21:19:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/109691.rs recursion too deep
+[2023-12-02T21:19:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/109698.rs recursion too deep
+[2023-12-02T21:20:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/110139.rs recursion too deep
+[2023-12-02T21:21:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/110339.rs recursion too deep
+[2023-12-02T21:22:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/110679.rs recursion too deep
+[2023-12-02T21:22:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/110811.rs recursion too deep
+[2023-12-02T21:23:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/111147.rs recursion too deep
+[2023-12-02T21:24:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/111426.rs recursion too deep
+[2023-12-02T21:27:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/112337.rs recursion too deep
+[2023-12-02T21:30:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/113605.rs recursion too deep
+[2023-12-02T21:31:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/113682.rs recursion too deep
+[2023-12-02T21:31:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/113713.rs recursion too deep
+[2023-12-02T21:31:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/113791.rs recursion too deep
+[2023-12-02T21:33:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/114344.rs recursion too deep
+[2023-12-02T21:33:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/114571.rs recursion too deep
+[2023-12-02T21:34:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/114900.rs recursion too deep
+[2023-12-02T21:37:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/115856.rs recursion too deep
+[2023-12-02T21:38:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/116256.rs recursion too deep
+[2023-12-02T21:39:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/116333.rs recursion too deep
+[2023-12-02T21:41:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/117208.rs recursion too deep
+[2023-12-02T21:41:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/117410.rs recursion too deep
+[2023-12-02T21:46:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/118875.rs recursion too deep
+[2023-12-02T21:47:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/119066.rs recursion too deep
+[2023-12-02T21:47:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/119112.rs recursion too deep
+[2023-12-02T21:47:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/119418.rs recursion too deep
+[2023-12-02T21:48:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/119708.rs recursion too deep
+[2023-12-02T21:48:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/119847.rs recursion too deep
+[2023-12-02T21:49:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/119932.rs recursion too deep
+[2023-12-02T21:49:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/119969.rs recursion too deep
+[2023-12-02T21:51:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/120420.rs recursion too deep
+[2023-12-02T21:51:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/120771.rs recursion too deep
+[2023-12-02T21:53:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/121290.rs recursion too deep
+[2023-12-02T21:53:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/121404.rs recursion too deep
+[2023-12-02T21:53:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/121424.rs recursion too deep
+[2023-12-02T21:55:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/121940.rs recursion too deep
+[2023-12-02T21:56:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/122240.rs recursion too deep
+[2023-12-02T21:57:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/122365.rs recursion too deep
+[2023-12-02T21:56:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/122429.rs recursion too deep
+[2023-12-02T21:56:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/122461.rs recursion too deep
+[2023-12-02T21:58:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/122807.rs recursion too deep
+[2023-12-02T21:58:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/122928.rs recursion too deep
+[2023-12-02T21:58:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/122948.rs recursion too deep
+[2023-12-02T21:58:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/123068.rs recursion too deep
+[2023-12-02T21:59:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/123228.rs recursion too deep
+[2023-12-02T22:01:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/123797.rs recursion too deep
+[2023-12-02T22:07:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/125808.rs recursion too deep
+[2023-12-02T22:07:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/125881.rs recursion too deep
+[2023-12-02T22:07:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/125896.rs recursion too deep
+[2023-12-02T22:07:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/125999.rs recursion too deep
+[2023-12-02T22:08:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/126179.rs recursion too deep
+[2023-12-02T22:08:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/126272.rs recursion too deep
+[2023-12-02T22:10:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/126836.rs recursion too deep
+[2023-12-02T22:12:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/127340.rs recursion too deep
+[2023-12-02T22:13:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/127906.rs recursion too deep
+[2023-12-02T22:14:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/128194.rs recursion too deep
+[2023-12-02T22:15:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/128385.rs recursion too deep
+[2023-12-02T22:15:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/128461.rs recursion too deep
+[2023-12-02T22:15:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/128485.rs recursion too deep
+[2023-12-02T22:15:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/128517.rs recursion too deep
+[2023-12-02T22:16:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/128824.rs recursion too deep
+[2023-12-02T22:16:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/128887.rs recursion too deep
+[2023-12-02T22:17:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/128978.rs recursion too deep
+[2023-12-02T22:17:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/129142.rs recursion too deep
+[2023-12-02T22:17:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/129199.rs recursion too deep
+[2023-12-02T22:18:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/129281.rs recursion too deep
+[2023-12-02T22:18:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/129628.rs recursion too deep
+[2023-12-02T22:24:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/131394.rs recursion too deep
+[2023-12-02T22:24:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/131592.rs recursion too deep
+[2023-12-02T22:26:20Z ERROR difftest] /scratch/tmp.38510665.wangqian/132140.rs didn't pass:
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 5230043779270987715
+    llvm-opt produced the following output:
+    stdout:
+    hash: 13195343538142913220
+    
+[2023-12-02T22:31:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/133723.rs recursion too deep
+[2023-12-02T22:31:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/133885.rs recursion too deep
+[2023-12-02T22:32:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/133961.rs recursion too deep
+[2023-12-02T22:33:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/134585.rs recursion too deep
+[2023-12-02T22:34:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/134752.rs recursion too deep
+[2023-12-02T22:34:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/134818.rs recursion too deep
+[2023-12-02T22:35:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/135163.rs recursion too deep
+[2023-12-02T22:36:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/135744.rs recursion too deep
+[2023-12-02T22:36:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/135779.rs recursion too deep
+[2023-12-02T22:37:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/135896.rs recursion too deep
+[2023-12-02T22:37:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/136027.rs recursion too deep
+[2023-12-02T22:38:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/136323.rs recursion too deep
+[2023-12-02T22:39:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/136443.rs recursion too deep
+[2023-12-02T22:39:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/136629.rs recursion too deep
+[2023-12-02T22:40:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/136744.rs recursion too deep
+[2023-12-02T22:40:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/137010.rs recursion too deep
+[2023-12-02T22:40:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/137025.rs recursion too deep
+[2023-12-02T22:41:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/137281.rs recursion too deep
+[2023-12-02T22:43:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/137678.rs recursion too deep
+[2023-12-02T22:43:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/137927.rs recursion too deep
+[2023-12-02T22:48:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/139255.rs recursion too deep
+[2023-12-02T22:48:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/139268.rs recursion too deep
+[2023-12-02T22:48:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/139461.rs recursion too deep
+[2023-12-02T22:49:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/139725.rs recursion too deep
+[2023-12-02T22:49:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/139832.rs recursion too deep
+[2023-12-02T22:51:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/140386.rs recursion too deep
+[2023-12-02T22:52:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/140596.rs recursion too deep
+[2023-12-02T22:52:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/140633.rs recursion too deep
+[2023-12-02T22:52:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/140787.rs recursion too deep
+[2023-12-02T22:53:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/140874.rs recursion too deep
+[2023-12-02T22:53:40Z ERROR difftest] /scratch/tmp.38510665.wangqian/141152.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 16891562605590708657
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 96264253778337939
+    
+[2023-12-02T22:54:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/141456.rs recursion too deep
+[2023-12-02T22:55:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/141560.rs recursion too deep
+[2023-12-02T22:56:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/141994.rs recursion too deep
+[2023-12-02T22:56:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/142053.rs recursion too deep
+[2023-12-02T22:58:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/142739.rs recursion too deep
+[2023-12-02T23:00:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/143241.rs recursion too deep
+[2023-12-02T23:02:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/144254.rs recursion too deep
+[2023-12-02T23:03:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/144437.rs recursion too deep
+[2023-12-02T23:04:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/144717.rs recursion too deep
+[2023-12-02T23:04:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/144886.rs recursion too deep
+[2023-12-02T23:06:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/145556.rs recursion too deep
+[2023-12-02T23:07:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/145774.rs recursion too deep
+[2023-12-02T23:08:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/146085.rs recursion too deep
+[2023-12-02T23:08:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/146174.rs recursion too deep
+[2023-12-02T23:11:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/146834.rs recursion too deep
+[2023-12-02T23:12:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/147196.rs recursion too deep
+[2023-12-02T23:14:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/147723.rs recursion too deep
+[2023-12-02T23:14:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/147849.rs recursion too deep
+[2023-12-02T23:14:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/147946.rs recursion too deep
+[2023-12-02T23:16:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/148674.rs recursion too deep
+[2023-12-02T23:17:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/148783.rs recursion too deep
+[2023-12-02T23:19:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/149188.rs recursion too deep
+[2023-12-02T23:18:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/149307.rs recursion too deep
+[2023-12-02T23:19:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/149475.rs recursion too deep
+[2023-12-02T23:19:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/149782.rs recursion too deep
+[2023-12-02T23:20:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/149785.rs recursion too deep
+[2023-12-02T23:22:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/150519.rs recursion too deep
+[2023-12-02T23:22:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/150594.rs recursion too deep
+[2023-12-02T23:23:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/150914.rs recursion too deep
+[2023-12-02T23:23:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/151013.rs recursion too deep
+[2023-12-02T23:26:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/152269.rs recursion too deep
+[2023-12-02T23:27:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/152650.rs recursion too deep
+[2023-12-02T23:30:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/153591.rs recursion too deep
+[2023-12-02T23:32:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/154077.rs recursion too deep
+[2023-12-02T23:32:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/154106.rs recursion too deep
+[2023-12-02T23:34:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/154690.rs recursion too deep
+[2023-12-02T23:36:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/155526.rs recursion too deep
+[2023-12-02T23:37:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/155761.rs recursion too deep
+[2023-12-02T23:38:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/155920.rs recursion too deep
+[2023-12-02T23:40:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/156465.rs recursion too deep
+[2023-12-02T23:40:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/156804.rs recursion too deep
+[2023-12-02T23:40:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/156811.rs recursion too deep
+[2023-12-02T23:44:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/158174.rs recursion too deep
+[2023-12-02T23:46:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/158578.rs recursion too deep
+[2023-12-02T23:47:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/159048.rs recursion too deep
+[2023-12-02T23:48:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/159449.rs recursion too deep
+[2023-12-02T23:49:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/159593.rs recursion too deep
+[2023-12-02T23:51:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/160253.rs recursion too deep
+[2023-12-02T23:51:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/160350.rs recursion too deep
+[2023-12-02T23:51:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/160475.rs recursion too deep
+[2023-12-02T23:53:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/161031.rs recursion too deep
+[2023-12-02T23:53:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/161333.rs recursion too deep
+[2023-12-02T23:54:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/161624.rs recursion too deep
+[2023-12-02T23:56:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/161979.rs recursion too deep
+[2023-12-02T23:57:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/162461.rs recursion too deep
+[2023-12-02T23:59:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/163166.rs recursion too deep
+[2023-12-03T00:00:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/163652.rs recursion too deep
+[2023-12-03T00:01:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/163849.rs recursion too deep
+[2023-12-03T00:01:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/163940.rs recursion too deep
+[2023-12-03T00:01:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/164079.rs recursion too deep
+[2023-12-03T00:03:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/164589.rs recursion too deep
+[2023-12-03T00:03:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/164822.rs recursion too deep
+[2023-12-03T00:04:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/164898.rs recursion too deep
+[2023-12-03T00:03:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/164914.rs recursion too deep
+[2023-12-03T00:04:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/164946.rs recursion too deep
+[2023-12-03T00:04:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/165272.rs recursion too deep
+[2023-12-03T00:05:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/165341.rs recursion too deep
+[2023-12-03T00:06:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/165444.rs recursion too deep
+[2023-12-03T00:06:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/165827.rs recursion too deep
+[2023-12-03T00:07:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/166154.rs recursion too deep
+[2023-12-03T00:10:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/167028.rs recursion too deep
+[2023-12-03T00:10:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/167285.rs recursion too deep
+[2023-12-03T00:12:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/167530.rs recursion too deep
+[2023-12-03T00:13:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/167992.rs recursion too deep
+[2023-12-03T00:13:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/168068.rs recursion too deep
+[2023-12-03T00:14:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/168408.rs recursion too deep
+[2023-12-03T00:15:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/168446.rs recursion too deep
+[2023-12-03T00:16:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/169062.rs recursion too deep
+[2023-12-03T00:17:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/169411.rs recursion too deep
+[2023-12-03T00:17:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/169620.rs recursion too deep
+[2023-12-03T00:23:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/171448.rs recursion too deep
+[2023-12-03T00:23:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/171526.rs recursion too deep
+[2023-12-03T00:24:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/171892.rs recursion too deep
+[2023-12-03T00:26:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/172502.rs recursion too deep
+[2023-12-03T00:27:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/172776.rs recursion too deep
+[2023-12-03T00:27:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/173043.rs recursion too deep
+[2023-12-03T00:28:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/173250.rs recursion too deep
+[2023-12-03T00:31:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/173885.rs recursion too deep
+[2023-12-03T00:33:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/174629.rs recursion too deep
+[2023-12-03T00:33:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/174859.rs recursion too deep
+[2023-12-03T00:35:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/175486.rs recursion too deep
+[2023-12-03T00:35:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/175573.rs recursion too deep
+[2023-12-03T00:35:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/175594.rs recursion too deep
+[2023-12-03T00:38:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/176534.rs recursion too deep
+[2023-12-03T00:39:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/176825.rs recursion too deep
+[2023-12-03T00:42:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/177887.rs recursion too deep
+[2023-12-03T00:43:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/178196.rs recursion too deep
+[2023-12-03T00:44:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/178400.rs recursion too deep
+[2023-12-03T00:44:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/178614.rs recursion too deep
+[2023-12-03T00:48:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/179698.rs recursion too deep
+[2023-12-03T00:51:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/180695.rs recursion too deep
+[2023-12-03T00:53:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/181182.rs recursion too deep
+[2023-12-03T00:54:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/181335.rs recursion too deep
+[2023-12-03T00:54:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/181394.rs recursion too deep
+[2023-12-03T00:55:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/181930.rs recursion too deep
+[2023-12-03T00:55:33Z ERROR difftest] /scratch/tmp.38510665.wangqian/181948.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 6287870604219956057
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 14643260629587965100
+    
+[2023-12-03T00:56:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/182249.rs recursion too deep
+[2023-12-03T00:57:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/182458.rs recursion too deep
+[2023-12-03T00:58:32Z WARN  difftest] /scratch/tmp.38510665.wangqian/182967.rs recursion too deep
+[2023-12-03T01:01:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/183966.rs recursion too deep
+[2023-12-03T01:03:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/184662.rs recursion too deep
+[2023-12-03T01:04:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/184899.rs recursion too deep
+[2023-12-03T01:07:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/185557.rs recursion too deep
+[2023-12-03T01:07:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/185770.rs recursion too deep
+[2023-12-03T01:08:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/185886.rs recursion too deep
+[2023-12-03T01:08:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/185942.rs recursion too deep
+[2023-12-03T01:10:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/186425.rs recursion too deep
+[2023-12-03T01:10:35Z ERROR difftest] /scratch/tmp.38510665.wangqian/186590.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 13746054723799303318
+    llvm-opt, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 17961286154724848993
+    
+[2023-12-03T01:10:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/186616.rs recursion too deep
+[2023-12-03T01:14:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/187741.rs recursion too deep
+[2023-12-03T01:14:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/187905.rs recursion too deep
+[2023-12-03T01:15:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/188093.rs recursion too deep
+[2023-12-03T01:16:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/188392.rs recursion too deep
+[2023-12-03T01:16:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/188424.rs recursion too deep
+[2023-12-03T01:16:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/188467.rs recursion too deep
+[2023-12-03T01:16:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/188544.rs recursion too deep
+[2023-12-03T01:17:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/188745.rs recursion too deep
+[2023-12-03T01:17:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/188802.rs recursion too deep
+[2023-12-03T01:18:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/188989.rs recursion too deep
+[2023-12-03T01:18:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/188996.rs recursion too deep
+[2023-12-03T01:19:32Z WARN  difftest] /scratch/tmp.38510665.wangqian/189315.rs recursion too deep
+[2023-12-03T01:19:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/189468.rs recursion too deep
+[2023-12-03T01:20:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/189653.rs recursion too deep
+[2023-12-03T01:20:45Z ERROR difftest] /scratch/tmp.38510665.wangqian/189888.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 14767264857637807103
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 13289233361692764328
+    
+[2023-12-03T01:22:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/190518.rs recursion too deep
+[2023-12-03T01:22:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/190599.rs recursion too deep
+[2023-12-03T01:24:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/190966.rs recursion too deep
+[2023-12-03T01:24:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/191211.rs recursion too deep
+[2023-12-03T01:27:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/192238.rs recursion too deep
+[2023-12-03T01:28:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/192411.rs recursion too deep
+[2023-12-03T01:28:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/192550.rs recursion too deep
+[2023-12-03T01:29:26Z ERROR difftest] /scratch/tmp.38510665.wangqian/192819.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 1818129474178794253
+    miri-unchecked, llvm-opt, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 16773622265293005120
+    
+[2023-12-03T01:30:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/193175.rs recursion too deep
+[2023-12-03T01:31:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/193252.rs recursion too deep
+[2023-12-03T01:33:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/194213.rs recursion too deep
+[2023-12-03T01:35:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/194638.rs recursion too deep
+[2023-12-03T01:35:32Z WARN  difftest] /scratch/tmp.38510665.wangqian/194861.rs recursion too deep
+[2023-12-03T01:37:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/195690.rs recursion too deep
+[2023-12-03T01:38:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/196034.rs recursion too deep
+[2023-12-03T01:38:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/196072.rs recursion too deep
+[2023-12-03T01:40:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/196804.rs recursion too deep
+[2023-12-03T01:41:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/197072.rs recursion too deep
+[2023-12-03T01:41:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/197123.rs recursion too deep
+[2023-12-03T01:42:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/197453.rs recursion too deep
+[2023-12-03T01:43:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/197755.rs recursion too deep
+[2023-12-03T01:45:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/198293.rs recursion too deep
+[2023-12-03T01:44:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/198365.rs recursion too deep
+[2023-12-03T01:45:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/198503.rs recursion too deep
+[2023-12-03T01:45:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/198592.rs recursion too deep
+[2023-12-03T01:45:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/198739.rs recursion too deep
+[2023-12-03T01:46:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/198844.rs recursion too deep
+[2023-12-03T01:46:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/198944.rs recursion too deep
+[2023-12-03T01:47:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/199099.rs recursion too deep
+[2023-12-03T01:49:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/199957.rs recursion too deep
+[2023-12-03T01:49:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/200040.rs recursion too deep
+[2023-12-03T01:50:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/200148.rs recursion too deep
+[2023-12-03T01:51:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/200407.rs recursion too deep
+[2023-12-03T01:51:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/200541.rs recursion too deep
+[2023-12-03T01:53:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/201066.rs recursion too deep
+[2023-12-03T01:52:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/201104.rs recursion too deep
+[2023-12-03T01:55:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/201973.rs recursion too deep
+[2023-12-03T01:58:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/203125.rs recursion too deep
+[2023-12-03T01:59:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/203514.rs recursion too deep
+[2023-12-03T02:02:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/204723.rs recursion too deep
+[2023-12-03T02:06:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/205786.rs recursion too deep
+[2023-12-03T02:07:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/205964.rs recursion too deep
+[2023-12-03T02:07:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/206128.rs recursion too deep
+[2023-12-03T02:08:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/206606.rs recursion too deep
+[2023-12-03T02:10:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/207483.rs recursion too deep
+[2023-12-03T02:11:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/207659.rs recursion too deep
+[2023-12-03T02:11:35Z WARN  difftest] /scratch/tmp.38510665.wangqian/207712.rs recursion too deep
+[2023-12-03T02:13:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/208582.rs recursion too deep
+[2023-12-03T02:13:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/208631.rs recursion too deep
+[2023-12-03T02:16:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/209407.rs recursion too deep
+[2023-12-03T02:15:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/209414.rs recursion too deep
+[2023-12-03T02:16:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/209645.rs recursion too deep
+[2023-12-03T02:18:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/210462.rs recursion too deep
+[2023-12-03T02:19:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/210821.rs recursion too deep
+[2023-12-03T02:20:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/211218.rs recursion too deep
+[2023-12-03T02:20:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/211220.rs recursion too deep
+[2023-12-03T02:22:08Z ERROR difftest] /scratch/tmp.38510665.wangqian/211767.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 5596695520649299298
+    miri-unchecked, cranelift-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 17409170560444764706
+    
+[2023-12-03T02:23:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/212121.rs recursion too deep
+[2023-12-03T02:24:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/212394.rs recursion too deep
+[2023-12-03T02:25:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/212916.rs recursion too deep
+[2023-12-03T02:25:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/212935.rs recursion too deep
+[2023-12-03T02:28:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/213848.rs recursion too deep
+[2023-12-03T02:28:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/213993.rs recursion too deep
+[2023-12-03T02:29:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/214508.rs recursion too deep
+[2023-12-03T02:30:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/214637.rs recursion too deep
+[2023-12-03T02:30:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/214809.rs recursion too deep
+[2023-12-03T02:30:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/214883.rs recursion too deep
+[2023-12-03T02:31:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/215050.rs recursion too deep
+[2023-12-03T02:31:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/215193.rs recursion too deep
+[2023-12-03T02:36:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/216879.rs recursion too deep
+[2023-12-03T02:37:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/217191.rs recursion too deep
+[2023-12-03T02:41:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/218302.rs recursion too deep
+[2023-12-03T02:41:32Z WARN  difftest] /scratch/tmp.38510665.wangqian/218353.rs recursion too deep
+[2023-12-03T02:41:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/218365.rs recursion too deep
+[2023-12-03T02:41:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/218377.rs recursion too deep
+[2023-12-03T02:41:44Z ERROR difftest] /scratch/tmp.38510665.wangqian/218591.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 98589783190245876
+    miri-unchecked, llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 3131506500987739896
+    
+[2023-12-03T02:42:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/218637.rs recursion too deep
+[2023-12-03T02:43:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/219220.rs recursion too deep
+[2023-12-03T02:44:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/219333.rs recursion too deep
+[2023-12-03T02:44:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/219541.rs recursion too deep
+[2023-12-03T02:45:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/219684.rs recursion too deep
+[2023-12-03T02:45:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/219894.rs recursion too deep
+[2023-12-03T02:46:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/220150.rs recursion too deep
+[2023-12-03T02:48:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/220454.rs recursion too deep
+[2023-12-03T02:47:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/220511.rs recursion too deep
+[2023-12-03T02:49:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/220845.rs recursion too deep
+[2023-12-03T02:48:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/220941.rs recursion too deep
+[2023-12-03T02:50:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/221634.rs recursion too deep
+[2023-12-03T02:51:14Z ERROR difftest] /scratch/tmp.38510665.wangqian/221700.rs didn't pass:
+    miri-unchecked, llvm-opt, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 15016720152365283176
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 12118799876215626364
+    
+[2023-12-03T02:51:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/221970.rs recursion too deep
+[2023-12-03T02:52:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/222159.rs recursion too deep
+[2023-12-03T02:57:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/223764.rs recursion too deep
+[2023-12-03T03:01:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/224859.rs recursion too deep
+[2023-12-03T03:02:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/225469.rs recursion too deep
+[2023-12-03T03:04:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/226015.rs recursion too deep
+[2023-12-03T03:04:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/226204.rs recursion too deep
+[2023-12-03T03:04:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/226325.rs recursion too deep
+[2023-12-03T03:04:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/226377.rs recursion too deep
+[2023-12-03T03:05:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/226465.rs recursion too deep
+[2023-12-03T03:07:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/226935.rs recursion too deep
+[2023-12-03T03:07:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/227047.rs recursion too deep
+[2023-12-03T03:07:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/227199.rs recursion too deep
+[2023-12-03T03:09:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/227809.rs recursion too deep
+[2023-12-03T03:10:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/228135.rs recursion too deep
+[2023-12-03T03:10:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/228154.rs recursion too deep
+[2023-12-03T03:10:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/228227.rs recursion too deep
+[2023-12-03T03:11:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/228320.rs recursion too deep
+[2023-12-03T03:12:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/228648.rs recursion too deep
+[2023-12-03T03:13:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/229158.rs recursion too deep
+[2023-12-03T03:14:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/229519.rs recursion too deep
+[2023-12-03T03:16:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/229941.rs recursion too deep
+[2023-12-03T03:16:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/230168.rs recursion too deep
+[2023-12-03T03:18:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/230762.rs recursion too deep
+[2023-12-03T03:20:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/231238.rs recursion too deep
+[2023-12-03T03:20:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/231332.rs recursion too deep
+[2023-12-03T03:21:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/231650.rs recursion too deep
+[2023-12-03T03:23:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/232082.rs recursion too deep
+[2023-12-03T03:23:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/232117.rs recursion too deep
+[2023-12-03T03:23:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/232227.rs recursion too deep
+[2023-12-03T03:24:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/232465.rs recursion too deep
+[2023-12-03T03:25:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/232905.rs recursion too deep
+[2023-12-03T03:26:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/233678.rs recursion too deep
+[2023-12-03T03:26:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/233748.rs recursion too deep
+[2023-12-03T03:27:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/234018.rs recursion too deep
+[2023-12-03T03:28:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/234048.rs recursion too deep
+[2023-12-03T03:30:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/234896.rs recursion too deep
+[2023-12-03T03:30:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/234909.rs recursion too deep
+[2023-12-03T03:31:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/235162.rs recursion too deep
+[2023-12-03T03:32:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/235359.rs recursion too deep
+[2023-12-03T03:32:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/235377.rs recursion too deep
+[2023-12-03T03:33:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/235741.rs recursion too deep
+[2023-12-03T03:33:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/235772.rs recursion too deep
+[2023-12-03T03:35:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/236856.rs recursion too deep
+[2023-12-03T03:37:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/237304.rs recursion too deep
+[2023-12-03T03:37:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/237310.rs recursion too deep
+[2023-12-03T03:40:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/238314.rs recursion too deep
+[2023-12-03T03:41:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/238425.rs recursion too deep
+[2023-12-03T03:42:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/238821.rs recursion too deep
+[2023-12-03T03:44:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/239558.rs recursion too deep
+[2023-12-03T03:45:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/239933.rs recursion too deep
+[2023-12-03T03:46:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/240281.rs recursion too deep
+[2023-12-03T03:46:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/240442.rs recursion too deep
+[2023-12-03T03:47:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/240636.rs recursion too deep
+[2023-12-03T03:47:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/240735.rs recursion too deep
+[2023-12-03T03:49:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/241427.rs recursion too deep
+[2023-12-03T03:54:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/242981.rs recursion too deep
+[2023-12-03T03:54:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/243311.rs recursion too deep
+[2023-12-03T03:55:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/243467.rs recursion too deep
+[2023-12-03T03:56:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/243628.rs recursion too deep
+[2023-12-03T03:56:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/243734.rs recursion too deep
+[2023-12-03T03:57:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/244006.rs recursion too deep
+[2023-12-03T03:58:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/244291.rs recursion too deep
+[2023-12-03T03:57:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/244354.rs recursion too deep
+[2023-12-03T03:59:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/244753.rs recursion too deep
+[2023-12-03T03:59:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/245027.rs recursion too deep
+[2023-12-03T04:00:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/245139.rs recursion too deep
+[2023-12-03T04:02:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/246071.rs recursion too deep
+[2023-12-03T04:03:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/246288.rs recursion too deep
+[2023-12-03T04:04:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/246327.rs recursion too deep
+[2023-12-03T04:05:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/246711.rs recursion too deep
+[2023-12-03T04:05:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/246744.rs recursion too deep
+[2023-12-03T04:05:35Z WARN  difftest] /scratch/tmp.38510665.wangqian/246884.rs recursion too deep
+[2023-12-03T04:06:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/247201.rs recursion too deep
+[2023-12-03T04:07:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/247490.rs recursion too deep
+[2023-12-03T04:07:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/247585.rs recursion too deep
+[2023-12-03T04:08:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/247782.rs recursion too deep
+[2023-12-03T04:08:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/247784.rs recursion too deep
+[2023-12-03T04:08:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/247937.rs recursion too deep
+[2023-12-03T04:08:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/247944.rs recursion too deep
+[2023-12-03T04:08:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/247994.rs recursion too deep
+[2023-12-03T04:09:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/248295.rs recursion too deep
+[2023-12-03T04:12:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/249186.rs recursion too deep
+[2023-12-03T04:13:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/249399.rs recursion too deep
+[2023-12-03T04:13:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/249430.rs recursion too deep
+[2023-12-03T04:16:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/250615.rs recursion too deep
+[2023-12-03T04:17:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/250886.rs recursion too deep
+[2023-12-03T04:19:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/251699.rs recursion too deep
+[2023-12-03T04:20:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/252015.rs recursion too deep
+[2023-12-03T04:22:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/252572.rs recursion too deep
+[2023-12-03T04:23:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/252861.rs recursion too deep
+[2023-12-03T04:23:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/252925.rs recursion too deep
+[2023-12-03T04:23:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/252974.rs recursion too deep
+[2023-12-03T04:23:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/253248.rs recursion too deep
+[2023-12-03T04:24:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/253443.rs recursion too deep
+[2023-12-03T04:27:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/254513.rs recursion too deep
+[2023-12-03T04:28:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/254519.rs recursion too deep
+[2023-12-03T04:31:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/255564.rs recursion too deep
+[2023-12-03T04:31:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/255604.rs recursion too deep
+[2023-12-03T04:31:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/255779.rs recursion too deep
+[2023-12-03T04:31:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/255839.rs recursion too deep
+[2023-12-03T04:32:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/256047.rs recursion too deep
+[2023-12-03T04:33:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/256419.rs recursion too deep
+[2023-12-03T04:35:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/256846.rs recursion too deep
+[2023-12-03T04:35:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/257081.rs recursion too deep
+[2023-12-03T04:38:11Z ERROR difftest] /scratch/tmp.38510665.wangqian/257902.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 13095847224304954456
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 5003360499422069090
+    
+[2023-12-03T04:39:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/258184.rs recursion too deep
+[2023-12-03T04:39:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/258296.rs recursion too deep
+[2023-12-03T04:40:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/258357.rs recursion too deep
+[2023-12-03T04:42:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/259031.rs recursion too deep
+[2023-12-03T04:41:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/259080.rs recursion too deep
+[2023-12-03T04:41:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/259093.rs recursion too deep
+[2023-12-03T04:42:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/259160.rs recursion too deep
+[2023-12-03T04:42:36Z ERROR difftest] /scratch/tmp.38510665.wangqian/259373.rs didn't pass:
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 15574964833387720655
+    llvm-opt produced the following output:
+    stdout:
+    hash: 874421820931004372
+    
+[2023-12-03T04:43:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/259653.rs recursion too deep
+[2023-12-03T04:45:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/260176.rs recursion too deep
+[2023-12-03T04:46:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/260521.rs recursion too deep
+[2023-12-03T04:46:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/260548.rs recursion too deep
+[2023-12-03T04:46:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/260561.rs recursion too deep
+[2023-12-03T04:46:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/260647.rs recursion too deep
+[2023-12-03T04:47:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/260690.rs recursion too deep
+[2023-12-03T04:46:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/260731.rs recursion too deep
+[2023-12-03T04:48:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/261157.rs recursion too deep
+[2023-12-03T04:50:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/261786.rs recursion too deep
+[2023-12-03T04:50:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/261901.rs recursion too deep
+[2023-12-03T04:51:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/261970.rs recursion too deep
+[2023-12-03T04:52:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/262357.rs recursion too deep
+[2023-12-03T04:52:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/262404.rs recursion too deep
+[2023-12-03T04:52:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/262535.rs recursion too deep
+[2023-12-03T04:52:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/262544.rs recursion too deep
+[2023-12-03T04:53:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/262668.rs recursion too deep
+[2023-12-03T04:55:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/263258.rs recursion too deep
+[2023-12-03T04:56:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/263582.rs recursion too deep
+[2023-12-03T04:56:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/263630.rs recursion too deep
+[2023-12-03T04:57:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/263870.rs recursion too deep
+[2023-12-03T04:58:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/263972.rs recursion too deep
+[2023-12-03T04:58:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/264018.rs recursion too deep
+[2023-12-03T04:58:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/264149.rs recursion too deep
+[2023-12-03T04:59:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/264543.rs recursion too deep
+[2023-12-03T05:00:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/264826.rs recursion too deep
+[2023-12-03T05:00:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/264833.rs recursion too deep
+[2023-12-03T05:02:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/265655.rs recursion too deep
+[2023-12-03T05:03:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/265829.rs recursion too deep
+[2023-12-03T05:04:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/266088.rs recursion too deep
+[2023-12-03T05:06:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/266698.rs recursion too deep
+[2023-12-03T05:07:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/267169.rs recursion too deep
+[2023-12-03T05:09:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/267876.rs recursion too deep
+[2023-12-03T05:10:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/268231.rs recursion too deep
+[2023-12-03T05:11:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/268361.rs recursion too deep
+[2023-12-03T05:11:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/268587.rs recursion too deep
+[2023-12-03T05:11:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/268630.rs recursion too deep
+[2023-12-03T05:12:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/268854.rs recursion too deep
+[2023-12-03T05:12:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/269090.rs recursion too deep
+[2023-12-03T05:13:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/269372.rs recursion too deep
+[2023-12-03T05:14:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/269558.rs recursion too deep
+[2023-12-03T05:14:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/269639.rs recursion too deep
+[2023-12-03T05:14:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/269707.rs recursion too deep
+[2023-12-03T05:14:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/269731.rs recursion too deep
+[2023-12-03T05:15:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/270002.rs recursion too deep
+[2023-12-03T05:16:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/270219.rs recursion too deep
+[2023-12-03T05:17:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/270648.rs recursion too deep
+[2023-12-03T05:20:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/271459.rs recursion too deep
+[2023-12-03T05:19:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/271569.rs recursion too deep
+[2023-12-03T05:20:29Z ERROR difftest] /scratch/tmp.38510665.wangqian/271817.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 3769319636025550120
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 10803144167594429007
+    
+[2023-12-03T05:20:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/271865.rs recursion too deep
+[2023-12-03T05:21:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/272120.rs recursion too deep
+[2023-12-03T05:21:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/272273.rs recursion too deep
+[2023-12-03T05:24:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/273061.rs recursion too deep
+[2023-12-03T05:25:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/273544.rs recursion too deep
+[2023-12-03T05:29:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/274848.rs recursion too deep
+[2023-12-03T05:31:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/275390.rs recursion too deep
+[2023-12-03T05:32:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/275440.rs recursion too deep
+[2023-12-03T05:33:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/275758.rs recursion too deep
+[2023-12-03T05:33:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/276029.rs recursion too deep
+[2023-12-03T05:33:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/276038.rs recursion too deep
+[2023-12-03T05:34:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/276238.rs recursion too deep
+[2023-12-03T05:35:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/276446.rs recursion too deep
+[2023-12-03T05:35:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/276518.rs recursion too deep
+[2023-12-03T05:36:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/276772.rs recursion too deep
+[2023-12-03T05:37:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/276885.rs recursion too deep
+[2023-12-03T05:39:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/278098.rs recursion too deep
+[2023-12-03T05:40:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/278438.rs recursion too deep
+[2023-12-03T05:41:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/278573.rs recursion too deep
+[2023-12-03T05:42:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/278972.rs recursion too deep
+[2023-12-03T05:44:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/279550.rs recursion too deep
+[2023-12-03T05:49:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/281072.rs recursion too deep
+[2023-12-03T05:49:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/281211.rs recursion too deep
+[2023-12-03T05:49:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/281235.rs recursion too deep
+[2023-12-03T05:50:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/281401.rs recursion too deep
+[2023-12-03T05:50:35Z WARN  difftest] /scratch/tmp.38510665.wangqian/281427.rs recursion too deep
+[2023-12-03T05:50:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/281463.rs recursion too deep
+[2023-12-03T05:50:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/281688.rs recursion too deep
+[2023-12-03T05:51:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/281695.rs recursion too deep
+[2023-12-03T05:51:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/281761.rs recursion too deep
+[2023-12-03T05:51:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/281771.rs recursion too deep
+[2023-12-03T05:51:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/282022.rs recursion too deep
+[2023-12-03T05:52:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/282249.rs recursion too deep
+[2023-12-03T05:53:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/282358.rs recursion too deep
+[2023-12-03T05:53:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/282476.rs recursion too deep
+[2023-12-03T05:55:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/283242.rs recursion too deep
+[2023-12-03T05:56:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/283521.rs recursion too deep
+[2023-12-03T05:57:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/283967.rs recursion too deep
+[2023-12-03T06:01:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/285168.rs recursion too deep
+[2023-12-03T06:04:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/286213.rs recursion too deep
+[2023-12-03T06:04:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/286288.rs recursion too deep
+[2023-12-03T06:05:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/286651.rs recursion too deep
+[2023-12-03T06:08:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/287490.rs recursion too deep
+[2023-12-03T06:10:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/287952.rs recursion too deep
+[2023-12-03T06:09:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/287994.rs recursion too deep
+[2023-12-03T06:11:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/288419.rs recursion too deep
+[2023-12-03T06:11:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/288572.rs recursion too deep
+[2023-12-03T06:13:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/289480.rs recursion too deep
+[2023-12-03T06:14:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/289631.rs recursion too deep
+[2023-12-03T06:15:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/289878.rs recursion too deep
+[2023-12-03T06:15:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/289881.rs recursion too deep
+[2023-12-03T06:15:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/290016.rs recursion too deep
+[2023-12-03T06:15:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/290071.rs recursion too deep
+[2023-12-03T06:15:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/290127.rs recursion too deep
+[2023-12-03T06:16:32Z WARN  difftest] /scratch/tmp.38510665.wangqian/290296.rs recursion too deep
+[2023-12-03T06:19:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/291354.rs recursion too deep
+[2023-12-03T06:20:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/291696.rs recursion too deep
+[2023-12-03T06:21:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/291912.rs recursion too deep
+[2023-12-03T06:21:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/291927.rs recursion too deep
+[2023-12-03T06:22:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/292344.rs recursion too deep
+[2023-12-03T06:22:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/292584.rs recursion too deep
+[2023-12-03T06:23:18Z ERROR difftest] /scratch/tmp.38510665.wangqian/292902.rs didn't pass:
+    miri-unchecked, llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 2840275138134876153
+    llvm-opt produced the following output:
+    stdout:
+    hash: 7072259985561680244
+    
+[2023-12-03T06:25:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/293417.rs recursion too deep
+[2023-12-03T06:27:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/293830.rs recursion too deep
+[2023-12-03T06:28:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/294360.rs recursion too deep
+[2023-12-03T06:28:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/294363.rs recursion too deep
+[2023-12-03T06:28:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/294501.rs recursion too deep
+[2023-12-03T06:30:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/295091.rs recursion too deep
+[2023-12-03T06:30:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/295102.rs recursion too deep
+[2023-12-03T06:33:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/296247.rs recursion too deep
+[2023-12-03T06:33:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/296591.rs recursion too deep
+[2023-12-03T06:33:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/296642.rs recursion too deep
+[2023-12-03T06:35:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/297182.rs recursion too deep
+[2023-12-03T06:36:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/297439.rs recursion too deep
+[2023-12-03T06:38:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/298288.rs recursion too deep
+[2023-12-03T06:39:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/298564.rs recursion too deep
+[2023-12-03T06:40:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/298897.rs recursion too deep
+[2023-12-03T06:40:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/298973.rs recursion too deep
+[2023-12-03T06:41:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/299158.rs recursion too deep
+[2023-12-03T06:41:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/299202.rs recursion too deep
+[2023-12-03T06:43:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/299658.rs recursion too deep
+[2023-12-03T06:43:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/299684.rs recursion too deep
+[2023-12-03T06:43:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/299871.rs recursion too deep
+[2023-12-03T06:44:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/299958.rs recursion too deep
+[2023-12-03T06:44:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/300232.rs recursion too deep
+[2023-12-03T06:45:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/300318.rs recursion too deep
+[2023-12-03T06:46:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/300916.rs recursion too deep
+[2023-12-03T06:46:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/300974.rs recursion too deep
+[2023-12-03T06:47:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/301066.rs recursion too deep
+[2023-12-03T06:49:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/301709.rs recursion too deep
+[2023-12-03T06:50:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/301894.rs recursion too deep
+[2023-12-03T06:50:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/301907.rs recursion too deep
+[2023-12-03T06:50:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/302191.rs recursion too deep
+[2023-12-03T06:51:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/302340.rs recursion too deep
+[2023-12-03T06:53:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/302978.rs recursion too deep
+[2023-12-03T06:53:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/303092.rs recursion too deep
+[2023-12-03T06:54:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/303123.rs recursion too deep
+[2023-12-03T06:55:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/303463.rs recursion too deep
+[2023-12-03T06:56:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/303913.rs recursion too deep
+[2023-12-03T06:59:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/304969.rs recursion too deep
+[2023-12-03T06:59:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/305105.rs recursion too deep
+[2023-12-03T06:59:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/305135.rs recursion too deep
+[2023-12-03T07:02:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/305752.rs recursion too deep
+[2023-12-03T07:02:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/305842.rs recursion too deep
+[2023-12-03T07:03:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/306240.rs recursion too deep
+[2023-12-03T07:07:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/307605.rs recursion too deep
+[2023-12-03T07:08:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/307994.rs recursion too deep
+[2023-12-03T07:10:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/308496.rs recursion too deep
+[2023-12-03T07:10:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/308555.rs recursion too deep
+[2023-12-03T07:13:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/309567.rs recursion too deep
+[2023-12-03T07:15:19Z ERROR difftest] /scratch/tmp.38510665.wangqian/310058.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 6673871938756471760
+    llvm-opt, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 11002709864042555800
+    
+[2023-12-03T07:16:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/310601.rs recursion too deep
+[2023-12-03T07:17:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/310655.rs recursion too deep
+[2023-12-03T07:20:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/311953.rs recursion too deep
+[2023-12-03T07:21:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/312349.rs recursion too deep
+[2023-12-03T07:22:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/312408.rs recursion too deep
+[2023-12-03T07:22:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/312551.rs recursion too deep
+[2023-12-03T07:23:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/312612.rs recursion too deep
+[2023-12-03T07:24:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/312872.rs recursion too deep
+[2023-12-03T07:23:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/312991.rs recursion too deep
+[2023-12-03T07:25:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/313202.rs recursion too deep
+[2023-12-03T07:30:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/314977.rs recursion too deep
+[2023-12-03T07:31:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/315474.rs recursion too deep
+[2023-12-03T07:32:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/315838.rs recursion too deep
+[2023-12-03T07:34:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/316658.rs recursion too deep
+[2023-12-03T07:35:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/316961.rs recursion too deep
+[2023-12-03T07:36:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/317417.rs recursion too deep
+[2023-12-03T07:38:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/317906.rs recursion too deep
+[2023-12-03T07:39:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/317970.rs recursion too deep
+[2023-12-03T07:40:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/318404.rs recursion too deep
+[2023-12-03T07:41:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/318644.rs recursion too deep
+[2023-12-03T07:40:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/318654.rs recursion too deep
+[2023-12-03T07:42:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/318881.rs recursion too deep
+[2023-12-03T07:42:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/319146.rs recursion too deep
+[2023-12-03T07:43:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/319474.rs recursion too deep
+[2023-12-03T07:44:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/319753.rs recursion too deep
+[2023-12-03T07:46:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/320499.rs recursion too deep
+[2023-12-03T07:47:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/320764.rs recursion too deep
+[2023-12-03T07:48:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/320971.rs recursion too deep
+[2023-12-03T07:50:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/321670.rs recursion too deep
+[2023-12-03T07:51:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/322285.rs recursion too deep
+[2023-12-03T07:53:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/322943.rs recursion too deep
+[2023-12-03T07:56:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/324057.rs recursion too deep
+[2023-12-03T07:56:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/324183.rs recursion too deep
+[2023-12-03T07:57:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/324455.rs recursion too deep
+[2023-12-03T07:57:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/324515.rs recursion too deep
+[2023-12-03T07:58:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/324683.rs recursion too deep
+[2023-12-03T07:58:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/324763.rs recursion too deep
+[2023-12-03T08:00:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/325348.rs recursion too deep
+[2023-12-03T08:01:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/325475.rs recursion too deep
+[2023-12-03T08:01:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/325628.rs recursion too deep
+[2023-12-03T08:02:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/325786.rs recursion too deep
+[2023-12-03T08:03:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/326374.rs recursion too deep
+[2023-12-03T08:03:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/326466.rs recursion too deep
+[2023-12-03T08:04:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/326567.rs recursion too deep
+[2023-12-03T08:04:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/326576.rs recursion too deep
+[2023-12-03T08:04:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/326848.rs recursion too deep
+[2023-12-03T08:05:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/327066.rs recursion too deep
+[2023-12-03T08:06:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/327096.rs recursion too deep
+[2023-12-03T08:06:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/327422.rs recursion too deep
+[2023-12-03T08:09:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/328309.rs recursion too deep
+[2023-12-03T08:11:31Z ERROR difftest] /scratch/tmp.38510665.wangqian/328992.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt produced the following output:
+    stdout:
+    hash: 8455904836893897815
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 12652678353454044109
+    
+[2023-12-03T08:12:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/329379.rs recursion too deep
+[2023-12-03T08:13:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/329389.rs recursion too deep
+[2023-12-03T08:13:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/329516.rs recursion too deep
+[2023-12-03T08:13:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/329575.rs recursion too deep
+[2023-12-03T08:13:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/329715.rs recursion too deep
+[2023-12-03T08:14:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/330037.rs recursion too deep
+[2023-12-03T08:17:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/330807.rs recursion too deep
+[2023-12-03T08:17:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/330951.rs recursion too deep
+[2023-12-03T08:17:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/331037.rs recursion too deep
+[2023-12-03T08:18:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/331108.rs recursion too deep
+[2023-12-03T08:19:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/331460.rs recursion too deep
+[2023-12-03T08:20:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/331771.rs recursion too deep
+[2023-12-03T08:20:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/331798.rs recursion too deep
+[2023-12-03T08:20:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/331926.rs recursion too deep
+[2023-12-03T08:21:46Z ERROR difftest] /scratch/tmp.38510665.wangqian/332238.rs didn't pass:
+    llvm-opt, llvm-opt-only, cranelift-opt-only produced the following output:
+    status: signal: 9 (SIGKILL)
+    stdout:
+    ================
+    stderr:
+    warning: the feature `custom_mir` is internal to the compiler or standard library
+     --> /scratch/tmp.38510665.wangqian/332238.rs:2:16
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                ^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+      = note: `#[warn(internal_features)]` on by default
+    
+    ================
+    miri-unchecked produced the following output:
+    stdout:
+    hash: 510086727621663085
+    
+[2023-12-03T08:23:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/332663.rs recursion too deep
+[2023-12-03T08:25:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/333253.rs recursion too deep
+[2023-12-03T08:26:50Z ERROR difftest] /scratch/tmp.38510665.wangqian/333946.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 1154666996717269927
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 11583698919058239044
+    
+[2023-12-03T08:27:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/334012.rs recursion too deep
+[2023-12-03T08:28:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/334257.rs recursion too deep
+[2023-12-03T08:28:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/334437.rs recursion too deep
+[2023-12-03T08:30:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/335133.rs recursion too deep
+[2023-12-03T08:32:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/335685.rs recursion too deep
+[2023-12-03T08:32:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/335813.rs recursion too deep
+[2023-12-03T08:35:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/336605.rs recursion too deep
+[2023-12-03T08:35:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/336749.rs recursion too deep
+[2023-12-03T08:36:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/336751.rs recursion too deep
+[2023-12-03T08:36:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/336826.rs recursion too deep
+[2023-12-03T08:36:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/337024.rs recursion too deep
+[2023-12-03T08:38:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/337695.rs recursion too deep
+[2023-12-03T08:39:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/337922.rs recursion too deep
+[2023-12-03T08:39:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/337946.rs recursion too deep
+[2023-12-03T08:40:19Z ERROR difftest] /scratch/tmp.38510665.wangqian/338476.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 12673099582069221668
+    miri-unchecked, llvm-opt, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 18417099414983889534
+    
+[2023-12-03T08:40:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/338507.rs recursion too deep
+[2023-12-03T08:41:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/338780.rs recursion too deep
+[2023-12-03T08:41:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/338855.rs recursion too deep
+[2023-12-03T08:42:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/339029.rs recursion too deep
+[2023-12-03T08:43:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/339535.rs recursion too deep
+[2023-12-03T08:44:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/339840.rs recursion too deep
+[2023-12-03T08:45:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/339971.rs recursion too deep
+[2023-12-03T08:44:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/339974.rs recursion too deep
+[2023-12-03T08:44:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/340015.rs recursion too deep
+[2023-12-03T08:47:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/340665.rs recursion too deep
+[2023-12-03T08:47:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/340710.rs recursion too deep
+[2023-12-03T08:48:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/341156.rs recursion too deep
+[2023-12-03T08:49:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/341328.rs recursion too deep
+[2023-12-03T08:50:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/341723.rs recursion too deep
+[2023-12-03T08:50:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/341769.rs recursion too deep
+[2023-12-03T08:51:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/341879.rs recursion too deep
+[2023-12-03T08:52:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/342139.rs recursion too deep
+[2023-12-03T08:51:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/342152.rs recursion too deep
+[2023-12-03T08:53:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/342598.rs recursion too deep
+[2023-12-03T08:53:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/342730.rs recursion too deep
+[2023-12-03T08:54:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/342884.rs recursion too deep
+[2023-12-03T08:55:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/343048.rs recursion too deep
+[2023-12-03T08:55:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/343143.rs recursion too deep
+[2023-12-03T08:57:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/343729.rs recursion too deep
+[2023-12-03T08:57:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/343800.rs recursion too deep
+[2023-12-03T08:58:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/344102.rs recursion too deep
+[2023-12-03T08:58:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/344345.rs recursion too deep
+[2023-12-03T09:03:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/345865.rs recursion too deep
+[2023-12-03T09:04:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/346122.rs recursion too deep
+[2023-12-03T09:04:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/346433.rs recursion too deep
+[2023-12-03T09:06:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/346770.rs recursion too deep
+[2023-12-03T09:06:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/346895.rs recursion too deep
+[2023-12-03T09:08:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/347633.rs recursion too deep
+[2023-12-03T09:09:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/347788.rs recursion too deep
+[2023-12-03T09:09:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/347870.rs recursion too deep
+[2023-12-03T09:09:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/348058.rs recursion too deep
+[2023-12-03T09:11:14Z ERROR difftest] /scratch/tmp.38510665.wangqian/348482.rs didn't pass:
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 1930616190456758049
+    llvm-opt produced the following output:
+    stdout:
+    hash: 2893733367056606373
+    
+[2023-12-03T09:11:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/348569.rs recursion too deep
+[2023-12-03T09:11:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/348659.rs recursion too deep
+[2023-12-03T09:11:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/348708.rs recursion too deep
+[2023-12-03T09:12:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/348722.rs recursion too deep
+[2023-12-03T09:12:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/349060.rs recursion too deep
+[2023-12-03T09:15:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/349794.rs recursion too deep
+[2023-12-03T09:16:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/349933.rs recursion too deep
+[2023-12-03T09:16:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/350269.rs recursion too deep
+[2023-12-03T09:16:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/350380.rs recursion too deep
+[2023-12-03T09:16:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/350413.rs recursion too deep
+[2023-12-03T09:17:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/350509.rs recursion too deep
+[2023-12-03T09:18:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/350841.rs recursion too deep
+[2023-12-03T09:20:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/351585.rs recursion too deep
+[2023-12-03T09:23:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/352374.rs recursion too deep
+[2023-12-03T09:23:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/352671.rs recursion too deep
+[2023-12-03T09:24:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/352725.rs recursion too deep
+[2023-12-03T09:25:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/353203.rs recursion too deep
+[2023-12-03T09:28:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/354008.rs recursion too deep
+[2023-12-03T09:28:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/354199.rs recursion too deep
+[2023-12-03T09:29:32Z WARN  difftest] /scratch/tmp.38510665.wangqian/354563.rs recursion too deep
+[2023-12-03T09:29:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/354609.rs recursion too deep
+[2023-12-03T09:30:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/354926.rs recursion too deep
+[2023-12-03T09:32:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/355749.rs recursion too deep
+[2023-12-03T09:33:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/355860.rs recursion too deep
+[2023-12-03T09:33:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/356051.rs recursion too deep
+[2023-12-03T09:35:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/356834.rs recursion too deep
+[2023-12-03T09:36:53Z WARN  difftest] /scratch/tmp.38510665.wangqian/357265.rs recursion too deep
+[2023-12-03T09:36:35Z WARN  difftest] /scratch/tmp.38510665.wangqian/357477.rs recursion too deep
+[2023-12-03T09:37:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/357655.rs recursion too deep
+[2023-12-03T09:38:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/358197.rs recursion too deep
+[2023-12-03T09:43:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/359923.rs recursion too deep
+[2023-12-03T09:44:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/360153.rs recursion too deep
+[2023-12-03T09:45:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/360316.rs recursion too deep
+[2023-12-03T09:45:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/360704.rs recursion too deep
+[2023-12-03T09:45:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/360710.rs recursion too deep
+[2023-12-03T09:45:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/360818.rs recursion too deep
+[2023-12-03T09:46:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/361002.rs recursion too deep
+[2023-12-03T09:47:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/361053.rs recursion too deep
+[2023-12-03T09:47:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/361183.rs recursion too deep
+[2023-12-03T09:47:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/361195.rs recursion too deep
+[2023-12-03T09:48:34Z ERROR difftest] /scratch/tmp.38510665.wangqian/361644.rs didn't pass:
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 8182003303004283454
+    llvm-opt produced the following output:
+    stdout:
+    hash: 11133462467145735121
+    
+[2023-12-03T09:55:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/363677.rs recursion too deep
+[2023-12-03T09:55:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/363680.rs recursion too deep
+[2023-12-03T09:55:32Z WARN  difftest] /scratch/tmp.38510665.wangqian/363864.rs recursion too deep
+[2023-12-03T09:56:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/364126.rs recursion too deep
+[2023-12-03T09:57:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/364645.rs recursion too deep
+[2023-12-03T09:58:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/364788.rs recursion too deep
+[2023-12-03T09:59:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/365092.rs recursion too deep
+[2023-12-03T09:59:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/365273.rs recursion too deep
+[2023-12-03T10:00:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/365402.rs recursion too deep
+[2023-12-03T10:02:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/366080.rs recursion too deep
+[2023-12-03T10:03:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/366322.rs recursion too deep
+[2023-12-03T10:03:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/366594.rs recursion too deep
+[2023-12-03T10:04:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/366780.rs recursion too deep
+[2023-12-03T10:04:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/366948.rs recursion too deep
+[2023-12-03T10:05:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/367282.rs recursion too deep
+[2023-12-03T10:06:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/367662.rs recursion too deep
+[2023-12-03T10:09:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/368727.rs recursion too deep
+[2023-12-03T10:09:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/368731.rs recursion too deep
+[2023-12-03T10:09:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/368773.rs recursion too deep
+[2023-12-03T10:11:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/369311.rs recursion too deep
+[2023-12-03T10:12:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/369648.rs recursion too deep
+[2023-12-03T10:11:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/369679.rs recursion too deep
+[2023-12-03T10:12:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/369848.rs recursion too deep
+[2023-12-03T10:12:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/370001.rs recursion too deep
+[2023-12-03T10:13:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/370022.rs recursion too deep
+[2023-12-03T10:14:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/370625.rs recursion too deep
+[2023-12-03T10:16:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/371205.rs recursion too deep
+[2023-12-03T10:17:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/371442.rs recursion too deep
+[2023-12-03T10:17:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/371718.rs recursion too deep
+[2023-12-03T10:18:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/371926.rs recursion too deep
+[2023-12-03T10:21:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/372889.rs recursion too deep
+[2023-12-03T10:24:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/373650.rs recursion too deep
+[2023-12-03T10:24:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/373899.rs recursion too deep
+[2023-12-03T10:27:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/374865.rs recursion too deep
+[2023-12-03T10:28:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/374988.rs recursion too deep
+[2023-12-03T10:32:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/376166.rs recursion too deep
+[2023-12-03T10:33:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/376513.rs recursion too deep
+[2023-12-03T10:33:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/376723.rs recursion too deep
+[2023-12-03T10:34:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/376753.rs recursion too deep
+[2023-12-03T10:35:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/377022.rs recursion too deep
+[2023-12-03T10:35:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/377216.rs recursion too deep
+[2023-12-03T10:36:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/377368.rs recursion too deep
+[2023-12-03T10:36:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/377433.rs recursion too deep
+[2023-12-03T10:36:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/377476.rs recursion too deep
+[2023-12-03T10:38:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/378156.rs recursion too deep
+[2023-12-03T10:39:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/378616.rs recursion too deep
+[2023-12-03T10:43:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/380003.rs recursion too deep
+[2023-12-03T10:44:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/380440.rs recursion too deep
+[2023-12-03T10:45:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/380756.rs recursion too deep
+[2023-12-03T10:46:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/381123.rs recursion too deep
+[2023-12-03T10:47:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/381600.rs recursion too deep
+[2023-12-03T10:47:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/381607.rs recursion too deep
+[2023-12-03T10:48:35Z ERROR difftest] /scratch/tmp.38510665.wangqian/382050.rs didn't pass:
+    cranelift-opt-only, llvm-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 15281128432795792836
+    llvm-opt produced the following output:
+    stdout:
+    hash: 12631707327282582457
+    
+[2023-12-03T10:54:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/383982.rs recursion too deep
+[2023-12-03T10:54:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/384120.rs recursion too deep
+[2023-12-03T10:54:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/384141.rs recursion too deep
+[2023-12-03T10:55:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/384194.rs recursion too deep
+[2023-12-03T10:55:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/384343.rs recursion too deep
+[2023-12-03T10:55:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/384351.rs recursion too deep
+[2023-12-03T10:56:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/384894.rs recursion too deep
+[2023-12-03T10:57:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/385050.rs recursion too deep
+[2023-12-03T11:00:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/386145.rs recursion too deep
+[2023-12-03T11:00:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/386206.rs recursion too deep
+[2023-12-03T11:01:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/386414.rs recursion too deep
+[2023-12-03T11:01:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/386769.rs recursion too deep
+[2023-12-03T11:03:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/387227.rs recursion too deep
+[2023-12-03T11:03:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/387474.rs recursion too deep
+[2023-12-03T11:04:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/387662.rs recursion too deep
+[2023-12-03T11:05:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/388025.rs recursion too deep
+[2023-12-03T11:08:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/388736.rs recursion too deep
+[2023-12-03T11:10:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/389820.rs recursion too deep
+[2023-12-03T11:12:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/390216.rs recursion too deep
+[2023-12-03T11:15:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/391005.rs recursion too deep
+[2023-12-03T11:17:45Z ERROR difftest] /scratch/tmp.38510665.wangqian/392181.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 11848995125801431299
+    cranelift-opt-only, llvm-opt, miri-unchecked produced the following output:
+    stdout:
+    hash: 1988482201425833208
+    
+[2023-12-03T11:18:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/392461.rs recursion too deep
+[2023-12-03T11:19:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/392726.rs recursion too deep
+[2023-12-03T11:22:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/393836.rs recursion too deep
+[2023-12-03T11:23:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/394077.rs recursion too deep
+[2023-12-03T11:24:23Z ERROR difftest] /scratch/tmp.38510665.wangqian/394597.rs didn't pass:
+    miri-unchecked, llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 18392416820549528823
+    llvm-opt produced the following output:
+    stdout:
+    hash: 15865314790358284339
+    
+[2023-12-03T11:26:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/395173.rs recursion too deep
+[2023-12-03T11:27:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/395703.rs recursion too deep
+[2023-12-03T11:29:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/396174.rs recursion too deep
+[2023-12-03T11:28:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/396178.rs recursion too deep
+[2023-12-03T11:29:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/396384.rs recursion too deep
+[2023-12-03T11:32:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/397219.rs recursion too deep
+[2023-12-03T11:35:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/398157.rs recursion too deep
+[2023-12-03T11:36:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/398437.rs recursion too deep
+[2023-12-03T11:36:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/398588.rs recursion too deep
+[2023-12-03T11:37:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/398756.rs recursion too deep
+[2023-12-03T11:37:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/398781.rs recursion too deep
+[2023-12-03T11:40:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/399809.rs recursion too deep
+[2023-12-03T11:40:57Z WARN  difftest] /scratch/tmp.38510665.wangqian/399904.rs recursion too deep
+[2023-12-03T11:41:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/399922.rs recursion too deep
+[2023-12-03T11:47:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/401853.rs recursion too deep
+[2023-12-03T11:49:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/402667.rs recursion too deep
+[2023-12-03T11:50:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/402719.rs recursion too deep
+[2023-12-03T11:49:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/402737.rs recursion too deep
+[2023-12-03T11:50:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/402926.rs recursion too deep
+[2023-12-03T11:53:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/403894.rs recursion too deep
+[2023-12-03T11:53:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/404132.rs recursion too deep
+[2023-12-03T11:56:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/404904.rs recursion too deep
+[2023-12-03T11:58:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/405584.rs recursion too deep
+[2023-12-03T11:58:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/405691.rs recursion too deep
+[2023-12-03T11:59:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/405881.rs recursion too deep
+[2023-12-03T11:59:18Z ERROR difftest] /scratch/tmp.38510665.wangqian/405885.rs didn't pass:
+    llvm-opt, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 5023361734082743557
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 1478057083147712742
+    
+[2023-12-03T11:59:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/405951.rs recursion too deep
+[2023-12-03T11:59:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/405979.rs recursion too deep
+[2023-12-03T12:00:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/406226.rs recursion too deep
+[2023-12-03T12:02:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/406744.rs recursion too deep
+[2023-12-03T12:03:59Z ERROR difftest] /scratch/tmp.38510665.wangqian/407326.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt produced the following output:
+    stdout:
+    hash: 16586789817331232823
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 18037562198309541769
+    
+[2023-12-03T12:04:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/407484.rs recursion too deep
+[2023-12-03T12:05:35Z WARN  difftest] /scratch/tmp.38510665.wangqian/407639.rs recursion too deep
+[2023-12-03T12:05:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/407678.rs recursion too deep
+[2023-12-03T12:08:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/408658.rs recursion too deep
+[2023-12-03T12:10:00Z WARN  difftest] /scratch/tmp.38510665.wangqian/409026.rs recursion too deep
+[2023-12-03T12:12:08Z WARN  difftest] /scratch/tmp.38510665.wangqian/409935.rs recursion too deep
+[2023-12-03T12:11:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/409960.rs recursion too deep
+[2023-12-03T12:11:55Z ERROR difftest] /scratch/tmp.38510665.wangqian/410041.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 6967078895527208429
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 14950047252900328758
+    
+[2023-12-03T12:12:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/410159.rs recursion too deep
+[2023-12-03T12:12:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/410253.rs recursion too deep
+[2023-12-03T12:15:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/411121.rs recursion too deep
+[2023-12-03T12:16:32Z WARN  difftest] /scratch/tmp.38510665.wangqian/411398.rs recursion too deep
+[2023-12-03T12:16:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/411479.rs recursion too deep
+[2023-12-03T12:18:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/412060.rs recursion too deep
+[2023-12-03T12:19:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/412368.rs recursion too deep
+[2023-12-03T12:25:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/414266.rs recursion too deep
+[2023-12-03T12:26:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/414558.rs recursion too deep
+[2023-12-03T12:26:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/414692.rs recursion too deep
+[2023-12-03T12:29:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/415537.rs recursion too deep
+[2023-12-03T12:29:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/415696.rs recursion too deep
+[2023-12-03T12:30:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/415887.rs recursion too deep
+[2023-12-03T12:30:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/415890.rs recursion too deep
+[2023-12-03T12:30:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/415940.rs recursion too deep
+[2023-12-03T12:31:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/416452.rs recursion too deep
+[2023-12-03T12:32:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/416476.rs recursion too deep
+[2023-12-03T12:31:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/416484.rs recursion too deep
+[2023-12-03T12:32:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/416576.rs recursion too deep
+[2023-12-03T12:32:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/416587.rs recursion too deep
+[2023-12-03T12:32:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/416651.rs recursion too deep
+[2023-12-03T12:32:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/416674.rs recursion too deep
+[2023-12-03T12:36:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/417933.rs recursion too deep
+[2023-12-03T12:37:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/418067.rs recursion too deep
+[2023-12-03T12:39:43Z WARN  difftest] /scratch/tmp.38510665.wangqian/418696.rs recursion too deep
+[2023-12-03T12:39:20Z WARN  difftest] /scratch/tmp.38510665.wangqian/418742.rs recursion too deep
+[2023-12-03T12:39:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/418752.rs recursion too deep
+[2023-12-03T12:40:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/418799.rs recursion too deep
+[2023-12-03T12:41:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/419508.rs recursion too deep
+[2023-12-03T12:44:32Z WARN  difftest] /scratch/tmp.38510665.wangqian/420439.rs recursion too deep
+[2023-12-03T12:44:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/420447.rs recursion too deep
+[2023-12-03T12:47:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/421543.rs recursion too deep
+[2023-12-03T12:48:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/421717.rs recursion too deep
+[2023-12-03T12:49:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/421922.rs recursion too deep
+[2023-12-03T12:51:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/422722.rs recursion too deep
+[2023-12-03T12:55:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/423926.rs recursion too deep
+[2023-12-03T12:55:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/423969.rs recursion too deep
+[2023-12-03T12:57:36Z WARN  difftest] /scratch/tmp.38510665.wangqian/424695.rs recursion too deep
+[2023-12-03T12:57:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/424753.rs recursion too deep
+[2023-12-03T12:58:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/425041.rs recursion too deep
+[2023-12-03T12:59:35Z WARN  difftest] /scratch/tmp.38510665.wangqian/425248.rs recursion too deep
+[2023-12-03T13:01:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/425766.rs recursion too deep
+[2023-12-03T13:02:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/426156.rs recursion too deep
+[2023-12-03T13:03:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/426411.rs recursion too deep
+[2023-12-03T13:04:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/426779.rs recursion too deep
+[2023-12-03T13:05:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/427082.rs recursion too deep
+[2023-12-03T13:06:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/427193.rs recursion too deep
+[2023-12-03T13:07:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/427832.rs recursion too deep
+[2023-12-03T13:08:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/427942.rs recursion too deep
+[2023-12-03T13:09:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/428453.rs recursion too deep
+[2023-12-03T13:12:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/429409.rs recursion too deep
+[2023-12-03T13:13:03Z WARN  difftest] /scratch/tmp.38510665.wangqian/429572.rs recursion too deep
+[2023-12-03T13:15:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/430123.rs recursion too deep
+[2023-12-03T13:16:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/430801.rs recursion too deep
+[2023-12-03T13:17:16Z WARN  difftest] /scratch/tmp.38510665.wangqian/430974.rs recursion too deep
+[2023-12-03T13:18:48Z WARN  difftest] /scratch/tmp.38510665.wangqian/431555.rs recursion too deep
+[2023-12-03T13:19:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/431658.rs recursion too deep
+[2023-12-03T13:18:49Z ERROR difftest] /scratch/tmp.38510665.wangqian/431754.rs didn't pass:
+    miri-unchecked, llvm-opt, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 16155640977801323375
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 3872629823581181421
+    
+[2023-12-03T13:21:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/432413.rs recursion too deep
+[2023-12-03T13:22:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/432808.rs recursion too deep
+[2023-12-03T13:23:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/432906.rs recursion too deep
+[2023-12-03T13:25:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/433633.rs recursion too deep
+[2023-12-03T13:25:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/433731.rs recursion too deep
+[2023-12-03T13:27:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/434262.rs recursion too deep
+[2023-12-03T13:27:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/434487.rs recursion too deep
+[2023-12-03T13:28:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/434882.rs recursion too deep
+[2023-12-03T13:31:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/436125.rs recursion too deep
+[2023-12-03T13:32:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/436130.rs recursion too deep
+[2023-12-03T13:33:17Z WARN  difftest] /scratch/tmp.38510665.wangqian/436418.rs recursion too deep
+[2023-12-03T13:34:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/436613.rs recursion too deep
+[2023-12-03T13:35:14Z WARN  difftest] /scratch/tmp.38510665.wangqian/436948.rs recursion too deep
+[2023-12-03T13:37:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/437780.rs recursion too deep
+[2023-12-03T13:39:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/438469.rs recursion too deep
+[2023-12-03T13:40:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/438693.rs recursion too deep
+[2023-12-03T13:40:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/438798.rs recursion too deep
+[2023-12-03T13:41:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/438956.rs recursion too deep
+[2023-12-03T13:47:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/440715.rs recursion too deep
+[2023-12-03T13:47:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/441118.rs recursion too deep
+[2023-12-03T13:48:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/441141.rs recursion too deep
+[2023-12-03T13:49:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/441612.rs recursion too deep
+[2023-12-03T13:49:52Z WARN  difftest] /scratch/tmp.38510665.wangqian/441722.rs recursion too deep
+[2023-12-03T13:51:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/442132.rs recursion too deep
+[2023-12-03T13:51:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/442315.rs recursion too deep
+[2023-12-03T13:52:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/442595.rs recursion too deep
+[2023-12-03T13:52:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/442649.rs recursion too deep
+[2023-12-03T13:52:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/442753.rs recursion too deep
+[2023-12-03T13:53:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/443080.rs recursion too deep
+[2023-12-03T13:55:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/443738.rs recursion too deep
+[2023-12-03T13:58:26Z WARN  difftest] /scratch/tmp.38510665.wangqian/444650.rs recursion too deep
+[2023-12-03T13:58:35Z WARN  difftest] /scratch/tmp.38510665.wangqian/444741.rs recursion too deep
+[2023-12-03T13:59:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/444845.rs recursion too deep
+[2023-12-03T14:00:18Z WARN  difftest] /scratch/tmp.38510665.wangqian/445203.rs recursion too deep
+[2023-12-03T14:02:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/445799.rs recursion too deep
+[2023-12-03T14:03:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/446304.rs recursion too deep
+[2023-12-03T14:05:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/446816.rs recursion too deep
+[2023-12-03T14:05:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/446863.rs recursion too deep
+[2023-12-03T14:05:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/446901.rs recursion too deep
+[2023-12-03T14:05:51Z WARN  difftest] /scratch/tmp.38510665.wangqian/447097.rs recursion too deep
+[2023-12-03T14:08:23Z WARN  difftest] /scratch/tmp.38510665.wangqian/447683.rs recursion too deep
+[2023-12-03T14:08:22Z WARN  difftest] /scratch/tmp.38510665.wangqian/447920.rs recursion too deep
+[2023-12-03T14:10:10Z WARN  difftest] /scratch/tmp.38510665.wangqian/448456.rs recursion too deep
+[2023-12-03T14:10:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/448531.rs recursion too deep
+[2023-12-03T14:10:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/448618.rs recursion too deep
+[2023-12-03T14:12:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/449397.rs recursion too deep
+[2023-12-03T14:13:56Z WARN  difftest] /scratch/tmp.38510665.wangqian/449644.rs recursion too deep
+[2023-12-03T14:15:58Z WARN  difftest] /scratch/tmp.38510665.wangqian/450448.rs recursion too deep
+[2023-12-03T14:16:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/450458.rs recursion too deep
+[2023-12-03T14:17:42Z WARN  difftest] /scratch/tmp.38510665.wangqian/450929.rs recursion too deep
+[2023-12-03T14:17:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/451136.rs recursion too deep
+[2023-12-03T14:19:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/451703.rs recursion too deep
+[2023-12-03T14:21:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/452338.rs recursion too deep
+[2023-12-03T14:22:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/452496.rs recursion too deep
+[2023-12-03T14:22:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/452687.rs recursion too deep
+[2023-12-03T14:22:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/452735.rs recursion too deep
+[2023-12-03T14:23:05Z WARN  difftest] /scratch/tmp.38510665.wangqian/452777.rs recursion too deep
+[2023-12-03T14:22:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/452960.rs recursion too deep
+[2023-12-03T14:24:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/453472.rs recursion too deep
+[2023-12-03T14:25:25Z ERROR difftest] /scratch/tmp.38510665.wangqian/453872.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 5882576775393912967
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 10646832835846573098
+    
+[2023-12-03T14:26:19Z WARN  difftest] /scratch/tmp.38510665.wangqian/454115.rs recursion too deep
+[2023-12-03T14:27:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/454488.rs recursion too deep
+[2023-12-03T14:30:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/455409.rs recursion too deep
+[2023-12-03T14:31:11Z WARN  difftest] /scratch/tmp.38510665.wangqian/455800.rs recursion too deep
+[2023-12-03T14:33:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/456413.rs recursion too deep
+[2023-12-03T14:33:01Z WARN  difftest] /scratch/tmp.38510665.wangqian/456502.rs recursion too deep
+[2023-12-03T14:33:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/456524.rs recursion too deep
+[2023-12-03T14:33:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/456602.rs recursion too deep
+[2023-12-03T14:35:46Z WARN  difftest] /scratch/tmp.38510665.wangqian/457466.rs recursion too deep
+[2023-12-03T14:36:13Z WARN  difftest] /scratch/tmp.38510665.wangqian/457522.rs recursion too deep
+[2023-12-03T14:37:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/457956.rs recursion too deep
+[2023-12-03T14:39:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/458495.rs recursion too deep
+[2023-12-03T14:40:06Z WARN  difftest] /scratch/tmp.38510665.wangqian/458782.rs recursion too deep
+[2023-12-03T14:41:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/459284.rs recursion too deep
+[2023-12-03T14:41:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/459290.rs recursion too deep
+[2023-12-03T14:44:15Z WARN  difftest] /scratch/tmp.38510665.wangqian/460260.rs recursion too deep
+[2023-12-03T14:44:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/460295.rs recursion too deep
+[2023-12-03T14:45:49Z WARN  difftest] /scratch/tmp.38510665.wangqian/460701.rs recursion too deep
+[2023-12-03T14:45:28Z WARN  difftest] /scratch/tmp.38510665.wangqian/460745.rs recursion too deep
+[2023-12-03T14:46:39Z WARN  difftest] /scratch/tmp.38510665.wangqian/461048.rs recursion too deep
+[2023-12-03T14:47:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/461348.rs recursion too deep
+[2023-12-03T14:49:40Z WARN  difftest] /scratch/tmp.38510665.wangqian/462043.rs recursion too deep
+[2023-12-03T14:50:44Z WARN  difftest] /scratch/tmp.38510665.wangqian/462314.rs recursion too deep
+[2023-12-03T14:51:12Z WARN  difftest] /scratch/tmp.38510665.wangqian/462584.rs recursion too deep
+[2023-12-03T14:51:45Z WARN  difftest] /scratch/tmp.38510665.wangqian/462719.rs recursion too deep
+[2023-12-03T14:52:29Z WARN  difftest] /scratch/tmp.38510665.wangqian/462961.rs recursion too deep
+[2023-12-03T14:52:34Z WARN  difftest] /scratch/tmp.38510665.wangqian/463105.rs recursion too deep
+[2023-12-03T14:53:27Z WARN  difftest] /scratch/tmp.38510665.wangqian/463398.rs recursion too deep
+[2023-12-03T15:00:07Z WARN  difftest] /scratch/tmp.38510665.wangqian/465462.rs recursion too deep
+[2023-12-03T15:00:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/465776.rs recursion too deep
+[2023-12-03T15:01:41Z WARN  difftest] /scratch/tmp.38510665.wangqian/466098.rs recursion too deep
+[2023-12-03T15:01:59Z WARN  difftest] /scratch/tmp.38510665.wangqian/466257.rs recursion too deep
+[2023-12-03T15:01:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/466289.rs recursion too deep
+[2023-12-03T15:02:24Z WARN  difftest] /scratch/tmp.38510665.wangqian/466486.rs recursion too deep
+[2023-12-03T15:02:31Z WARN  difftest] /scratch/tmp.38510665.wangqian/466502.rs recursion too deep
+[2023-12-03T15:03:21Z WARN  difftest] /scratch/tmp.38510665.wangqian/466715.rs recursion too deep
+[2023-12-03T15:04:30Z WARN  difftest] /scratch/tmp.38510665.wangqian/466828.rs recursion too deep
+[2023-12-03T15:04:09Z WARN  difftest] /scratch/tmp.38510665.wangqian/466908.rs recursion too deep
+[2023-12-03T15:04:55Z WARN  difftest] /scratch/tmp.38510665.wangqian/467082.rs recursion too deep
+[2023-12-03T15:08:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/468203.rs recursion too deep
+[2023-12-03T15:09:02Z WARN  difftest] /scratch/tmp.38510665.wangqian/468491.rs recursion too deep
+[2023-12-03T15:08:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/468538.rs recursion too deep
+[2023-12-03T15:09:54Z WARN  difftest] /scratch/tmp.38510665.wangqian/468945.rs recursion too deep
+[2023-12-03T15:10:37Z WARN  difftest] /scratch/tmp.38510665.wangqian/469107.rs recursion too deep
+[2023-12-03T15:12:25Z WARN  difftest] /scratch/tmp.38510665.wangqian/469652.rs recursion too deep
+[2023-12-03T15:12:38Z WARN  difftest] /scratch/tmp.38510665.wangqian/469763.rs recursion too deep
+slurmstepd: error: _handle_stat_jobacct: Took usec=481127457, which is more than MessageTimeout (40s). The result won't be delivered
+[2023-12-03T15:15:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/470570.rs recursion too deep
+[2023-12-03T15:16:50Z WARN  difftest] /scratch/tmp.38510665.wangqian/471172.rs recursion too deep
+[2023-12-03T15:17:04Z WARN  difftest] /scratch/tmp.38510665.wangqian/471180.rs recursion too deep
+[2023-12-03T15:16:47Z WARN  difftest] /scratch/tmp.38510665.wangqian/471183.rs recursion too deep
+[2023-12-03T15:17:33Z WARN  difftest] /scratch/tmp.38510665.wangqian/471480.rs recursion too deep

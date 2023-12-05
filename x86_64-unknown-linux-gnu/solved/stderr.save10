@@ -1,0 +1,165 @@
+
+The following have been reloaded with a version change:
+  1) gcc/4.8.5 => gcc/9.3.0
+
+Fuzzing on d1119e6dac24a2611837f919c630dc07893def9b
+warning: unused imports: `Item`, `Permission`, `state::GlobalState`
+  --> fuzz/src/mem/stacked_borrows/mod.rs:11:12
+   |
+11 |     item::{Item, Permission},
+   |            ^^^^  ^^^^^^^^^^
+12 |     stack::Stack,
+13 |     state::GlobalState,
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: unused variable: `p`
+   --> fuzz/src/ptable.rs:438:40
+    |
+438 |     pub fn mark_place_moved(&mut self, p: impl ToPlaceIndex) {
+    |                                        ^ help: if this is intentional, prefix it with an underscore: `_p`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `ty`
+   --> fuzz/src/ty.rs:183:27
+    |
+183 |     pub fn is_copy(&self, ty: &Ty) -> bool {
+    |                           ^^ help: if this is intentional, prefix it with an underscore: `_ty`
+
+warning: methods `generate_storage_live`, `generate_storage_dead`, and `generate_deinit` are never used
+   --> fuzz/src/generation/mod.rs:391:8
+    |
+354 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+391 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+401 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+411 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: method `make_choice_mut` is never used
+   --> fuzz/src/generation/mod.rs:946:8
+    |
+866 | impl GenerationCtx {
+    | ------------------ method in this implementation
+...
+946 |     fn make_choice_mut<T, F, R>(
+    |        ^^^^^^^^^^^^^^^
+
+warning: method `provenance` is never used
+  --> fuzz/src/mem/mod.rs:39:12
+   |
+34 | impl<Provenance> AbstractByte<Provenance> {
+   | ----------------------------------------- method in this implementation
+...
+39 |     pub fn provenance(&self) -> Option<&Provenance> {
+   |            ^^^^^^^^^^
+
+warning: method `size` is never used
+  --> fuzz/src/mem/mod.rs:59:12
+   |
+53 | impl<Provenance: Copy + Clone> Run<Provenance> {
+   | ---------------------------------------------- method in this implementation
+...
+59 |     pub fn size(&self) -> Size {
+   |            ^^^^
+
+warning: method `same_run` is never used
+  --> fuzz/src/mem/mod.rs:70:12
+   |
+69 | impl RunAndOffset {
+   | ----------------- method in this implementation
+70 |     pub fn same_run(&self, other: &Self) -> bool {
+   |            ^^^^^^^^
+
+warning: field `stacks` is never read
+  --> fuzz/src/mem/mod.rs:81:5
+   |
+78 | struct Allocation {
+   |        ---------- field in this struct
+...
+81 |     stacks: Stacks,
+   |     ^^^^^^
+
+warning: methods `runs_and_sizes` and `run` are never used
+  --> fuzz/src/mem/mod.rs:89:8
+   |
+88 | impl Allocation {
+   | --------------- methods in this implementation
+89 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+   |        ^^^^^^^^^^^^^^
+...
+95 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run<Provenance> {
+   |        ^^^
+
+warning: method `inner` is never used
+  --> fuzz/src/mem/stacked_borrows/mod.rs:31:12
+   |
+22 | impl BorTag {
+   | ----------- method in this implementation
+...
+31 |     pub fn inner(&self) -> NonZeroU64 {
+   |            ^^^^^
+
+warning: field `stacks` is never read
+  --> fuzz/src/mem/stacked_borrows/mod.rs:68:5
+   |
+67 | pub struct Stacks {
+   |            ------ field in this struct
+68 |     stacks: IndexVec<RunId, RangeMap<Stack>>,
+   |     ^^^^^^
+   |
+   = note: `Stacks` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+
+warning: method `set_permission` is never used
+  --> fuzz/src/mem/stacked_borrows/item.rs:52:12
+   |
+20 | impl Item {
+   | --------- method in this implementation
+...
+52 |     pub fn set_permission(&mut self, perm: Permission) {
+   |            ^^^^^^^^^^^^^^
+
+warning: field `borrows` is never read
+  --> fuzz/src/mem/stacked_borrows/stack.rs:10:5
+   |
+5  | pub struct Stack {
+   |            ----- field in this struct
+...
+10 |     borrows: Vec<Item>,
+   |     ^^^^^^^
+   |
+   = note: `Stack` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+
+warning: method `place_count` is never used
+   --> fuzz/src/ptable.rs:723:12
+    |
+78  | impl PlaceTable {
+    | --------------- method in this implementation
+...
+723 |     pub fn place_count(&self) -> usize {
+    |            ^^^^^^^^^^^
+
+warning: `fuzz` (bin "fuzz") generated 15 warnings (run `cargo fix --bin "fuzz"` to apply 3 suggestions)
+    Finished release [optimized] target(s) in 0.34s
+parallel: Warning: No more file handles. 
+parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
+[2023-06-04T01:07:59Z ERROR difftest] /scratch/tmp.18069759.wangqian/5442162.rs didn't pass:
+    miri-unchecked, llvm-opt, cranelift-opt-only produced the following output:
+    stdout:
+    24615355723530893305075589477694163617
+    hash: 1133716939969782714
+    llvm-opt-only produced the following output:
+    stdout:
+    24615355723530893305075589477694163617
+    hash: 4866085485552896842
+    
+slurmstepd: error: *** JOB 18069759 ON eu-g5-015-1 CANCELLED AT 2023-06-04T18:59:04 DUE TO TIME LIMIT ***

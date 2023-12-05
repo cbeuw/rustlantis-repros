@@ -1,0 +1,220 @@
+
+The following have been reloaded with a version change:
+  1) gcc/4.8.5 => gcc/9.3.0
+
+Fuzzing on ebdd7f0df51ad18253aa660f52e8bdf09934c92c
+warning: unused variable: `variant`
+   --> mir/src/serialize.rs:158:40
+    |
+158 |                 AggregateKind::Adt(ty, variant) => {
+    |                                        ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_variant`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `vid`
+   --> mir/src/syntax.rs:338:39
+    |
+338 |             [ProjectionElem::Downcast(vid), proj, tail @ ..] => todo!(),
+    |                                       ^^^ help: if this is intentional, prefix it with an underscore: `_vid`
+
+warning: unused variable: `proj`
+   --> mir/src/syntax.rs:338:45
+    |
+338 |             [ProjectionElem::Downcast(vid), proj, tail @ ..] => todo!(),
+    |                                             ^^^^ help: if this is intentional, prefix it with an underscore: `_proj`
+
+warning: unused variable: `tail`
+   --> mir/src/syntax.rs:338:51
+    |
+338 |             [ProjectionElem::Downcast(vid), proj, tail @ ..] => todo!(),
+    |                                                   ^^^^ help: if this is intentional, prefix it with an underscore: `_tail`
+
+warning: `mir` (lib) generated 4 warnings (run `cargo fix --lib -p mir` to apply 4 suggestions)
+warning: methods `generate_storage_live`, `generate_storage_dead`, and `generate_deinit` are never used
+   --> generate/src/generation/mod.rs:444:8
+    |
+409 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+444 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+454 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+464 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: method `make_choice_mut` is never used
+    --> generate/src/generation/mod.rs:1030:8
+     |
+950  | impl GenerationCtx {
+     | ------------------ method in this implementation
+...
+1030 |     fn make_choice_mut<T, F, R>(
+     |        ^^^^^^^^^^^^^^^
+
+warning: method `size` is never used
+  --> generate/src/mem/mod.rs:45:12
+   |
+39 | impl Run {
+   | -------- method in this implementation
+...
+45 |     pub fn size(&self) -> Size {
+   |            ^^^^
+
+warning: method `same_run` is never used
+  --> generate/src/mem/mod.rs:56:12
+   |
+55 | impl RunAndOffset {
+   | ----------------- method in this implementation
+56 |     pub fn same_run(&self, other: &Self) -> bool {
+   |            ^^^^^^^^
+
+warning: methods `runs_and_sizes` and `run` are never used
+  --> generate/src/mem/mod.rs:75:8
+   |
+74 | impl Allocation {
+   | --------------- methods in this implementation
+75 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+   |        ^^^^^^^^^^^^^^
+...
+81 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run {
+   |        ^^^
+
+warning: method `place_count` is never used
+   --> generate/src/ptable.rs:788:12
+    |
+139 | impl PlaceTable {
+    | --------------- method in this implementation
+...
+788 |     pub fn place_count(&self) -> usize {
+    |            ^^^^^^^^^^^
+
+warning: `generate` (bin "generate") generated 6 warnings
+    Finished release [optimized] target(s) in 0.83s
+parallel: Warning: No more file handles. 
+parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
+[2023-07-10T22:36:40Z ERROR difftest] /scratch/tmp.20895585.wangqian/20371869.rs didn't pass:
+    llvm-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 631612727933624907
+    miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 13340244155329586439
+    
+[2023-07-11T18:37:58Z ERROR difftest] /scratch/tmp.20895585.wangqian/21024161.rs didn't pass:
+    llvm-opt, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 7004363022768483751
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 17491728931096680120
+    
+[2023-07-11T22:00:17Z ERROR difftest] /scratch/tmp.20895585.wangqian/21127752.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 2697290685990097704
+    miri-unchecked, llvm-opt, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 12021192751768103214
+    
+[2023-07-12T08:11:55Z ERROR difftest] /scratch/tmp.20895585.wangqian/21438769.rs didn't pass:
+    cranelift-opt-only, llvm-opt, miri-unchecked produced the following output:
+    stdout:
+    hash: 567685867173870831
+    llvm-opt-only produced the following output:
+    status: signal: 11 (SIGSEGV)
+    stdout:
+    ================
+    stderr:
+    warning: field `fld4` is never read
+        --> /scratch/tmp.20895585.wangqian/21438769.rs:4582:1
+         |
+    4577 | pub struct Adt53 {
+         |            ----- field in this struct
+    ...
+    4582 | fld4: [i8; 3],
+         | ^^^^
+         |
+         = note: `Adt53` has derived impls for the traits `Clone` and `Debug`, but these are intentionally ignored during dead code analysis
+         = note: `#[warn(dead_code)]` on by default
+    
+    warning: field `fld0` is never read
+        --> /scratch/tmp.20895585.wangqian/21438769.rs:4619:1
+         |
+    4618 | pub struct Adt60 {
+         |            ----- field in this struct
+    4619 | fld0: *const [u32; 6],
+         | ^^^^
+         |
+         = note: `Adt60` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+    
+    warning: field `fld5` is never read
+        --> /scratch/tmp.20895585.wangqian/21438769.rs:4653:1
+         |
+    4647 | pub struct Adt64 {
+         |            ----- field in this struct
+    ...
+    4653 | fld5: *const u32,
+         | ^^^^
+         |
+         = note: `Adt64` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+    
+    warning: field `fld5` is never read
+        --> /scratch/tmp.20895585.wangqian/21438769.rs:4664:1
+         |
+    4658 | pub struct Adt65 {
+         |            ----- field in this struct
+    ...
+    4664 | fld5: *const u32,
+         | ^^^^
+         |
+         = note: `Adt65` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+    
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0xe1c6e3)[0x2ab1c4a0c6e3]
+    /lib64/libc.so.6(+0x36400)[0x2ab1cde78400]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x20f63f4)[0x2ab1c5ce63f4]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x2211edc)[0x2ab1c5e01edc]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x2218ac3)[0x2ab1c5e08ac3]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x221ee86)[0x2ab1c5e0ee86]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x20ec780)[0x2ab1c5cdc780]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x30bd970)[0x2ab1c6cad970]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x30bdae1)[0x2ab1c6cadae1]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x30bee20)[0x2ab1c6caee20]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x1152a48)[0x2ab1c4d42a48]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x100a0e9)[0x2ab1c4bfa0e9]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x100ebe8)[0x2ab1c4bfebe8]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x100d9b8)[0x2ab1c4bfd9b8]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(_RNvXs1_Cs8esbUpFjSf3_18rustc_codegen_llvmNtB5_18LlvmCodegenBackendNtNtNtCsjkIdNIEIIwo_17rustc_codegen_ssa6traits5write19WriteBackendMethods7codegen+0x9)[0x2ab1c4bfefd9]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x10d9431)[0x2ab1c4cc9431]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x10d9393)[0x2ab1c4cc9393]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x113aec9)[0x2ab1c4d2aec9]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x10e0dc4)[0x2ab1c4cd0dc4]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x10ab49e)[0x2ab1c4c9b49e]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-4200b4c11350e9ad.so(+0x1061446)[0x2ab1c4c51446]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/libstd-d611a04c4671d2a8.so(rust_metadata_std_51cecb4a45830a81+0xa6e0a)[0x2ab1cdb37e0a]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/libstd-d611a04c4671d2a8.so(rust_metadata_std_51cecb4a45830a81+0x94d3a)[0x2ab1cdb25d3a]
+    /lib64/libpthread.so.0(+0x7ea5)[0x2ab1ce41bea5]
+    /lib64/libc.so.6(clone+0x6d)[0x2ab1cdf40b0d]
+    ================
+    
+[2023-07-12T09:32:45Z ERROR difftest] /scratch/tmp.20895585.wangqian/21479267.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 7302347774116014381
+    llvm-opt produced the following output:
+    stdout:
+    hash: 6426489388760796341
+    
+[2023-07-12T17:57:15Z ERROR difftest] /scratch/tmp.20895585.wangqian/21746433.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 13167106948720470623
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 292341505187876048
+    
+slurmstepd: error: *** JOB 20895585 ON eu-g5-004-4 CANCELLED AT 2023-07-13T11:31:27 DUE TO TIME LIMIT ***

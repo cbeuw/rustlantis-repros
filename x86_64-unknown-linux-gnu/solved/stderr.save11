@@ -1,0 +1,114 @@
+
+The following have been reloaded with a version change:
+  1) gcc/4.8.5 => gcc/9.3.0
+
+Fuzzing on f5122ca5237073d386ecb631cb0d308e5a239d99
+warning: unused variable: `p`
+   --> fuzz/src/ptable.rs:470:40
+    |
+470 |     pub fn mark_place_moved(&mut self, p: impl ToPlaceIndex) {
+    |                                        ^ help: if this is intentional, prefix it with an underscore: `_p`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: methods `generate_storage_live`, `generate_storage_dead`, and `generate_deinit` are never used
+   --> fuzz/src/generation/mod.rs:392:8
+    |
+357 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+392 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+402 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+412 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: method `make_choice_mut` is never used
+   --> fuzz/src/generation/mod.rs:951:8
+    |
+871 | impl GenerationCtx {
+    | ------------------ method in this implementation
+...
+951 |     fn make_choice_mut<T, F, R>(
+    |        ^^^^^^^^^^^^^^^
+
+warning: method `provenance` is never used
+  --> fuzz/src/mem/mod.rs:32:12
+   |
+27 | impl<Provenance> AbstractByte<Provenance> {
+   | ----------------------------------------- method in this implementation
+...
+32 |     pub fn provenance(&self) -> Option<&Provenance> {
+   |            ^^^^^^^^^^
+
+warning: method `size` is never used
+  --> fuzz/src/mem/mod.rs:52:12
+   |
+46 | impl<Provenance: Copy + Clone> Run<Provenance> {
+   | ---------------------------------------------- method in this implementation
+...
+52 |     pub fn size(&self) -> Size {
+   |            ^^^^
+
+warning: method `same_run` is never used
+  --> fuzz/src/mem/mod.rs:63:12
+   |
+62 | impl RunAndOffset {
+   | ----------------- method in this implementation
+63 |     pub fn same_run(&self, other: &Self) -> bool {
+   |            ^^^^^^^^
+
+warning: methods `runs_and_sizes` and `run` are never used
+  --> fuzz/src/mem/mod.rs:83:8
+   |
+82 | impl Allocation {
+   | --------------- methods in this implementation
+83 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+   |        ^^^^^^^^^^^^^^
+...
+89 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run<Provenance> {
+   |        ^^^
+
+warning: method `place_count` is never used
+   --> fuzz/src/ptable.rs:754:12
+    |
+114 | impl PlaceTable {
+    | --------------- method in this implementation
+...
+754 |     pub fn place_count(&self) -> usize {
+    |            ^^^^^^^^^^^
+
+warning: `fuzz` (bin "fuzz") generated 8 warnings (run `cargo fix --bin "fuzz"` to apply 1 suggestion)
+    Finished release [optimized] target(s) in 0.89s
+[2023-06-09T16:18:34Z ERROR difftest] /scratch/259623560.tmpdir/2058993.rs didn't pass:
+    llvm-opt-only, llvm-opt produced the following output:
+    stdout:
+    -6557845141619850671
+    hash: 5354419288506882982
+    miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    -6557845141619850671
+    hash: 16571340744469719416
+    
+[2023-06-10T16:31:37Z ERROR difftest] /scratch/259623560.tmpdir/2693710.rs didn't pass:
+    cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    [709559578, 709559578]
+    hash: 10551210884920703465
+    llvm-opt, llvm-opt-only produced the following output:
+    stdout:
+    [709559578, 709559578]
+    hash: 4624028017412408594
+    
+User defined signal 2
+
+Computers / CPU cores / Max jobs to run
+1:local / 48 / 48
+
+Computers / CPU cores / Max jobs to run
+1:local / 48 / 48

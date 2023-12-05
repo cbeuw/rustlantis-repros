@@ -1,0 +1,231 @@
+warning: unused imports: `Item`, `Permission`, `state::GlobalState`
+  --> fuzz/src/mem/stacked_borrows/mod.rs:11:12
+   |
+11 |     item::{Item, Permission},
+   |            ^^^^  ^^^^^^^^^^
+12 |     stack::Stack,
+13 |     state::GlobalState,
+   |     ^^^^^^^^^^^^^^^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: unused variable: `p`
+   --> fuzz/src/ptable.rs:438:40
+    |
+438 |     pub fn mark_place_moved(&mut self, p: impl ToPlaceIndex) {
+    |                                        ^ help: if this is intentional, prefix it with an underscore: `_p`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `ty`
+   --> fuzz/src/ty.rs:183:27
+    |
+183 |     pub fn is_copy(&self, ty: &Ty) -> bool {
+    |                           ^^ help: if this is intentional, prefix it with an underscore: `_ty`
+
+warning: methods `generate_storage_live`, `generate_storage_dead`, and `generate_deinit` are never used
+   --> fuzz/src/generation/mod.rs:391:8
+    |
+354 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+391 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+401 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+411 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: method `make_choice_mut` is never used
+   --> fuzz/src/generation/mod.rs:946:8
+    |
+866 | impl GenerationCtx {
+    | ------------------ method in this implementation
+...
+946 |     fn make_choice_mut<T, F, R>(
+    |        ^^^^^^^^^^^^^^^
+
+warning: method `provenance` is never used
+  --> fuzz/src/mem/mod.rs:39:12
+   |
+34 | impl<Provenance> AbstractByte<Provenance> {
+   | ----------------------------------------- method in this implementation
+...
+39 |     pub fn provenance(&self) -> Option<&Provenance> {
+   |            ^^^^^^^^^^
+
+warning: method `size` is never used
+  --> fuzz/src/mem/mod.rs:59:12
+   |
+53 | impl<Provenance: Copy + Clone> Run<Provenance> {
+   | ---------------------------------------------- method in this implementation
+...
+59 |     pub fn size(&self) -> Size {
+   |            ^^^^
+
+warning: method `same_run` is never used
+  --> fuzz/src/mem/mod.rs:70:12
+   |
+69 | impl RunAndOffset {
+   | ----------------- method in this implementation
+70 |     pub fn same_run(&self, other: &Self) -> bool {
+   |            ^^^^^^^^
+
+warning: field `stacks` is never read
+  --> fuzz/src/mem/mod.rs:81:5
+   |
+78 | struct Allocation {
+   |        ---------- field in this struct
+...
+81 |     stacks: Stacks,
+   |     ^^^^^^
+
+warning: methods `runs_and_sizes` and `run` are never used
+  --> fuzz/src/mem/mod.rs:89:8
+   |
+88 | impl Allocation {
+   | --------------- methods in this implementation
+89 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+   |        ^^^^^^^^^^^^^^
+...
+95 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run<Provenance> {
+   |        ^^^
+
+warning: method `inner` is never used
+  --> fuzz/src/mem/stacked_borrows/mod.rs:31:12
+   |
+22 | impl BorTag {
+   | ----------- method in this implementation
+...
+31 |     pub fn inner(&self) -> NonZeroU64 {
+   |            ^^^^^
+
+warning: field `stacks` is never read
+  --> fuzz/src/mem/stacked_borrows/mod.rs:68:5
+   |
+67 | pub struct Stacks {
+   |            ------ field in this struct
+68 |     stacks: IndexVec<RunId, RangeMap<Stack>>,
+   |     ^^^^^^
+   |
+   = note: `Stacks` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+
+warning: method `set_permission` is never used
+  --> fuzz/src/mem/stacked_borrows/item.rs:52:12
+   |
+20 | impl Item {
+   | --------- method in this implementation
+...
+52 |     pub fn set_permission(&mut self, perm: Permission) {
+   |            ^^^^^^^^^^^^^^
+
+warning: field `borrows` is never read
+  --> fuzz/src/mem/stacked_borrows/stack.rs:10:5
+   |
+5  | pub struct Stack {
+   |            ----- field in this struct
+...
+10 |     borrows: Vec<Item>,
+   |     ^^^^^^^
+   |
+   = note: `Stack` has derived impls for the traits `Debug` and `Clone`, but these are intentionally ignored during dead code analysis
+
+warning: method `place_count` is never used
+   --> fuzz/src/ptable.rs:723:12
+    |
+78  | impl PlaceTable {
+    | --------------- method in this implementation
+...
+723 |     pub fn place_count(&self) -> usize {
+    |            ^^^^^^^^^^^
+
+warning: `fuzz` (bin "fuzz") generated 15 warnings (run `cargo fix --bin "fuzz"` to apply 3 suggestions)
+    Finished release [optimized] target(s) in 0.55s
+d1119e6dac24a2611837f919c630dc07893def9b
+parallel: Warning: No more file handles. 
+parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
+parallel: Warning: No more file handles. 
+parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
+[2023-05-27T21:03:36Z ERROR difftest] /scratch/tmp.17546721.wangqian/49900.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    -4444275777520649855
+    hash: 6807573517618474717
+    cranelift-opt-only, miri-unchecked, llvm-opt-only produced the following output:
+    stdout:
+    -4444275777520649855
+    hash: 4564866691488027302
+    
+REPORTED llvm-project#63033
+[2023-05-28T03:26:33Z ERROR difftest] /scratch/tmp.17546721.wangqian/291892.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    ================
+    stderr:
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/librustc_driver-d15267f2dccc2ab2.so(+0x30cd133)[0x2b5723743133]
+    /lib64/libpthread.so.0(+0xf630)[0x2b5724bbe630]
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/libLLVM-16-rust-1.71.0-nightly.so(+0x61da3f4)[0x2b572b3733f4]
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/libLLVM-16-rust-1.71.0-nightly.so(+0x61d89f8)[0x2b572b3719f8]
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/libLLVM-16-rust-1.71.0-nightly.so(_ZN4llvm13FPPassManager11runOnModuleERNS_6ModuleE+0xbf2)[0x2b572b1f5610]
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/libLLVM-16-rust-1.71.0-nightly.so(_ZN4llvm6legacy15PassManagerImpl3runERNS_6ModuleE+0x26d)[0x2b572b0d256d]
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/librustc_driver-d15267f2dccc2ab2.so(+0x25b9386)[0x2b5722c2f386]
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/librustc_driver-d15267f2dccc2ab2.so(+0x25b8d58)[0x2b5722c2ed58]
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/librustc_driver-d15267f2dccc2ab2.so(+0x25b6f35)[0x2b5722c2cf35]
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/librustc_driver-d15267f2dccc2ab2.so(+0x25b4ca6)[0x2b5722c2aca6]
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/librustc_driver-d15267f2dccc2ab2.so(+0x25b4063)[0x2b5722c2a063]
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/librustc_driver-d15267f2dccc2ab2.so(+0x25b2814)[0x2b5722c28814]
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/librustc_driver-d15267f2dccc2ab2.so(+0x2542ac6)[0x2b5722bb8ac6]
+    /cluster/home/wangqian/.rustup/toolchains/master/lib/libstd-edb03adabf0b22c8.so(rust_metadata_std_706ae2eac2fecb83+0x101d45)[0x2b5720577d45]
+    /lib64/libpthread.so.0(+0x7ea5)[0x2b5724bb6ea5]
+    /lib64/libc.so.6(clone+0x6d)[0x2b5724ec9b0d]
+    ================
+    llvm-opt, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    [-9202670810356683411, -9202670810356683411, -9202670810356683411, -9202670810356683411, -9202670810356683411]
+    hash: 14125177328967874650
+    
+[2023-05-28T07:13:09Z ERROR difftest] /scratch/tmp.17546721.wangqian/436119.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    '\u{57918}'
+    hash: 7426412090289558720
+    miri-unchecked, cranelift-opt-only, llvm-opt produced the following output:
+    stdout:
+    '\u{57918}'
+    hash: 9384472288409826316
+    
+[2023-05-28T17:23:56Z ERROR difftest] /scratch/tmp.17546721.wangqian/811157.rs didn't pass:
+    llvm-opt, llvm-opt-only produced the following output:
+    stdout:
+    [28, 28]
+    hash: 8116835003729783881
+    cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    [28, 28]
+    hash: 10890437930001502290
+
+[2023-05-29T01:47:10Z ERROR difftest] /scratch/tmp.17577136.wangqian/1076456.rs didn't pass:
+    miri-unchecked, llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    30137
+    hash: 12353456082114040028
+    llvm-opt produced the following output:
+    stdout:
+    30137
+    hash: 10205279273808160566
+    
+[2023-05-29T16:41:11Z ERROR difftest] /scratch/tmp.17577136.wangqian/1721470.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt produced the following output:
+    stdout:
+    3557229253
+    hash: 1474428280164712208
+    llvm-opt-only produced the following output:
+    stdout:
+    3557229253
+    hash: 2462904254870996264
+    
+slurmstepd: error: *** JOB 17546721 ON eu-g5-021-3 CANCELLED AT 2023-05-28T21:40:48 DUE TO TIME LIMIT ***

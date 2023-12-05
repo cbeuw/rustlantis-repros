@@ -1,0 +1,97 @@
+
+The following have been reloaded with a version change:
+  1) gcc/4.8.5 => gcc/9.3.0
+
+Fuzzing on 04dfe1281ded08f9b7cf98346aed5301f349fa61
+warning: unused variable: `variant`
+   --> mir/src/serialize.rs:158:40
+    |
+158 |                 AggregateKind::Adt(ty, variant) => {
+    |                                        ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_variant`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `vid`
+   --> mir/src/syntax.rs:338:39
+    |
+338 |             [ProjectionElem::Downcast(vid), proj, tail @ ..] => todo!(),
+    |                                       ^^^ help: if this is intentional, prefix it with an underscore: `_vid`
+
+warning: unused variable: `proj`
+   --> mir/src/syntax.rs:338:45
+    |
+338 |             [ProjectionElem::Downcast(vid), proj, tail @ ..] => todo!(),
+    |                                             ^^^^ help: if this is intentional, prefix it with an underscore: `_proj`
+
+warning: unused variable: `tail`
+   --> mir/src/syntax.rs:338:51
+    |
+338 |             [ProjectionElem::Downcast(vid), proj, tail @ ..] => todo!(),
+    |                                                   ^^^^ help: if this is intentional, prefix it with an underscore: `_tail`
+
+warning: `mir` (lib) generated 4 warnings (run `cargo fix --lib -p mir` to apply 4 suggestions)
+warning: methods `generate_storage_live`, `generate_storage_dead`, and `generate_deinit` are never used
+   --> generate/src/generation/mod.rs:444:8
+    |
+409 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+444 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+454 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+464 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: method `make_choice_mut` is never used
+    --> generate/src/generation/mod.rs:1030:8
+     |
+950  | impl GenerationCtx {
+     | ------------------ method in this implementation
+...
+1030 |     fn make_choice_mut<T, F, R>(
+     |        ^^^^^^^^^^^^^^^
+
+warning: method `size` is never used
+  --> generate/src/mem/mod.rs:45:12
+   |
+39 | impl Run {
+   | -------- method in this implementation
+...
+45 |     pub fn size(&self) -> Size {
+   |            ^^^^
+
+warning: method `same_run` is never used
+  --> generate/src/mem/mod.rs:56:12
+   |
+55 | impl RunAndOffset {
+   | ----------------- method in this implementation
+56 |     pub fn same_run(&self, other: &Self) -> bool {
+   |            ^^^^^^^^
+
+warning: methods `runs_and_sizes` and `run` are never used
+  --> generate/src/mem/mod.rs:75:8
+   |
+74 | impl Allocation {
+   | --------------- methods in this implementation
+75 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+   |        ^^^^^^^^^^^^^^
+...
+81 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run {
+   |        ^^^
+
+warning: method `place_count` is never used
+   --> generate/src/ptable.rs:788:12
+    |
+139 | impl PlaceTable {
+    | --------------- method in this implementation
+...
+788 |     pub fn place_count(&self) -> usize {
+    |            ^^^^^^^^^^^
+
+warning: `generate` (bin "generate") generated 6 warnings
+    Finished release [optimized] target(s) in 0.55s

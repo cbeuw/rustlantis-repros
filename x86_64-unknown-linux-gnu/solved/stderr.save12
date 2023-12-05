@@ -1,0 +1,314 @@
+
+The following have been reloaded with a version change:
+  1) gcc/4.8.5 => gcc/9.3.0
+
+Fuzzing on 1fd06f187cd7cc64e84dcb7cca6443460ae10f8f
+   Compiling libc v0.2.140
+   Compiling autocfg v1.1.0
+   Compiling cfg-if v1.0.0
+   Compiling io-lifetimes v1.0.6
+   Compiling memchr v2.5.0
+   Compiling rustix v0.36.9
+   Compiling crossbeam-utils v0.8.15
+   Compiling bitflags v1.3.2
+   Compiling linux-raw-sys v0.1.4
+   Compiling proc-macro2 v1.0.52
+   Compiling quote v1.0.24
+   Compiling unicode-ident v1.0.8
+   Compiling syn v1.0.109
+   Compiling log v0.4.17
+   Compiling serde v1.0.155
+   Compiling scopeguard v1.1.0
+   Compiling regex-syntax v0.6.28
+   Compiling rayon-core v1.11.0
+   Compiling termcolor v1.2.0
+   Compiling libm v0.2.6
+   Compiling async-trait v0.1.66
+   Compiling ppv-lite86 v0.2.17
+   Compiling humantime v2.1.0
+   Compiling os_str_bytes v6.4.1
+   Compiling minimal-lexical v0.2.1
+   Compiling lazy_static v1.4.0
+   Compiling hashbrown v0.12.3
+   Compiling either v1.8.1
+   Compiling fastrand v1.9.0
+   Compiling strsim v0.10.0
+   Compiling pathdiff v0.2.1
+   Compiling index_vec v0.1.3
+   Compiling abi v0.1.0 (/cluster/home/wangqian/rustlantis/abi)
+   Compiling smallvec v1.10.0
+   Compiling fixedbitset v0.4.2
+   Compiling bimap v0.6.3
+   Compiling rangemap v0.1.0 (/cluster/home/wangqian/rustlantis/rangemap)
+   Compiling clap_lex v0.3.2
+   Compiling mir v0.1.0 (/cluster/home/wangqian/rustlantis/mir)
+   Compiling memoffset v0.8.0
+   Compiling crossbeam-epoch v0.9.14
+   Compiling indexmap v1.9.2
+   Compiling num-traits v0.2.15
+warning: unused variable: `variant`
+   --> mir/src/serialize.rs:158:40
+    |
+158 |                 AggregateKind::Adt(ty, variant) => {
+    |                                        ^^^^^^^ help: if this is intentional, prefix it with an underscore: `_variant`
+    |
+    = note: `#[warn(unused_variables)]` on by default
+
+warning: unused variable: `vid`
+   --> mir/src/syntax.rs:339:39
+    |
+339 |             [ProjectionElem::Downcast(vid), proj, tail @ ..] => todo!(),
+    |                                       ^^^ help: if this is intentional, prefix it with an underscore: `_vid`
+
+warning: unused variable: `proj`
+   --> mir/src/syntax.rs:339:45
+    |
+339 |             [ProjectionElem::Downcast(vid), proj, tail @ ..] => todo!(),
+    |                                             ^^^^ help: if this is intentional, prefix it with an underscore: `_proj`
+
+warning: unused variable: `tail`
+   --> mir/src/syntax.rs:339:51
+    |
+339 |             [ProjectionElem::Downcast(vid), proj, tail @ ..] => todo!(),
+    |                                                   ^^^^ help: if this is intentional, prefix it with an underscore: `_tail`
+
+   Compiling crossbeam-channel v0.5.7
+   Compiling aho-corasick v0.7.20
+   Compiling nom v7.1.3
+   Compiling petgraph v0.6.3
+   Compiling crossbeam-deque v0.8.3
+warning: `mir` (lib) generated 4 warnings (run `cargo fix --lib -p mir` to apply 4 suggestions)
+   Compiling regex v1.7.1
+   Compiling getrandom v0.2.8
+   Compiling num_cpus v1.15.0
+   Compiling atty v0.2.14
+   Compiling colored v2.0.0
+   Compiling rand_core v0.6.4
+   Compiling rand_chacha v0.3.1
+   Compiling rand v0.8.5
+   Compiling rayon v1.7.0
+   Compiling rand_distr v0.4.3
+   Compiling toml v0.5.11
+   Compiling is-terminal v0.4.4
+   Compiling tempfile v3.4.0
+   Compiling env_logger v0.10.0
+   Compiling clap v4.1.8
+   Compiling fuzz v0.1.0 (/cluster/home/wangqian/rustlantis/fuzz)
+   Compiling config v0.13.3
+warning: methods `generate_storage_live`, `generate_storage_dead`, and `generate_deinit` are never used
+   --> fuzz/src/generation/mod.rs:429:8
+    |
+394 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+429 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+439 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+449 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: method `make_choice_mut` is never used
+    --> fuzz/src/generation/mod.rs:1020:8
+     |
+940  | impl GenerationCtx {
+     | ------------------ method in this implementation
+...
+1020 |     fn make_choice_mut<T, F, R>(
+     |        ^^^^^^^^^^^^^^^
+
+warning: method `provenance` is never used
+  --> fuzz/src/mem/mod.rs:32:12
+   |
+27 | impl<Provenance> AbstractByte<Provenance> {
+   | ----------------------------------------- method in this implementation
+...
+32 |     pub fn provenance(&self) -> Option<&Provenance> {
+   |            ^^^^^^^^^^
+
+warning: method `size` is never used
+  --> fuzz/src/mem/mod.rs:52:12
+   |
+46 | impl<Provenance: Copy + Clone> Run<Provenance> {
+   | ---------------------------------------------- method in this implementation
+...
+52 |     pub fn size(&self) -> Size {
+   |            ^^^^
+
+warning: method `same_run` is never used
+  --> fuzz/src/mem/mod.rs:63:12
+   |
+62 | impl RunAndOffset {
+   | ----------------- method in this implementation
+63 |     pub fn same_run(&self, other: &Self) -> bool {
+   |            ^^^^^^^^
+
+warning: methods `runs_and_sizes` and `run` are never used
+  --> fuzz/src/mem/mod.rs:83:8
+   |
+82 | impl Allocation {
+   | --------------- methods in this implementation
+83 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+   |        ^^^^^^^^^^^^^^
+...
+89 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run<Provenance> {
+   |        ^^^
+
+warning: method `place_count` is never used
+   --> fuzz/src/ptable.rs:786:12
+    |
+137 | impl PlaceTable {
+    | --------------- method in this implementation
+...
+786 |     pub fn place_count(&self) -> usize {
+    |            ^^^^^^^^^^^
+
+   Compiling difftest v0.1.0 (/cluster/home/wangqian/rustlantis/difftest)
+warning: `fuzz` (bin "fuzz") generated 7 warnings
+    Finished release [optimized] target(s) in 9.12s
+parallel: Warning: No more file handles. 
+parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
+[2023-06-18T14:20:04Z ERROR difftest] /scratch/tmp.18862187.wangqian/1398448.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    [15204, 41793, 25890, 60178]
+    hash: 12223807427768366796
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    [15204, 41793, 25890, 60178]
+    hash: 16037069914463777990
+    
+[2023-06-18T19:31:18Z ERROR difftest] /scratch/tmp.18862187.wangqian/1582988.rs didn't pass:
+    llvm-opt, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    -6076
+    hash: 10377827065806095609
+    llvm-opt-only produced the following output:
+    stdout:
+    -6076
+    hash: 16051508707979126231
+    
+[2023-06-18T21:22:00Z ERROR difftest] /scratch/tmp.18862187.wangqian/1648716.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt produced the following output:
+    stdout:
+    5726772795099695139
+    hash: 9762302473379415357
+    llvm-opt-only produced the following output:
+    stdout:
+    5726772795099695139
+    hash: 15149911642892980778
+    
+[2023-06-19T00:44:19Z ERROR difftest] /scratch/tmp.18862187.wangqian/1765824.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    true
+    hash: 5013112536697776413
+    miri-unchecked, llvm-opt, cranelift-opt-only produced the following output:
+    stdout:
+    true
+    hash: 6900669474694220490
+    
+[2023-06-19T01:39:48Z ERROR difftest] /scratch/tmp.18862187.wangqian/1797701.rs didn't pass:
+    miri-unchecked, llvm-opt, cranelift-opt-only produced the following output:
+    stdout:
+    (73.0,)
+    hash: 9098713153635431989
+    llvm-opt-only produced the following output:
+    stdout:
+    (73.0,)
+    hash: 2529401413934521466
+    
+[2023-06-19T04:50:21Z ERROR difftest] /scratch/tmp.18862187.wangqian/1909574.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt-only produced the following output:
+    stdout:
+    18226332697627977530
+    hash: 1035070057886178887
+    llvm-opt produced the following output:
+    stdout:
+    18226332697627977530
+    hash: 5601124906246104411
+    
+[2023-06-19T00:15:27Z ERROR difftest] /scratch/260592995.tmpdir/3222906.rs didn't pass:
+    llvm-opt, llvm-opt-only produced the following output:
+    stdout:
+    3841172913.0
+    hash: 2716299094217223881
+    miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    3841172913.0
+    hash: 6970590691847688341
+    
+[2023-06-19T00:30:28Z ERROR difftest] /scratch/260592995.tmpdir/3231667.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    6.80564733841877e38
+    hash: 10469220136124993207
+    cranelift-opt-only, miri-unchecked, llvm-opt produced the following output:
+    stdout:
+    6.80564733841877e38
+    hash: 17538971261115222138
+    
+[2023-06-19T01:38:40Z ERROR difftest] /scratch/260592995.tmpdir/3273037.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    (2860399979, (63924, 1611))
+    hash: 1350675402738469984
+    llvm-opt produced the following output:
+    stdout:
+    (2860399979, (63924, 1611))
+    hash: 4629191828045673392
+    
+[2023-06-19T05:55:12Z ERROR difftest] /scratch/260592995.tmpdir/3429043.rs didn't pass:
+    cranelift-opt-only, llvm-opt, miri-unchecked produced the following output:
+    stdout:
+    [-120507513709835624851383764944063645029]
+    hash: 1841033382974575719
+    llvm-opt-only produced the following output:
+    stdout:
+    [-120507513709835624851383764944063645029]
+    hash: 5439349329429012229
+    
+[2023-06-19T05:55:45Z ERROR difftest] /scratch/260592995.tmpdir/3429469.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt produced the following output:
+    stdout:
+    false
+    hash: 1801559797471995707
+    llvm-opt-only produced the following output:
+    stdout:
+    false
+    hash: 14613287892902944825
+    
+[2023-06-19T11:27:47Z ERROR difftest] /scratch/260592995.tmpdir/3632473.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    5913118700.0
+    hash: 7727450745327715184
+    miri-unchecked, llvm-opt, cranelift-opt-only produced the following output:
+    stdout:
+    5913118700.0
+    hash: 9392367923394773846
+    
+[2023-06-19T14:50:50Z ERROR difftest] /scratch/260592995.tmpdir/3756861.rs didn't pass:
+    cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    '\u{d4afc}'
+    hash: 3264478999789305530
+    llvm-opt-only, llvm-opt produced the following output:
+    stdout:
+    '\u{d4afc}'
+    hash: 4419634769488420283
+    
+[2023-06-19T21:22:10Z ERROR difftest] /scratch/260592995.tmpdir/3995994.rs didn't pass:
+    miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    Adt53 { fld0: [0, 0, 127], fld1: 251816397 }
+    hash: 15419607128987510861
+    llvm-opt, llvm-opt-only produced the following output:
+    stdout:
+    Adt53 { fld0: [0, 0, 127], fld1: 251816397 }
+    hash: 11862794858483256988
+    

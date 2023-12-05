@@ -1,0 +1,376 @@
+Fuzzing on ed4397563180cf50020d68b3901802e334de864a
+warning: methods `generate_storage_live`, `generate_storage_dead`, and `generate_deinit` are never used
+   --> generate/src/generation/mod.rs:460:8
+    |
+425 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+460 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+470 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+480 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: method `make_choice_mut` is never used
+    --> generate/src/generation/mod.rs:1076:8
+     |
+996  | impl GenerationCtx {
+     | ------------------ method in this implementation
+...
+1076 |     fn make_choice_mut<T, F, R>(
+     |        ^^^^^^^^^^^^^^^
+
+warning: method `size` is never used
+  --> generate/src/mem/mod.rs:45:12
+   |
+39 | impl Run {
+   | -------- method in this implementation
+...
+45 |     pub fn size(&self) -> Size {
+   |            ^^^^
+
+warning: method `same_run` is never used
+  --> generate/src/mem/mod.rs:56:12
+   |
+55 | impl RunAndOffset {
+   | ----------------- method in this implementation
+56 |     pub fn same_run(&self, other: &Self) -> bool {
+   |            ^^^^^^^^
+
+warning: methods `runs_and_sizes` and `run` are never used
+  --> generate/src/mem/mod.rs:75:8
+   |
+74 | impl Allocation {
+   | --------------- methods in this implementation
+75 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+   |        ^^^^^^^^^^^^^^
+...
+81 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run {
+   |        ^^^
+
+warning: method `place_count` is never used
+   --> generate/src/ptable.rs:890:12
+    |
+145 | impl PlaceTable {
+    | --------------- method in this implementation
+...
+890 |     pub fn place_count(&self) -> usize {
+    |            ^^^^^^^^^^^
+
+warning: method `is_local` is never used
+   --> generate/src/ptable.rs:959:12
+    |
+901 | impl PlacePath {
+    | -------------- method in this implementation
+...
+959 |     pub fn is_local(&self) -> bool {
+    |            ^^^^^^^^
+
+warning: `generate` (bin "generate") generated 7 warnings
+    Finished release [optimized] target(s) in 0.67s
+[2023-11-29T19:56:08Z WARN  difftest] /scratch/tmp.37792059.wangqian/19199.rs recursion limit reached
+parallel: Warning: No more file handles. 
+parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
+[2023-11-29T19:58:11Z ERROR difftest] /scratch/tmp.37792059.wangqian/20174.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 18395350960717777726
+    llvm-opt, cranelift-opt-only, miri-checked produced the following output:
+    stdout:
+    hash: 7207864828768043394
+    
+[2023-11-29T19:58:55Z WARN  difftest] /scratch/tmp.37792059.wangqian/20427.rs recursion limit reached
+[2023-11-29T20:00:37Z ERROR difftest] /scratch/tmp.37792059.wangqian/21074.rs didn't pass:
+    llvm-opt, llvm-opt-only produced the following output:
+    stdout:
+    hash: 11040627105495215596
+    cranelift-opt-only produced the following output:
+    stdout:
+    hash: 13765835367118637092
+    miri-checked produced the following output:
+    status: exit status: 1
+    stdout:
+    ================
+    stderr:
+    warning: the feature `custom_mir` is internal to the compiler or standard library
+     --> /scratch/tmp.37792059.wangqian/21074.rs:2:16
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                ^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+      = note: `#[warn(internal_features)]` on by default
+    
+    warning: field `fld2` is never read
+        --> /scratch/tmp.37792059.wangqian/21074.rs:6321:1
+         |
+    6318 | pub struct Adt57 {
+         |            ----- field in this struct
+    ...
+    6321 | fld2: Adt56,
+         | ^^^^
+         |
+         = note: `Adt57` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+         = note: `#[warn(dead_code)]` on by default
+    
+    error: Undefined Behavior: constructing invalid value: encountered 0x3a, but expected a boolean
+        --> /scratch/tmp.37792059.wangqian/21074.rs:5592:1
+         |
+    5592 | _25 = Field::<bool>(Variant(_3, 1), 0);
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ constructing invalid value: encountered 0x3a, but expected a boolean
+         |
+         = help: this indicates a bug in the program: it performed an invalid operation, and caused Undefined Behavior
+         = help: see https://doc.rust-lang.org/nightly/reference/behavior-considered-undefined.html for further information
+         = note: BACKTRACE:
+         = note: inside `fn16` at /scratch/tmp.37792059.wangqian/21074.rs:5592:1: 5592:39
+    note: inside `fn15`
+        --> /scratch/tmp.37792059.wangqian/21074.rs:5294:1
+         |
+    5294 | Call(_17.4 = fn16(_5.0, _5.0, _8, _13, _8, RET, _3, _1, _10), bb10, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn14`
+        --> /scratch/tmp.37792059.wangqian/21074.rs:4946:1
+         |
+    4946 | Call(_6 = fn15(_11, _4, _7, Field::<bool>(Variant(_11, 1), 0), _10, _10.0, _3, _11, _10.0, _9), bb6, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn10`
+        --> /scratch/tmp.37792059.wangqian/21074.rs:3784:1
+         |
+    3784 | Call(place!(Field::<[bool; 1]>(Variant(_36, 1), 4)) = fn14((*_12), _37, _29, _19), bb30, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn9`
+        --> /scratch/tmp.37792059.wangqian/21074.rs:2970:1
+         |
+    2970 | Call(_22 = fn10(Field::<*mut u16>(Variant(_8, 1), 6), Field::<*mut u16>(Variant(_8, 1), 6), _12, _5, _10, _2, _5, _7, _2, _2, _13, Field::<*mut u16>(Variant(_8, 1), 6)), bb3, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn8`
+        --> /scratch/tmp.37792059.wangqian/21074.rs:1828:1
+         |
+    1828 | Call(_3 = fn9(_2, _2, _2, _2, _2, _2, _2, Move(_6), _2, _2, _2, _2, _2, _2), bb4, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn7`
+        --> /scratch/tmp.37792059.wangqian/21074.rs:1388:1
+         |
+    1388 | Call(_15 = fn8(_8, _3), bb1, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn2`
+        --> /scratch/tmp.37792059.wangqian/21074.rs:606:1
+         |
+    606  | Call(RET = fn7(_6, _6, _2, _3, _2, _3, _2, _2, _5, _6), bb10, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn1`
+        --> /scratch/tmp.37792059.wangqian/21074.rs:248:1
+         |
+    248  | Call(RET.1 = fn2(_4, _1, _4, _2, _4, _4, RET.2), bb1, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn0`
+        --> /scratch/tmp.37792059.wangqian/21074.rs:113:1
+         |
+    113  | Call(RET = fn1(_4, _7, _7, _4), bb6, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `main`
+        --> /scratch/tmp.37792059.wangqian/21074.rs:6124:17
+         |
+    6124 |                 fn0(std::hint::black_box(true), std::hint::black_box(51051_u16), std::hint::black_box(2857559716_u32));
+         |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+    note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
+    
+    error: aborting due to previous error; 2 warnings emitted
+    
+    ================
+    
+[2023-11-29T20:05:43Z WARN  difftest] /scratch/tmp.37792059.wangqian/22879.rs recursion limit reached
+[2023-11-29T20:11:12Z WARN  difftest] /scratch/tmp.37792059.wangqian/25179.rs recursion limit reached
+[2023-11-29T20:23:13Z WARN  difftest] /scratch/tmp.37792059.wangqian/30838.rs recursion limit reached
+[2023-11-29T20:25:39Z ERROR difftest] /scratch/tmp.37792059.wangqian/31973.rs didn't pass:
+    cranelift-opt-only, llvm-opt, miri-checked produced the following output:
+    stdout:
+    hash: 11890028676513424482
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 15476777535042460004
+    
+[2023-11-29T20:27:23Z WARN  difftest] /scratch/tmp.37792059.wangqian/32624.rs recursion limit reached
+[2023-11-29T20:28:36Z WARN  difftest] /scratch/tmp.37792059.wangqian/33159.rs recursion limit reached
+[2023-11-29T20:31:04Z ERROR difftest] /scratch/tmp.37792059.wangqian/34316.rs didn't pass:
+    miri-checked produced the following output:
+    status: exit status: 1
+    stdout:
+    ================
+    stderr:
+    warning: the feature `custom_mir` is internal to the compiler or standard library
+     --> /scratch/tmp.37792059.wangqian/34316.rs:2:16
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                ^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+      = note: `#[warn(internal_features)]` on by default
+    
+    error: Undefined Behavior: using uninitialized data, but this operation requires initialized memory
+        --> /scratch/tmp.37792059.wangqian/34316.rs:8006:1
+         |
+    8006 | place!(Field::<(*const bool, *const [bool; 2], f32, u32, *const [bool; 2])>(Variant(_25, 1), 1)).4 = Field::<(*const bool, *const [bool; 2], f32, u32, *const [bool; 2])>(Variant(_25, 1), 1)...
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ using uninitialized data, but this operation requires initialized memory
+         |
+         = help: this indicates a bug in the program: it performed an invalid operation, and caused Undefined Behavior
+         = help: see https://doc.rust-lang.org/nightly/reference/behavior-considered-undefined.html for further information
+         = note: BACKTRACE:
+         = note: inside `fn18` at /scratch/tmp.37792059.wangqian/34316.rs:8006:1: 8006:192
+    note: inside `fn17`
+        --> /scratch/tmp.37792059.wangqian/34316.rs:3816:1
+         |
+    3816 | Call(_20 = fn18(_6, _22.0, _3, Field::<(*const bool, *const [bool; 2], f32, u32, *const [bool; 2])>(Variant(_8, 1), 1).0, (*_18), _4, _4, _18, _1, _6.3, _6.2, (*_18), _4), bb8, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn16`
+        --> /scratch/tmp.37792059.wangqian/34316.rs:3189:1
+         |
+    3189 | Call(_7 = fn17(_4, _2, _4, _5, _1), bb2, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn13`
+        --> /scratch/tmp.37792059.wangqian/34316.rs:2337:1
+         |
+    2337 | Call(_15.fld0.1 = fn16(_2.0, _4, _18, _11, _7.0), bb15, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn7`
+        --> /scratch/tmp.37792059.wangqian/34316.rs:1306:1
+         |
+    1306 | Call(_26 = fn13(Move(_20), _22, _4, _7, _2, _1, _22, _22.0, _22, RET, _7), bb3, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn1`
+        --> /scratch/tmp.37792059.wangqian/34316.rs:478:1
+         |
+    478  | Call(_24 = fn7(_17, _8, _2, _5, _8, _2, _19, RET, _7, _23, _5, _7, RET, _5, _4), bb4, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn0`
+        --> /scratch/tmp.37792059.wangqian/34316.rs:109:1
+         |
+    109  | Call(RET.0 = fn1(RET.1, RET.1, _1, _2, _4, RET.1, RET.1, _7, _12, _12, _1, RET.1, _2, RET.1, _8), bb1, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `main`
+        --> /scratch/tmp.37792059.wangqian/34316.rs:8668:17
+         |
+    8668 | ...   fn0(std::hint::black_box(46_u8), std::hint::black_box(284902758759693024144232784362303516637_u128), std::hint::black_box((-69_isize)), std::hint::black_box(3_usize), std::hint::black_box(57848_u16), std::hint::black_box(873849733_i32), std::hint::black_box(471335952515473708_u64), std::hint::black_box(3314772565_u32...
+         |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+    note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
+    
+    error: aborting due to previous error; 1 warning emitted
+    
+    ================
+    cranelift-opt-only, llvm-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 11565170594085676758
+    
+[2023-11-29T20:32:41Z ERROR difftest] /scratch/tmp.37792059.wangqian/35121.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 40831096512326545
+    cranelift-opt-only, miri-checked, llvm-opt produced the following output:
+    stdout:
+    hash: 646983265759188552
+    
+[2023-11-29T20:35:15Z WARN  difftest] /scratch/tmp.37792059.wangqian/36135.rs recursion limit reached
+[2023-11-29T20:37:07Z WARN  difftest] /scratch/tmp.37792059.wangqian/36928.rs recursion limit reached
+[2023-11-29T20:37:44Z WARN  difftest] /scratch/tmp.37792059.wangqian/37279.rs recursion limit reached
+[2023-11-29T20:43:28Z WARN  difftest] /scratch/tmp.37792059.wangqian/39515.rs recursion limit reached
+[2023-11-29T20:43:56Z WARN  difftest] /scratch/tmp.37792059.wangqian/39584.rs recursion limit reached
+[2023-11-29T20:43:39Z ERROR difftest] /scratch/tmp.37792059.wangqian/39684.rs didn't pass:
+    llvm-opt, llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 566918017183101552
+    miri-checked produced the following output:
+    status: exit status: 1
+    stdout:
+    ================
+    stderr:
+    warning: the feature `custom_mir` is internal to the compiler or standard library
+     --> /scratch/tmp.37792059.wangqian/39684.rs:2:16
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                ^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+      = note: `#[warn(internal_features)]` on by default
+    
+    error: Undefined Behavior: interpreting an invalid 8-bit value as a bool: 0xff
+        --> /scratch/tmp.37792059.wangqian/39684.rs:5616:1
+         |
+    5616 | place!(Field::<bool>(Variant(_5.fld0, 0), 0)) = Field::<([i16; 5], bool, *const [char; 3], i128)>(Variant(_5.fld0, 0), 6).1 & (*_17);
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ interpreting an invalid 8-bit value as a bool: 0xff
+         |
+         = help: this indicates a bug in the program: it performed an invalid operation, and caused Undefined Behavior
+         = help: see https://doc.rust-lang.org/nightly/reference/behavior-considered-undefined.html for further information
+         = note: BACKTRACE:
+         = note: inside `fn7` at /scratch/tmp.37792059.wangqian/39684.rs:5616:1: 5616:133
+    note: inside `fn5`
+        --> /scratch/tmp.37792059.wangqian/39684.rs:1773:1
+         |
+    1773 | Call(_15 = fn7(_10, _12, _14), bb3, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn4`
+        --> /scratch/tmp.37792059.wangqian/39684.rs:1252:1
+         |
+    1252 | Call(RET = fn5(_3, _1, _1, _1, _3, _3, _1, _3, _1, _1, _1, _1, _1, _1, _3, _1), bb1, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn3`
+        --> /scratch/tmp.37792059.wangqian/39684.rs:1072:1
+         |
+    1072 | Call(_27 = fn4(_14, _29), bb7, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn2`
+        --> /scratch/tmp.37792059.wangqian/39684.rs:690:1
+         |
+    690  | Call(_1 = fn3(_2, _2, _3, _2, _3, _3, _2, _3, RET, _3, RET, _3, RET, _3, _2), bb1, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn1`
+        --> /scratch/tmp.37792059.wangqian/39684.rs:390:1
+         |
+    390  | Call(_8.1 = fn2(_1.fld1, _4, _2), bb1, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `fn0`
+        --> /scratch/tmp.37792059.wangqian/39684.rs:90:1
+         |
+    90   | Call(_2 = fn1(Move(_10), RET, _3, RET, RET, _3), bb2, UnwindUnreachable())
+         | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    note: inside `main`
+        --> /scratch/tmp.37792059.wangqian/39684.rs:8891:17
+         |
+    8891 | ...   fn0(std::hint::black_box(true), std::hint::black_box('\u{64fd1}'), std::hint::black_box((-30_isize)), std::hint::black_box((-77551454035498578449425456425814264737_i128)), std::hint::black_box((-16510_i16)), std::hint::black_box(66129476716612930162798282736566822371_u128), std::hint::black_box((-1405038117202106633_i64)...
+         |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    
+    note: some details are omitted, run with `MIRIFLAGS=-Zmiri-backtrace=full` for a verbose backtrace
+    
+    error: aborting due to previous error; 1 warning emitted
+    
+    ================
+    
+[2023-11-29T20:53:27Z WARN  difftest] /scratch/tmp.37792059.wangqian/43762.rs recursion limit reached
+[2023-11-29T20:55:08Z WARN  difftest] /scratch/tmp.37792059.wangqian/44482.rs recursion limit reached
+[2023-11-29T20:56:39Z WARN  difftest] /scratch/tmp.37792059.wangqian/44970.rs recursion limit reached
+[2023-11-29T20:57:36Z WARN  difftest] /scratch/tmp.37792059.wangqian/45472.rs recursion limit reached
+[2023-11-29T20:57:43Z WARN  difftest] /scratch/tmp.37792059.wangqian/45603.rs recursion limit reached
+[2023-11-29T20:58:12Z WARN  difftest] /scratch/tmp.37792059.wangqian/45609.rs recursion limit reached
+[2023-11-29T20:59:08Z WARN  difftest] /scratch/tmp.37792059.wangqian/46159.rs recursion limit reached
+[2023-11-29T21:00:29Z WARN  difftest] /scratch/tmp.37792059.wangqian/46557.rs recursion limit reached
+[2023-11-29T21:01:59Z WARN  difftest] /scratch/tmp.37792059.wangqian/47247.rs recursion limit reached
+[2023-11-29T21:04:04Z WARN  difftest] /scratch/tmp.37792059.wangqian/48097.rs recursion limit reached
+[2023-11-29T21:09:55Z WARN  difftest] /scratch/tmp.37792059.wangqian/50634.rs recursion limit reached
+[2023-11-29T21:15:27Z WARN  difftest] /scratch/tmp.37792059.wangqian/52699.rs recursion limit reached
+[2023-11-29T21:15:59Z ERROR difftest] /scratch/tmp.37792059.wangqian/53212.rs didn't pass:
+    llvm-opt, miri-checked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 13354209728602052982
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 3949266267244481639
+    
+[2023-11-29T21:16:49Z WARN  difftest] /scratch/tmp.37792059.wangqian/53355.rs recursion limit reached
+[2023-11-29T21:19:03Z WARN  difftest] /scratch/tmp.37792059.wangqian/54549.rs recursion limit reached
+slurmstepd: error: *** JOB 37792059 ON eu-g5-007-2 CANCELLED AT 2023-11-29T22:19:55 ***
