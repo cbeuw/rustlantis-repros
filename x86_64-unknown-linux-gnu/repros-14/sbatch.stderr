@@ -1,0 +1,98 @@
+
+The following have been reloaded with a version change:
+  1) gcc/4.8.5 => gcc/11.4.0
+
+Fuzzing on 052a29d9793e182183b13add31c4b9190d593da9
+warning: unused import: `warn`
+  --> difftest/src/main.rs:12:31
+   |
+12 | use log::{debug, error, info, warn};
+   |                               ^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: methods `generate_storage_live`, `generate_storage_dead`, and `generate_deinit` are never used
+   --> generate/src/generation/mod.rs:475:8
+    |
+440 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+475 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+485 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+495 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: method `make_choice_mut` is never used
+    --> generate/src/generation/mod.rs:1127:8
+     |
+1047 | impl GenerationCtx {
+     | ------------------ method in this implementation
+...
+1127 |     fn make_choice_mut<T, F, R>(
+     |        ^^^^^^^^^^^^^^^
+
+warning: method `size` is never used
+  --> generate/src/mem/mod.rs:45:12
+   |
+39 | impl Run {
+   | -------- method in this implementation
+...
+45 |     pub fn size(&self) -> Size {
+   |            ^^^^
+
+warning: method `same_run` is never used
+  --> generate/src/mem/mod.rs:56:12
+   |
+55 | impl RunAndOffset {
+   | ----------------- method in this implementation
+56 |     pub fn same_run(&self, other: &Self) -> bool {
+   |            ^^^^^^^^
+
+warning: methods `runs_and_sizes` and `run` are never used
+  --> generate/src/mem/mod.rs:77:8
+   |
+76 | impl Allocation {
+   | --------------- methods in this implementation
+77 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+   |        ^^^^^^^^^^^^^^
+...
+83 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run {
+   |        ^^^
+
+warning: method `place_count` is never used
+   --> generate/src/ptable.rs:891:12
+    |
+149 | impl PlaceTable {
+    | --------------- method in this implementation
+...
+891 |     pub fn place_count(&self) -> usize {
+    |            ^^^^^^^^^^^
+
+warning: method `is_local` is never used
+   --> generate/src/ptable.rs:960:12
+    |
+902 | impl PlacePath {
+    | -------------- method in this implementation
+...
+960 |     pub fn is_local(&self) -> bool {
+    |            ^^^^^^^^
+
+warning: `difftest` (bin "difftest") generated 1 warning (run `cargo fix --bin "difftest"` to apply 1 suggestion)
+warning: `generate` (bin "generate") generated 7 warnings
+    Finished release [optimized] target(s) in 0.64s
+[2023-12-10T04:34:46Z ERROR difftest] /scratch/tmp.39453771.wangqian/3045595.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 1745829465132967538
+    cranelift-opt-only, miri-unchecked, llvm-opt-only produced the following output:
+    stdout:
+    hash: 7065699868596491863
+    
+slurmstepd: error: *** JOB 39453771 ON eu-g5-004-1 CANCELLED AT 2023-12-10T11:44:37 ***
+slurmstepd: error: _handle_stat_jobacct: Took usec=71911282, which is more than MessageTimeout (40s). The result won't be delivered
