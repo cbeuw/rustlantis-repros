@@ -131,47 +131,47 @@ parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
     note: inside `fn15`
         --> /scratch/tmp.37792059.wangqian/21074.rs:5294:1
          |
-    5294 | Call(_17.4 = fn16(_5.0, _5.0, _8, _13, _8, RET, _3, _1, _10), bb10, UnwindUnreachable())
+    5294 | Call(_17.4 = fn16(_5.0, _5.0, _8, _13, _8, RET, _3, _1, _10), ReturnTo(bb10), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn14`
         --> /scratch/tmp.37792059.wangqian/21074.rs:4946:1
          |
-    4946 | Call(_6 = fn15(_11, _4, _7, Field::<bool>(Variant(_11, 1), 0), _10, _10.0, _3, _11, _10.0, _9), bb6, UnwindUnreachable())
+    4946 | Call(_6 = fn15(_11, _4, _7, Field::<bool>(Variant(_11, 1), 0), _10, _10.0, _3, _11, _10.0, _9), ReturnTo(bb6), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn10`
         --> /scratch/tmp.37792059.wangqian/21074.rs:3784:1
          |
-    3784 | Call(place!(Field::<[bool; 1]>(Variant(_36, 1), 4)) = fn14((*_12), _37, _29, _19), bb30, UnwindUnreachable())
+    3784 | Call(place!(Field::<[bool; 1]>(Variant(_36, 1), 4)) = fn14((*_12), _37, _29, _19), ReturnTo(bb30), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn9`
         --> /scratch/tmp.37792059.wangqian/21074.rs:2970:1
          |
-    2970 | Call(_22 = fn10(Field::<*mut u16>(Variant(_8, 1), 6), Field::<*mut u16>(Variant(_8, 1), 6), _12, _5, _10, _2, _5, _7, _2, _2, _13, Field::<*mut u16>(Variant(_8, 1), 6)), bb3, UnwindUnreachable())
+    2970 | Call(_22 = fn10(Field::<*mut u16>(Variant(_8, 1), 6), Field::<*mut u16>(Variant(_8, 1), 6), _12, _5, _10, _2, _5, _7, _2, _2, _13, Field::<*mut u16>(Variant(_8, 1), 6)), ReturnTo(bb3), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn8`
         --> /scratch/tmp.37792059.wangqian/21074.rs:1828:1
          |
-    1828 | Call(_3 = fn9(_2, _2, _2, _2, _2, _2, _2, Move(_6), _2, _2, _2, _2, _2, _2), bb4, UnwindUnreachable())
+    1828 | Call(_3 = fn9(_2, _2, _2, _2, _2, _2, _2, Move(_6), _2, _2, _2, _2, _2, _2), ReturnTo(bb4), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn7`
         --> /scratch/tmp.37792059.wangqian/21074.rs:1388:1
          |
-    1388 | Call(_15 = fn8(_8, _3), bb1, UnwindUnreachable())
+    1388 | Call(_15 = fn8(_8, _3), ReturnTo(bb1), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn2`
         --> /scratch/tmp.37792059.wangqian/21074.rs:606:1
          |
-    606  | Call(RET = fn7(_6, _6, _2, _3, _2, _3, _2, _2, _5, _6), bb10, UnwindUnreachable())
+    606  | Call(RET = fn7(_6, _6, _2, _3, _2, _3, _2, _2, _5, _6), ReturnTo(bb10), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn1`
         --> /scratch/tmp.37792059.wangqian/21074.rs:248:1
          |
-    248  | Call(RET.1 = fn2(_4, _1, _4, _2, _4, _4, RET.2), bb1, UnwindUnreachable())
+    248  | Call(RET.1 = fn2(_4, _1, _4, _2, _4, _4, RET.2), ReturnTo(bb1), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn0`
         --> /scratch/tmp.37792059.wangqian/21074.rs:113:1
          |
-    113  | Call(RET = fn1(_4, _7, _7, _4), bb6, UnwindUnreachable())
+    113  | Call(RET = fn1(_4, _7, _7, _4), ReturnTo(bb6), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `main`
         --> /scratch/tmp.37792059.wangqian/21074.rs:6124:17
@@ -226,32 +226,32 @@ parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
     note: inside `fn17`
         --> /scratch/tmp.37792059.wangqian/34316.rs:3816:1
          |
-    3816 | Call(_20 = fn18(_6, _22.0, _3, Field::<(*const bool, *const [bool; 2], f32, u32, *const [bool; 2])>(Variant(_8, 1), 1).0, (*_18), _4, _4, _18, _1, _6.3, _6.2, (*_18), _4), bb8, UnwindUnreachable())
+    3816 | Call(_20 = fn18(_6, _22.0, _3, Field::<(*const bool, *const [bool; 2], f32, u32, *const [bool; 2])>(Variant(_8, 1), 1).0, (*_18), _4, _4, _18, _1, _6.3, _6.2, (*_18), _4), ReturnTo(bb8), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn16`
         --> /scratch/tmp.37792059.wangqian/34316.rs:3189:1
          |
-    3189 | Call(_7 = fn17(_4, _2, _4, _5, _1), bb2, UnwindUnreachable())
+    3189 | Call(_7 = fn17(_4, _2, _4, _5, _1), ReturnTo(bb2), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn13`
         --> /scratch/tmp.37792059.wangqian/34316.rs:2337:1
          |
-    2337 | Call(_15.fld0.1 = fn16(_2.0, _4, _18, _11, _7.0), bb15, UnwindUnreachable())
+    2337 | Call(_15.fld0.1 = fn16(_2.0, _4, _18, _11, _7.0), ReturnTo(bb15), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn7`
         --> /scratch/tmp.37792059.wangqian/34316.rs:1306:1
          |
-    1306 | Call(_26 = fn13(Move(_20), _22, _4, _7, _2, _1, _22, _22.0, _22, RET, _7), bb3, UnwindUnreachable())
+    1306 | Call(_26 = fn13(Move(_20), _22, _4, _7, _2, _1, _22, _22.0, _22, RET, _7), ReturnTo(bb3), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn1`
         --> /scratch/tmp.37792059.wangqian/34316.rs:478:1
          |
-    478  | Call(_24 = fn7(_17, _8, _2, _5, _8, _2, _19, RET, _7, _23, _5, _7, RET, _5, _4), bb4, UnwindUnreachable())
+    478  | Call(_24 = fn7(_17, _8, _2, _5, _8, _2, _19, RET, _7, _23, _5, _7, RET, _5, _4), ReturnTo(bb4), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn0`
         --> /scratch/tmp.37792059.wangqian/34316.rs:109:1
          |
-    109  | Call(RET.0 = fn1(RET.1, RET.1, _1, _2, _4, RET.1, RET.1, _7, _12, _12, _1, RET.1, _2, RET.1, _8), bb1, UnwindUnreachable())
+    109  | Call(RET.0 = fn1(RET.1, RET.1, _1, _2, _4, RET.1, RET.1, _7, _12, _12, _1, RET.1, _2, RET.1, _8), ReturnTo(bb1), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `main`
         --> /scratch/tmp.37792059.wangqian/34316.rs:8668:17
@@ -312,32 +312,32 @@ parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
     note: inside `fn5`
         --> /scratch/tmp.37792059.wangqian/39684.rs:1773:1
          |
-    1773 | Call(_15 = fn7(_10, _12, _14), bb3, UnwindUnreachable())
+    1773 | Call(_15 = fn7(_10, _12, _14), ReturnTo(bb3), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn4`
         --> /scratch/tmp.37792059.wangqian/39684.rs:1252:1
          |
-    1252 | Call(RET = fn5(_3, _1, _1, _1, _3, _3, _1, _3, _1, _1, _1, _1, _1, _1, _3, _1), bb1, UnwindUnreachable())
+    1252 | Call(RET = fn5(_3, _1, _1, _1, _3, _3, _1, _3, _1, _1, _1, _1, _1, _1, _3, _1), ReturnTo(bb1), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn3`
         --> /scratch/tmp.37792059.wangqian/39684.rs:1072:1
          |
-    1072 | Call(_27 = fn4(_14, _29), bb7, UnwindUnreachable())
+    1072 | Call(_27 = fn4(_14, _29), ReturnTo(bb7), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn2`
         --> /scratch/tmp.37792059.wangqian/39684.rs:690:1
          |
-    690  | Call(_1 = fn3(_2, _2, _3, _2, _3, _3, _2, _3, RET, _3, RET, _3, RET, _3, _2), bb1, UnwindUnreachable())
+    690  | Call(_1 = fn3(_2, _2, _3, _2, _3, _3, _2, _3, RET, _3, RET, _3, RET, _3, _2), ReturnTo(bb1), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn1`
         --> /scratch/tmp.37792059.wangqian/39684.rs:390:1
          |
-    390  | Call(_8.1 = fn2(_1.fld1, _4, _2), bb1, UnwindUnreachable())
+    390  | Call(_8.1 = fn2(_1.fld1, _4, _2), ReturnTo(bb1), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `fn0`
         --> /scratch/tmp.37792059.wangqian/39684.rs:90:1
          |
-    90   | Call(_2 = fn1(Move(_10), RET, _3, RET, RET, _3), bb2, UnwindUnreachable())
+    90   | Call(_2 = fn1(Move(_10), RET, _3, RET, RET, _3), ReturnTo(bb2), UnwindUnreachable())
          | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     note: inside `main`
         --> /scratch/tmp.37792059.wangqian/39684.rs:8891:17

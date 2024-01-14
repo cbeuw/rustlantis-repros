@@ -173,7 +173,7 @@ _20 = [_7.0.2];
 _12.0.2 = [_12.0.1,_5,_12.0.1,_5,_12.0.1,_12.0.1,_5];
 _7.0.0.1.2 = RET;
 _9 = core::ptr::addr_of!(_6);
-Call(_10 = core::intrinsics::transmute(_15.1), bb9, UnwindUnreachable())
+Call(_10 = core::intrinsics::transmute(_15.1), ReturnTo(bb9), UnwindUnreachable())
 }
 bb9 = {
 _7.0.1 = _11 - _11;
@@ -191,7 +191,7 @@ _15.0 = _21 * _21;
 _24.3 = _5 as f64;
 _24.1 = !_12.0.1;
 _7.0.2 = (*_9) - (*_9);
-Call(_14 = core::intrinsics::fmaf64(_12.0.3, _12.0.3, _16), bb11, UnwindUnreachable())
+Call(_14 = core::intrinsics::fmaf64(_12.0.3, _12.0.3, _16), ReturnTo(bb11), UnwindUnreachable())
 }
 bb11 = {
 _4 = -_15.3;
@@ -222,7 +222,7 @@ _12.0.0.1.0 = _7.0.0.1.0;
 _12 = (_24,);
 _25 = Adt61::Variant0 { fld0: _9,fld1: _7 };
 _1 = _12.0.0.1.1;
-Call(_12.0.1 = fn1(_12.0.0, _2, Field::<*const isize>(Variant(_25, 0), 0), _7.0.0.1.0, _15, _12.0.0.1.2, _24.3, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_25, 0), 1).0.0.0, _21, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_25, 0), 1), _12.0.0.1, _24.0, _2), bb12, UnwindUnreachable())
+Call(_12.0.1 = fn1(_12.0.0, _2, Field::<*const isize>(Variant(_25, 0), 0), _7.0.0.1.0, _15, _12.0.0.1.2, _24.3, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_25, 0), 1).0.0.0, _21, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_25, 0), 1), _12.0.0.1, _24.0, _2), ReturnTo(bb12), UnwindUnreachable())
 }
 bb12 = {
 _24.0.1.1 = !_1;
@@ -284,13 +284,13 @@ _7.0.0.0 = Field::<([i32; 7], i32, u8, u8)>(Variant(_25, 1), 2).3 - Field::<([i3
 Goto(bb16)
 }
 bb16 = {
-Call(_40 = dump_var(0_usize, 21_usize, Move(_21), 17_usize, Move(_17), 3_usize, Move(_3), 19_usize, Move(_19)), bb17, UnwindUnreachable())
+Call(_40 = dump_var(0_usize, 21_usize, Move(_21), 17_usize, Move(_17), 3_usize, Move(_3), 19_usize, Move(_19)), ReturnTo(bb17), UnwindUnreachable())
 }
 bb17 = {
-Call(_40 = dump_var(0_usize, 6_usize, Move(_6), 8_usize, Move(_8), 2_usize, Move(_2), 29_usize, Move(_29)), bb18, UnwindUnreachable())
+Call(_40 = dump_var(0_usize, 6_usize, Move(_6), 8_usize, Move(_8), 2_usize, Move(_2), 29_usize, Move(_29)), ReturnTo(bb18), UnwindUnreachable())
 }
 bb18 = {
-Call(_40 = dump_var(0_usize, 11_usize, Move(_11), 41_usize, _41, 41_usize, _41, 41_usize, _41), bb19, UnwindUnreachable())
+Call(_40 = dump_var(0_usize, 11_usize, Move(_11), 41_usize, _41, 41_usize, _41, 41_usize, _41), ReturnTo(bb19), UnwindUnreachable())
 }
 bb19 = {
 Return()
@@ -336,7 +336,7 @@ _5.1 = 14335200496814887662_u64 as u16;
 _10.0.0.1.0 = -_12.1.0;
 _1 = (_10.0.0.0, _11);
 _10.0 = (_12, _5.1, (*_3));
-Call(_1.1.0 = core::intrinsics::transmute(_1.0), bb1, UnwindUnreachable())
+Call(_1.1.0 = core::intrinsics::transmute(_1.0), ReturnTo(bb1), UnwindUnreachable())
 }
 bb1 = {
 _10.0.0.1.0 = _4;
@@ -362,7 +362,7 @@ _1 = (_10.0.0.0, _12.1);
 _16 = '\u{73ae0}';
 _12 = _10.0.0;
 _12.1.0 = 319954594412058642465688008044244240554_u128 as i8;
-Call(_13 = fn2(_10.0, _11.1, _10.0.0.1, _10.0), bb2, UnwindUnreachable())
+Call(_13 = fn2(_10.0, _11.1, _10.0.0.1, _10.0), ReturnTo(bb2), UnwindUnreachable())
 }
 bb2 = {
 _17 = [RET,RET,RET,RET,RET,RET,RET];
@@ -377,7 +377,7 @@ _1.1.0 = _10.0.0.1.0 * _10.0.0.1.0;
 _19 = (_1.0, _10.0.0.1);
 (*_3) = !_10.0.2;
 _11 = (_1.1.0, _19.1.1, _12.1.2);
-Call(_11.2 = core::intrinsics::fmaf64(_12.1.2, _10.0.0.1.2, _6), bb3, UnwindUnreachable())
+Call(_11.2 = core::intrinsics::fmaf64(_12.1.2, _10.0.0.1.2, _6), ReturnTo(bb3), UnwindUnreachable())
 }
 bb3 = {
 _1.1.0 = -_19.1.0;
@@ -385,11 +385,11 @@ _10.0.0 = (_19.0, _11);
 _22.1 = (_10.0.0.1.2, _19.1.1, _5.2);
 _12.1.1 = _15 as usize;
 _21 = _15 as isize;
-Call(_12.1.2 = fn18(_10.0.0.1.2, _19.0, _10.0.0.1, _19.1.1, _19, _10.0.0.0), bb4, UnwindUnreachable())
+Call(_12.1.2 = fn18(_10.0.0.1.2, _19.0, _10.0.0.1, _19.1.1, _19, _10.0.0.0), ReturnTo(bb4), UnwindUnreachable())
 }
 bb4 = {
 _2 = _13 + _13;
-Call(_22.2.3 = core::intrinsics::transmute(_10.0.0.0), bb5, UnwindUnreachable())
+Call(_22.2.3 = core::intrinsics::transmute(_10.0.0.0), ReturnTo(bb5), UnwindUnreachable())
 }
 bb5 = {
 _22.3.0 = _1.0 - _19.0;
@@ -405,7 +405,7 @@ _ => bb9
 }
 bb6 = {
 _2 = _13 + _13;
-Call(_22.2.3 = core::intrinsics::transmute(_10.0.0.0), bb5, UnwindUnreachable())
+Call(_22.2.3 = core::intrinsics::transmute(_10.0.0.0), ReturnTo(bb5), UnwindUnreachable())
 }
 bb7 = {
 _1.1.0 = -_19.1.0;
@@ -413,7 +413,7 @@ _10.0.0 = (_19.0, _11);
 _22.1 = (_10.0.0.1.2, _19.1.1, _5.2);
 _12.1.1 = _15 as usize;
 _21 = _15 as isize;
-Call(_12.1.2 = fn18(_10.0.0.1.2, _19.0, _10.0.0.1, _19.1.1, _19, _10.0.0.0), bb4, UnwindUnreachable())
+Call(_12.1.2 = fn18(_10.0.0.1.2, _19.0, _10.0.0.1, _19.1.1, _19, _10.0.0.0), ReturnTo(bb4), UnwindUnreachable())
 }
 bb8 = {
 _17 = [RET,RET,RET,RET,RET,RET,RET];
@@ -428,7 +428,7 @@ _1.1.0 = _10.0.0.1.0 * _10.0.0.1.0;
 _19 = (_1.0, _10.0.0.1);
 (*_3) = !_10.0.2;
 _11 = (_1.1.0, _19.1.1, _12.1.2);
-Call(_11.2 = core::intrinsics::fmaf64(_12.1.2, _10.0.0.1.2, _6), bb3, UnwindUnreachable())
+Call(_11.2 = core::intrinsics::fmaf64(_12.1.2, _10.0.0.1.2, _6), ReturnTo(bb3), UnwindUnreachable())
 }
 bb9 = {
 _10.0.0.1.0 = _4;
@@ -454,11 +454,11 @@ _1 = (_10.0.0.0, _12.1);
 _16 = '\u{73ae0}';
 _12 = _10.0.0;
 _12.1.0 = 319954594412058642465688008044244240554_u128 as i8;
-Call(_13 = fn2(_10.0, _11.1, _10.0.0.1, _10.0), bb2, UnwindUnreachable())
+Call(_13 = fn2(_10.0, _11.1, _10.0.0.1, _10.0), ReturnTo(bb2), UnwindUnreachable())
 }
 bb10 = {
 _22.2.2 = _22.1.2;
-Call(_1.1.2 = fn19(_10.0.0.1.0, _4, _3, _2, _12, _12.1.2, _7, _12.1, _22.1), bb11, UnwindUnreachable())
+Call(_1.1.2 = fn19(_10.0.0.1.0, _4, _3, _2, _12, _12.1.2, _7, _12.1, _22.1), ReturnTo(bb11), UnwindUnreachable())
 }
 bb11 = {
 RET = !993443444_i32;
@@ -505,7 +505,7 @@ _1 = (_10.0.0.0, _12.1);
 _16 = '\u{73ae0}';
 _12 = _10.0.0;
 _12.1.0 = 319954594412058642465688008044244240554_u128 as i8;
-Call(_13 = fn2(_10.0, _11.1, _10.0.0.1, _10.0), bb2, UnwindUnreachable())
+Call(_13 = fn2(_10.0, _11.1, _10.0.0.1, _10.0), ReturnTo(bb2), UnwindUnreachable())
 }
 bb13 = {
 _27 = [2841018739_u32,597027668_u32,2315018365_u32,4108331051_u32];
@@ -529,10 +529,10 @@ _22.1.1 = _1.1.1;
 Goto(bb15)
 }
 bb15 = {
-Call(_34 = dump_var(1_usize, 17_usize, Move(_17), 21_usize, Move(_21), 26_usize, Move(_26), 14_usize, Move(_14)), bb16, UnwindUnreachable())
+Call(_34 = dump_var(1_usize, 17_usize, Move(_17), 21_usize, Move(_21), 26_usize, Move(_26), 14_usize, Move(_14)), ReturnTo(bb16), UnwindUnreachable())
 }
 bb16 = {
-Call(_34 = dump_var(1_usize, 13_usize, Move(_13), 2_usize, Move(_2), 16_usize, Move(_16), 35_usize, _35), bb17, UnwindUnreachable())
+Call(_34 = dump_var(1_usize, 13_usize, Move(_13), 2_usize, Move(_2), 16_usize, Move(_16), 35_usize, _35), ReturnTo(bb17), UnwindUnreachable())
 }
 bb17 = {
 Return()
@@ -785,7 +785,7 @@ _13.0 = _4.1 as i16;
 _16 = _21.1 as i16;
 _4.0 = (_1.0.0, _1.0.1);
 _12.fld0.0 = [_12.fld0.1,_12.fld0.1,_12.fld0.1,_12.fld0.1,_12.fld0.1,_12.fld0.1,_12.fld0.1];
-Call(_19.fld1 = fn3(_1.0.0, _4.0.1.1, _4.0.0, _12.fld0, _8, _10, _1.2, _1.0.1.1, _1.0.0, _21.2, Field::<[u128; 7]>(Variant(_19.fld2, 2), 0), _12.fld0.2, Move(_12), Move(_19.fld2), _4, _23), bb14, UnwindUnreachable())
+Call(_19.fld1 = fn3(_1.0.0, _4.0.1.1, _4.0.0, _12.fld0, _8, _10, _1.2, _1.0.1.1, _1.0.0, _21.2, Field::<[u128; 7]>(Variant(_19.fld2, 2), 0), _12.fld0.2, Move(_12), Move(_19.fld2), _4, _23), ReturnTo(bb14), UnwindUnreachable())
 }
 bb14 = {
 _2 = !_14;
@@ -807,10 +807,10 @@ _21.1 = !_24;
 Goto(bb15)
 }
 bb15 = {
-Call(_31 = dump_var(2_usize, 26_usize, Move(_26), 14_usize, Move(_14), 7_usize, Move(_7), 5_usize, Move(_5)), bb16, UnwindUnreachable())
+Call(_31 = dump_var(2_usize, 26_usize, Move(_26), 14_usize, Move(_14), 7_usize, Move(_7), 5_usize, Move(_5)), ReturnTo(bb16), UnwindUnreachable())
 }
 bb16 = {
-Call(_31 = dump_var(2_usize, 23_usize, Move(_23), 17_usize, Move(_17), 8_usize, Move(_8), 32_usize, _32), bb17, UnwindUnreachable())
+Call(_31 = dump_var(2_usize, 23_usize, Move(_23), 17_usize, Move(_17), 8_usize, Move(_8), 32_usize, _32), ReturnTo(bb17), UnwindUnreachable())
 }
 bb17 = {
 Return()
@@ -862,7 +862,7 @@ _17 = _15.0.1.2;
 _20 = -_7;
 _5 = _6;
 _4.0 = [_4.1,_4.1,_4.1,_13.fld0.1,_4.1,_4.1,_4.1];
-Call(RET = fn4(_19.0.0.1.1, _4.2, Move(_14), _4.2), bb1, UnwindUnreachable())
+Call(RET = fn4(_19.0.0.1.1, _4.2, Move(_14), _4.2), ReturnTo(bb1), UnwindUnreachable())
 }
 bb1 = {
 place!(Field::<(u8, (i8, usize, f64))>(Variant(RET, 0), 1)).1 = _15.0.1;
@@ -880,10 +880,10 @@ _19.0.2 = [Field::<Adt52>(Variant(RET, 0), 0).fld0.1,_23.0.1,_4.1,_23.0.1,Field:
 Goto(bb2)
 }
 bb2 = {
-Call(_31 = dump_var(3_usize, 7_usize, Move(_7), 20_usize, Move(_20), 21_usize, Move(_21), 12_usize, Move(_12)), bb3, UnwindUnreachable())
+Call(_31 = dump_var(3_usize, 7_usize, Move(_7), 20_usize, Move(_20), 21_usize, Move(_21), 12_usize, Move(_12)), ReturnTo(bb3), UnwindUnreachable())
 }
 bb3 = {
-Call(_31 = dump_var(3_usize, 16_usize, Move(_16), 1_usize, Move(_1), 3_usize, Move(_3), 32_usize, _32), bb4, UnwindUnreachable())
+Call(_31 = dump_var(3_usize, 16_usize, Move(_16), 1_usize, Move(_1), 3_usize, Move(_3), 32_usize, _32), ReturnTo(bb4), UnwindUnreachable())
 }
 bb4 = {
 Return()
@@ -1174,7 +1174,7 @@ _6.2 = [_6.1,_6.1,_6.1,_6.1,_6.1,_6.1,_6.1];
 _8.1 = 17739644206959733562_u64;
 _1 = !_6.0.1.1;
 place!(Field::<[u128; 7]>(Variant(_3, 2), 0)) = [211270479748329600991173982702814270893_u128,195457714103652924615933007835172428753_u128,271338306660170066895839084855728571982_u128,324591944844951741229432163533993348068_u128,214734671223276033146567645677843474803_u128,38242354490841401207694578926733575930_u128,79949884034302239922263079546097125951_u128];
-Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), bb2, UnwindUnreachable())
+Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), ReturnTo(bb2), UnwindUnreachable())
 }
 bb2 = {
 place!(Field::<[u128; 7]>(Variant(_3, 2), 0)) = [187637760471066517462737391719796858301_u128,283215791883897058556136400607779911304_u128,255697313467905994809489780376856913680_u128,40885999641191079660284280549754553827_u128,53569125339253392927027068596995835172_u128,305322145357349372563329960047660498345_u128,49418461604836897581321896732475515005_u128];
@@ -1196,7 +1196,7 @@ _5 = -_6.0.1.2;
 _6.3 = -_6.0.1.2;
 _9 = Adt50::Variant1 { fld0: _6.1 };
 _8.1 = 12588281882997977243_u64;
-Call(_2 = core::intrinsics::transmute(_7), bb3, UnwindUnreachable())
+Call(_2 = core::intrinsics::transmute(_7), ReturnTo(bb3), UnwindUnreachable())
 }
 bb3 = {
 _6.2 = [_6.1,Field::<i32>(Variant(_9, 1), 0),Field::<i32>(Variant(_9, 1), 0),_6.1,Field::<i32>(Variant(_9, 1), 0),_6.1,_6.1];
@@ -1239,7 +1239,7 @@ _11 = !1944227100_u32;
 SetDiscriminant(_9, 2);
 _6.0.0 = _14.0.0.0;
 _6.0.0 = _4 * _4;
-Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), bb5, UnwindUnreachable())
+Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), ReturnTo(bb5), UnwindUnreachable())
 }
 bb5 = {
 SetDiscriminant(_3, 0);
@@ -1286,7 +1286,7 @@ _11 = !1944227100_u32;
 SetDiscriminant(_9, 2);
 _6.0.0 = _14.0.0.0;
 _6.0.0 = _4 * _4;
-Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), bb5, UnwindUnreachable())
+Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), ReturnTo(bb5), UnwindUnreachable())
 }
 bb7 = {
 _6.2 = [_6.1,Field::<i32>(Variant(_9, 1), 0),Field::<i32>(Variant(_9, 1), 0),_6.1,Field::<i32>(Variant(_9, 1), 0),_6.1,_6.1];
@@ -1342,7 +1342,7 @@ _6.2 = [_6.1,_6.1,_6.1,_6.1,_6.1,_6.1,_6.1];
 _8.1 = 17739644206959733562_u64;
 _1 = !_6.0.1.1;
 place!(Field::<[u128; 7]>(Variant(_3, 2), 0)) = [211270479748329600991173982702814270893_u128,195457714103652924615933007835172428753_u128,271338306660170066895839084855728571982_u128,324591944844951741229432163533993348068_u128,214734671223276033146567645677843474803_u128,38242354490841401207694578926733575930_u128,79949884034302239922263079546097125951_u128];
-Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), bb2, UnwindUnreachable())
+Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), ReturnTo(bb2), UnwindUnreachable())
 }
 bb9 = {
 _14.0.0 = _6.0;
@@ -1388,7 +1388,7 @@ _11 = !1944227100_u32;
 SetDiscriminant(_9, 2);
 _6.0.0 = _14.0.0.0;
 _6.0.0 = _4 * _4;
-Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), bb5, UnwindUnreachable())
+Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), ReturnTo(bb5), UnwindUnreachable())
 }
 bb11 = {
 _16.0.1.0 = _8.1 as i8;
@@ -1448,7 +1448,7 @@ _6.2 = [_6.1,_6.1,_6.1,_6.1,_6.1,_6.1,_6.1];
 _8.1 = 17739644206959733562_u64;
 _1 = !_6.0.1.1;
 place!(Field::<[u128; 7]>(Variant(_3, 2), 0)) = [211270479748329600991173982702814270893_u128,195457714103652924615933007835172428753_u128,271338306660170066895839084855728571982_u128,324591944844951741229432163533993348068_u128,214734671223276033146567645677843474803_u128,38242354490841401207694578926733575930_u128,79949884034302239922263079546097125951_u128];
-Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), bb2, UnwindUnreachable())
+Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), ReturnTo(bb2), UnwindUnreachable())
 }
 bb14 = {
 place!(Field::<[u128; 7]>(Variant(_3, 2), 0)) = [187637760471066517462737391719796858301_u128,283215791883897058556136400607779911304_u128,255697313467905994809489780376856913680_u128,40885999641191079660284280549754553827_u128,53569125339253392927027068596995835172_u128,305322145357349372563329960047660498345_u128,49418461604836897581321896732475515005_u128];
@@ -1470,7 +1470,7 @@ _5 = -_6.0.1.2;
 _6.3 = -_6.0.1.2;
 _9 = Adt50::Variant1 { fld0: _6.1 };
 _8.1 = 12588281882997977243_u64;
-Call(_2 = core::intrinsics::transmute(_7), bb3, UnwindUnreachable())
+Call(_2 = core::intrinsics::transmute(_7), ReturnTo(bb3), UnwindUnreachable())
 }
 bb15 = {
 place!(Field::<*const [u128; 7]>(Variant(_9, 2), 0)) = core::ptr::addr_of!(place!(Field::<[u128; 7]>(Variant(_9, 2), 2)));
@@ -1734,7 +1734,7 @@ _11 = !1944227100_u32;
 SetDiscriminant(_9, 2);
 _6.0.0 = _14.0.0.0;
 _6.0.0 = _4 * _4;
-Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), bb5, UnwindUnreachable())
+Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), ReturnTo(bb5), UnwindUnreachable())
 }
 bb27 = {
 _35 = _20 * _21;
@@ -1744,7 +1744,7 @@ Goto(bb28)
 bb28 = {
 _41 = _30.0.0.0 as u16;
 _41 = Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_3, 0), 1).0.1 % Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_3, 0), 1).0.1;
-Call(_13.1 = core::intrinsics::bswap(_33.0.1.1), bb29, UnwindUnreachable())
+Call(_13.1 = core::intrinsics::bswap(_33.0.1.1), ReturnTo(bb29), UnwindUnreachable())
 }
 bb29 = {
 _33.2 = [_14.0.1,_33.1,_6.1,_14.0.1,_14.0.1,_30.0.1,_33.1];
@@ -1768,7 +1768,7 @@ _30.0 = (Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_3, 0), 1).0.0
 _33.0.1 = (_30.0.0.1.0, _29.1, _30.0.0.1.2);
 _13.1 = !Field::<(f64, usize, *const i32)>(Variant(_9, 0), 0).1;
 _33.2 = _16.2;
-Call(_6 = fn9(_13.1, _41, _14, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_3, 0), 1).0.2, _15.1, (*_17), _15, _30.0.0.1, _39, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_3, 0), 1).0.1, _33.0.1.1), bb30, UnwindUnreachable())
+Call(_6 = fn9(_13.1, _41, _14, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_3, 0), 1).0.2, _15.1, (*_17), _15, _30.0.0.1, _39, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_3, 0), 1).0.1, _33.0.1.1), ReturnTo(bb30), UnwindUnreachable())
 }
 bb30 = {
 _15.0 = _30.0.3 * _29.2;
@@ -1793,7 +1793,7 @@ _13.2 = _31 as f64;
 _32 = Adt51::Variant2 { fld0: _34.1 };
 _6 = (_30.0.0, _33.1, _30.0.2, _39);
 _14.0.0.1.2 = -_47.1.2;
-Call(_38 = fn10(_15.1, _33.0.1.1, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_3, 0), 1).0.0.1, _29, _21, _30.0.0.1.2, (*_17), _15, _29.0, _16, _17), bb31, UnwindUnreachable())
+Call(_38 = fn10(_15.1, _33.0.1.1, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_3, 0), 1).0.0.1, _29, _21, _30.0.0.1.2, (*_17), _15, _29.0, _16, _17), ReturnTo(bb31), UnwindUnreachable())
 }
 bb31 = {
 _23 = -_30.0.0.1.2;
@@ -1908,7 +1908,7 @@ _6.0.1 = (_46.0, _13.1, _23);
 place!(Field::<(u64,)>(Variant(_48.fld2, 0), 4)) = (_8.1,);
 place!(Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_48.fld2, 0), 1)).0.0 = _33.0;
 _52 = (_34.1, _41, _40, _33.0.1.0);
-Call(place!(Field::<(f64, usize, *const i32)>(Variant(_9, 0), 0)).2 = fn11(_16.0, _4, _30.0.0.1.1, _52.1, _16, _16.0.1, _6.0, _35, _56.0.0.1.2, _6.3, _16, _6.0.1, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_48.fld2, 0), 1).0.0.0), bb36, UnwindUnreachable())
+Call(place!(Field::<(f64, usize, *const i32)>(Variant(_9, 0), 0)).2 = fn11(_16.0, _4, _30.0.0.1.1, _52.1, _16, _16.0.1, _6.0, _35, _56.0.0.1.2, _6.3, _16, _6.0.1, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_48.fld2, 0), 1).0.0.0), ReturnTo(bb36), UnwindUnreachable())
 }
 bb36 = {
 _29.2 = _52.0 as f64;
@@ -1959,7 +1959,7 @@ place!(Field::<*const i32>(Variant(_48.fld2, 0), 2)) = core::ptr::addr_of!(_56.0
 _33.0.1.0 = _46.0;
 _70 = [Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_48.fld2, 0), 1).0.0.1.0,_56.0.0.1.0,_47.1.0,_14.0.0.1.0,_14.0.0.1.0,_29.0,_56.0.0.1.0];
 _34 = (_38, _52.0, _55);
-Call(_33.0.0 = fn15(_38, _29.0, _16.0.0, _26, _52.3, _6.0.1, _16.0.1.2), bb38, UnwindUnreachable())
+Call(_33.0.0 = fn15(_38, _29.0, _16.0.0, _26, _52.3, _6.0.1, _16.0.1.2), ReturnTo(bb38), UnwindUnreachable())
 }
 bb38 = {
 _60 = _33.0.1.2;
@@ -2310,7 +2310,7 @@ _6.2 = [_6.1,_6.1,_6.1,_6.1,_6.1,_6.1,_6.1];
 _8.1 = 17739644206959733562_u64;
 _1 = !_6.0.1.1;
 place!(Field::<[u128; 7]>(Variant(_3, 2), 0)) = [211270479748329600991173982702814270893_u128,195457714103652924615933007835172428753_u128,271338306660170066895839084855728571982_u128,324591944844951741229432163533993348068_u128,214734671223276033146567645677843474803_u128,38242354490841401207694578926733575930_u128,79949884034302239922263079546097125951_u128];
-Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), bb2, UnwindUnreachable())
+Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), ReturnTo(bb2), UnwindUnreachable())
 }
 bb53 = {
 _33.0.1.2 = _13.1 as f64;
@@ -2357,7 +2357,7 @@ _6.2 = [_6.1,_6.1,_6.1,_6.1,_6.1,_6.1,_6.1];
 _8.1 = 17739644206959733562_u64;
 _1 = !_6.0.1.1;
 place!(Field::<[u128; 7]>(Variant(_3, 2), 0)) = [211270479748329600991173982702814270893_u128,195457714103652924615933007835172428753_u128,271338306660170066895839084855728571982_u128,324591944844951741229432163533993348068_u128,214734671223276033146567645677843474803_u128,38242354490841401207694578926733575930_u128,79949884034302239922263079546097125951_u128];
-Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), bb2, UnwindUnreachable())
+Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), ReturnTo(bb2), UnwindUnreachable())
 }
 bb55 = {
 place!(Field::<[u128; 7]>(Variant(_3, 2), 0)) = [187637760471066517462737391719796858301_u128,283215791883897058556136400607779911304_u128,255697313467905994809489780376856913680_u128,40885999641191079660284280549754553827_u128,53569125339253392927027068596995835172_u128,305322145357349372563329960047660498345_u128,49418461604836897581321896732475515005_u128];
@@ -2379,7 +2379,7 @@ _5 = -_6.0.1.2;
 _6.3 = -_6.0.1.2;
 _9 = Adt50::Variant1 { fld0: _6.1 };
 _8.1 = 12588281882997977243_u64;
-Call(_2 = core::intrinsics::transmute(_7), bb3, UnwindUnreachable())
+Call(_2 = core::intrinsics::transmute(_7), ReturnTo(bb3), UnwindUnreachable())
 }
 bb56 = {
 place!(Field::<(i8, usize, f64)>(Variant(_77, 3), 4)) = (Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_48.fld2, 0), 1).0.0.1.0, _16.0.1.1, Field::<(((u8, (i8, usize, f64)), i32, [i32; 7], f64),)>(Variant(_77, 3), 6).0.3);
@@ -2487,7 +2487,7 @@ _13.2 = _31 as f64;
 _32 = Adt51::Variant2 { fld0: _34.1 };
 _6 = (_30.0.0, _33.1, _30.0.2, _39);
 _14.0.0.1.2 = -_47.1.2;
-Call(_38 = fn10(_15.1, _33.0.1.1, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_3, 0), 1).0.0.1, _29, _21, _30.0.0.1.2, (*_17), _15, _29.0, _16, _17), bb31, UnwindUnreachable())
+Call(_38 = fn10(_15.1, _33.0.1.1, Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_3, 0), 1).0.0.1, _29, _21, _30.0.0.1.2, (*_17), _15, _29.0, _16, _17), ReturnTo(bb31), UnwindUnreachable())
 }
 bb60 = {
 place!(Field::<(f64, usize, *const i32)>(Variant(_9, 0), 0)).1 = _33.0.1.1;
@@ -2602,7 +2602,7 @@ _6.2 = [_6.1,_6.1,_6.1,_6.1,_6.1,_6.1,_6.1];
 _8.1 = 17739644206959733562_u64;
 _1 = !_6.0.1.1;
 place!(Field::<[u128; 7]>(Variant(_3, 2), 0)) = [211270479748329600991173982702814270893_u128,195457714103652924615933007835172428753_u128,271338306660170066895839084855728571982_u128,324591944844951741229432163533993348068_u128,214734671223276033146567645677843474803_u128,38242354490841401207694578926733575930_u128,79949884034302239922263079546097125951_u128];
-Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), bb2, UnwindUnreachable())
+Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), ReturnTo(bb2), UnwindUnreachable())
 }
 bb67 = {
 _33.0.1.2 = _13.1 as f64;
@@ -2688,7 +2688,7 @@ _11 = !1944227100_u32;
 SetDiscriminant(_9, 2);
 _6.0.0 = _14.0.0.0;
 _6.0.0 = _4 * _4;
-Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), bb5, UnwindUnreachable())
+Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), ReturnTo(bb5), UnwindUnreachable())
 }
 bb71 = {
 _119.fld6.0.1.2 = Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_48.fld2, 0), 1).0.0.0 as f64;
@@ -2891,7 +2891,7 @@ place!(Field::<u64>(Variant(_32, 0), 6)) = _48.fld0.0 | _91.0;
 _52.1 = !_112.1;
 place!(Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_69, 3), 1)).0.0.1.2 = _96 as f64;
 _119.fld1.0 = (_56.0.0, _119.fld5, Field::<(((u8, (i8, usize, f64)), i32, [i32; 7], f64),)>(Variant(_77, 3), 6).0.2, _42);
-Call(_90.0.0.1.1 = core::intrinsics::transmute(_74), bb81, UnwindUnreachable())
+Call(_90.0.0.1.1 = core::intrinsics::transmute(_74), ReturnTo(bb81), UnwindUnreachable())
 }
 bb81 = {
 place!(Field::<(((u8, (i8, usize, f64)), i32, [i32; 7], f64),)>(Variant(_77, 3), 6)).0.0.0 = _14.0.0.0;
@@ -3055,7 +3055,7 @@ _5 = -_6.0.1.2;
 _6.3 = -_6.0.1.2;
 _9 = Adt50::Variant1 { fld0: _6.1 };
 _8.1 = 12588281882997977243_u64;
-Call(_2 = core::intrinsics::transmute(_7), bb3, UnwindUnreachable())
+Call(_2 = core::intrinsics::transmute(_7), ReturnTo(bb3), UnwindUnreachable())
 }
 bb89 = {
 place!(Field::<(bool, u64)>(Variant(_9, 2), 3)).0 = _44;
@@ -3148,7 +3148,7 @@ _11 = !1944227100_u32;
 SetDiscriminant(_9, 2);
 _6.0.0 = _14.0.0.0;
 _6.0.0 = _4 * _4;
-Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), bb5, UnwindUnreachable())
+Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), ReturnTo(bb5), UnwindUnreachable())
 }
 bb94 = {
 _33.0.1.2 = _13.1 as f64;
@@ -3226,7 +3226,7 @@ place!(Field::<*const i32>(Variant(_48.fld2, 0), 2)) = core::ptr::addr_of!(_56.0
 _33.0.1.0 = _46.0;
 _70 = [Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_48.fld2, 0), 1).0.0.1.0,_56.0.0.1.0,_47.1.0,_14.0.0.1.0,_14.0.0.1.0,_29.0,_56.0.0.1.0];
 _34 = (_38, _52.0, _55);
-Call(_33.0.0 = fn15(_38, _29.0, _16.0.0, _26, _52.3, _6.0.1, _16.0.1.2), bb38, UnwindUnreachable())
+Call(_33.0.0 = fn15(_38, _29.0, _16.0.0, _26, _52.3, _6.0.1, _16.0.1.2), ReturnTo(bb38), UnwindUnreachable())
 }
 bb98 = {
 _130.fld2 = Field::<(u64,)>(Variant(_69, 3), 2).0 as i64;
@@ -3239,7 +3239,7 @@ place!(Field::<[i128; 8]>(Variant(_32, 1), 0)) = [_107.fld1,_53.fld1,_53.fld1,_1
 _29 = (_125.0.1.0, _16.0.1.1, _15.0);
 place!(Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_48.fld2, 0), 1)) = (_119.fld6,);
 place!(Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_69, 3), 1)).0 = (_56.0.0, _119.fld2, _119.fld6.2);
-Call(place!(Field::<u8>(Variant(_67.fld1, 0), 0)) = core::intrinsics::transmute(_33.0.1.0), bb99, UnwindUnreachable())
+Call(place!(Field::<u8>(Variant(_67.fld1, 0), 0)) = core::intrinsics::transmute(_33.0.1.0), ReturnTo(bb99), UnwindUnreachable())
 }
 bb99 = {
 _62 = Field::<isize>(Variant(_77, 3), 2);
@@ -3306,7 +3306,7 @@ place!(Field::<[i128; 8]>(Variant(_32, 1), 0)) = [_107.fld1,_53.fld1,_53.fld1,_1
 _29 = (_125.0.1.0, _16.0.1.1, _15.0);
 place!(Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_48.fld2, 0), 1)) = (_119.fld6,);
 place!(Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_69, 3), 1)).0 = (_56.0.0, _119.fld2, _119.fld6.2);
-Call(place!(Field::<u8>(Variant(_67.fld1, 0), 0)) = core::intrinsics::transmute(_33.0.1.0), bb99, UnwindUnreachable())
+Call(place!(Field::<u8>(Variant(_67.fld1, 0), 0)) = core::intrinsics::transmute(_33.0.1.0), ReturnTo(bb99), UnwindUnreachable())
 }
 bb103 = {
 _42 = -_29.2;
@@ -3702,7 +3702,7 @@ _6.2 = [_6.1,_6.1,_6.1,_6.1,_6.1,_6.1,_6.1];
 _8.1 = 17739644206959733562_u64;
 _1 = !_6.0.1.1;
 place!(Field::<[u128; 7]>(Variant(_3, 2), 0)) = [211270479748329600991173982702814270893_u128,195457714103652924615933007835172428753_u128,271338306660170066895839084855728571982_u128,324591944844951741229432163533993348068_u128,214734671223276033146567645677843474803_u128,38242354490841401207694578926733575930_u128,79949884034302239922263079546097125951_u128];
-Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), bb2, UnwindUnreachable())
+Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), ReturnTo(bb2), UnwindUnreachable())
 }
 bb118 = {
 SetDiscriminant(_69, 3);
@@ -3757,7 +3757,7 @@ _6.2 = [_6.1,_6.1,_6.1,_6.1,_6.1,_6.1,_6.1];
 _8.1 = 17739644206959733562_u64;
 _1 = !_6.0.1.1;
 place!(Field::<[u128; 7]>(Variant(_3, 2), 0)) = [211270479748329600991173982702814270893_u128,195457714103652924615933007835172428753_u128,271338306660170066895839084855728571982_u128,324591944844951741229432163533993348068_u128,214734671223276033146567645677843474803_u128,38242354490841401207694578926733575930_u128,79949884034302239922263079546097125951_u128];
-Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), bb2, UnwindUnreachable())
+Call(_4 = fn5(_6.0, _7, _6.0, _7, _6.0.0, _6, _6.0), ReturnTo(bb2), UnwindUnreachable())
 }
 bb120 = {
 _19 = !_125.2;
@@ -3811,7 +3811,7 @@ _11 = !1944227100_u32;
 SetDiscriminant(_9, 2);
 _6.0.0 = _14.0.0.0;
 _6.0.0 = _4 * _4;
-Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), bb5, UnwindUnreachable())
+Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), ReturnTo(bb5), UnwindUnreachable())
 }
 bb123 = {
 (*_40) = _56.0.1 & _30.0.1;
@@ -3911,7 +3911,7 @@ Goto(bb130)
 }
 bb130 = {
 _34.1 = _89 as i64;
-Call(_137.1 = fn16(_30.0.0.1, _113.0, Field::<[bool; 6]>(Variant(_128, 1), 3), _165.0.0.1.0, Field::<[isize; 1]>(Variant(_186, 1), 1), _41, _40), bb131, UnwindUnreachable())
+Call(_137.1 = fn16(_30.0.0.1, _113.0, Field::<[bool; 6]>(Variant(_128, 1), 3), _165.0.0.1.0, Field::<[isize; 1]>(Variant(_186, 1), 1), _41, _40), ReturnTo(bb131), UnwindUnreachable())
 }
 bb131 = {
 _181 = _119.fld6.0;
@@ -3973,7 +3973,7 @@ _11 = !1944227100_u32;
 SetDiscriminant(_9, 2);
 _6.0.0 = _14.0.0.0;
 _6.0.0 = _4 * _4;
-Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), bb5, UnwindUnreachable())
+Call(_16.2 = fn6(_7, _14.0.0.1.0, _14, _6.0, _14.0, _14.0.0, _6.0.0), ReturnTo(bb5), UnwindUnreachable())
 }
 bb134 = {
 _16.0.1 = _13;
@@ -4090,7 +4090,7 @@ place!(Field::<u64>(Variant(_32, 0), 6)) = _48.fld0.0 | _91.0;
 _52.1 = !_112.1;
 place!(Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_69, 3), 1)).0.0.1.2 = _96 as f64;
 _119.fld1.0 = (_56.0.0, _119.fld5, Field::<(((u8, (i8, usize, f64)), i32, [i32; 7], f64),)>(Variant(_77, 3), 6).0.2, _42);
-Call(_90.0.0.1.1 = core::intrinsics::transmute(_74), bb81, UnwindUnreachable())
+Call(_90.0.0.1.1 = core::intrinsics::transmute(_74), ReturnTo(bb81), UnwindUnreachable())
 }
 bb140 = {
 _14.0.0.1.2 = Field::<([i8; 7], i64, [bool; 4])>(Variant(_48.fld2, 0), 0).1 as f64;
@@ -4143,7 +4143,7 @@ place!(Field::<u64>(Variant(_32, 0), 6)) = _48.fld0.0 | _91.0;
 _52.1 = !_112.1;
 place!(Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_69, 3), 1)).0.0.1.2 = _96 as f64;
 _119.fld1.0 = (_56.0.0, _119.fld5, Field::<(((u8, (i8, usize, f64)), i32, [i32; 7], f64),)>(Variant(_77, 3), 6).0.2, _42);
-Call(_90.0.0.1.1 = core::intrinsics::transmute(_74), bb81, UnwindUnreachable())
+Call(_90.0.0.1.1 = core::intrinsics::transmute(_74), ReturnTo(bb81), UnwindUnreachable())
 }
 bb142 = {
 _23 = -_30.0.0.1.2;
@@ -4377,7 +4377,7 @@ place!(Field::<([i8; 7], i64, [bool; 4])>(Variant(_170, 1), 4)).1 = _177 | Field
 _79 = [_47.1.0,_30.0.0.1.0,Field::<(((u8, (i8, usize, f64)), i32, [i32; 7], f64),)>(Variant(_102, 3), 6).0.0.1.0,_180.3,Field::<(i64, u16, *const i32, i8)>(Variant(_186, 2), 2).3,_29.0,_110];
 _6.0.1.2 = Field::<(((u8, (i8, usize, f64)), i32, [i32; 7], f64), (bool, u64))>(Variant(_170, 1), 7).0.0.1.0 as f64;
 _125.0 = _119.fld6.0;
-Call(_36 = core::intrinsics::transmute(_30.0.1), bb153, UnwindUnreachable())
+Call(_36 = core::intrinsics::transmute(_30.0.1), ReturnTo(bb153), UnwindUnreachable())
 }
 bb153 = {
 _168.0.0 = (Field::<(u8, (i8, usize, f64))>(Variant(_93, 1), 5).0, Field::<(u8, (i8, usize, f64))>(Variant(_170, 1), 5).1);
@@ -4533,7 +4533,7 @@ _6.0.1.2 = -Field::<(u8, (i8, usize, f64))>(Variant(_207, 1), 1).1.2;
 _130.fld0 = _67.fld0;
 place!(Field::<(((u8, (i8, usize, f64)), i32, [i32; 7], f64),)>(Variant(_77, 3), 6)).0.0.1.2 = _126.0;
 _232 = _53.fld1 as isize;
-Call(_58 = core::intrinsics::transmute(_50), bb159, UnwindUnreachable())
+Call(_58 = core::intrinsics::transmute(_50), ReturnTo(bb159), UnwindUnreachable())
 }
 bb159 = {
 place!(Field::<(i64, u16, *const i32, i8)>(Variant(_93, 2), 2)).3 = Field::<(i8, usize, f64)>(Variant(_182, 3), 4).0;
@@ -4561,7 +4561,7 @@ _195 = !Field::<(((u8, (i8, usize, f64)), u16, isize),)>(Variant(_68, 0), 1).0.2
 (*_17) = !_62;
 _183 = Adt59::Variant2 { fld0: _34,fld1: Field::<Adt50>(Variant(Field::<Adt59>(Variant(_182, 1), 0), 2), 1),fld2: _180 };
 (*_40) = Field::<i32>(Variant(Field::<Adt50>(Variant(_183, 2), 1), 1), 0);
-Call(_226 = fn17(Field::<(i8, usize, f64)>(Variant(_77, 3), 4), _4, _163.0, _67.fld3, _14.0.0.1.0, _30.0.0.1.1, _114, _16.0.1, (*_175), _15.1, Field::<isize>(Variant(_77, 3), 2), (*_197).2, _56, _74, _15, Move(Field::<Adt59>(Variant(_207, 1), 0))), bb160, UnwindUnreachable())
+Call(_226 = fn17(Field::<(i8, usize, f64)>(Variant(_77, 3), 4), _4, _163.0, _67.fld3, _14.0.0.1.0, _30.0.0.1.1, _114, _16.0.1, (*_175), _15.1, Field::<isize>(Variant(_77, 3), 2), (*_197).2, _56, _74, _15, Move(Field::<Adt59>(Variant(_207, 1), 0))), ReturnTo(bb160), UnwindUnreachable())
 }
 bb160 = {
 SetDiscriminant(Field::<Adt51>(Variant(_182, 1), 2), 1);
@@ -4589,46 +4589,46 @@ place!(Field::<i128>(Variant(_182, 1), 7)) = Field::<i128>(Variant(_207, 1), 7) 
 Goto(bb161)
 }
 bb161 = {
-Call(_239 = dump_var(4_usize, 59_usize, Move(_59), 179_usize, Move(_179), 63_usize, Move(_63), 84_usize, Move(_84)), bb162, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 59_usize, Move(_59), 179_usize, Move(_179), 63_usize, Move(_63), 84_usize, Move(_84)), ReturnTo(bb162), UnwindUnreachable())
 }
 bb162 = {
-Call(_239 = dump_var(4_usize, 155_usize, Move(_155), 173_usize, Move(_173), 163_usize, Move(_163), 86_usize, Move(_86)), bb163, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 155_usize, Move(_155), 173_usize, Move(_173), 163_usize, Move(_163), 86_usize, Move(_86)), ReturnTo(bb163), UnwindUnreachable())
 }
 bb163 = {
-Call(_239 = dump_var(4_usize, 212_usize, Move(_212), 124_usize, Move(_124), 41_usize, Move(_41), 140_usize, Move(_140)), bb164, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 212_usize, Move(_212), 124_usize, Move(_124), 41_usize, Move(_41), 140_usize, Move(_140)), ReturnTo(bb164), UnwindUnreachable())
 }
 bb164 = {
-Call(_239 = dump_var(4_usize, 4_usize, Move(_4), 210_usize, Move(_210), 187_usize, Move(_187), 1_usize, Move(_1)), bb165, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 4_usize, Move(_4), 210_usize, Move(_210), 187_usize, Move(_187), 1_usize, Move(_1)), ReturnTo(bb165), UnwindUnreachable())
 }
 bb165 = {
-Call(_239 = dump_var(4_usize, 196_usize, Move(_196), 114_usize, Move(_114), 82_usize, Move(_82), 27_usize, Move(_27)), bb166, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 196_usize, Move(_196), 114_usize, Move(_114), 82_usize, Move(_82), 27_usize, Move(_27)), ReturnTo(bb166), UnwindUnreachable())
 }
 bb166 = {
-Call(_239 = dump_var(4_usize, 120_usize, Move(_120), 34_usize, Move(_34), 94_usize, Move(_94), 79_usize, Move(_79)), bb167, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 120_usize, Move(_120), 34_usize, Move(_34), 94_usize, Move(_94), 79_usize, Move(_79)), ReturnTo(bb167), UnwindUnreachable())
 }
 bb167 = {
-Call(_239 = dump_var(4_usize, 162_usize, Move(_162), 152_usize, Move(_152), 8_usize, Move(_8), 2_usize, Move(_2)), bb168, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 162_usize, Move(_162), 152_usize, Move(_152), 8_usize, Move(_8), 2_usize, Move(_2)), ReturnTo(bb168), UnwindUnreachable())
 }
 bb168 = {
-Call(_239 = dump_var(4_usize, 223_usize, Move(_223), 118_usize, Move(_118), 80_usize, Move(_80), 88_usize, Move(_88)), bb169, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 223_usize, Move(_223), 118_usize, Move(_118), 80_usize, Move(_80), 88_usize, Move(_88)), ReturnTo(bb169), UnwindUnreachable())
 }
 bb169 = {
-Call(_239 = dump_var(4_usize, 97_usize, Move(_97), 122_usize, Move(_122), 73_usize, Move(_73), 110_usize, Move(_110)), bb170, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 97_usize, Move(_97), 122_usize, Move(_122), 73_usize, Move(_73), 110_usize, Move(_110)), ReturnTo(bb170), UnwindUnreachable())
 }
 bb170 = {
-Call(_239 = dump_var(4_usize, 184_usize, Move(_184), 111_usize, Move(_111), 166_usize, Move(_166), 208_usize, Move(_208)), bb171, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 184_usize, Move(_184), 111_usize, Move(_111), 166_usize, Move(_166), 208_usize, Move(_208)), ReturnTo(bb171), UnwindUnreachable())
 }
 bb171 = {
-Call(_239 = dump_var(4_usize, 147_usize, Move(_147), 12_usize, Move(_12), 74_usize, Move(_74), 11_usize, Move(_11)), bb172, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 147_usize, Move(_147), 12_usize, Move(_12), 74_usize, Move(_74), 11_usize, Move(_11)), ReturnTo(bb172), UnwindUnreachable())
 }
 bb172 = {
-Call(_239 = dump_var(4_usize, 153_usize, Move(_153), 109_usize, Move(_109), 144_usize, Move(_144), 172_usize, Move(_172)), bb173, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 153_usize, Move(_153), 109_usize, Move(_109), 144_usize, Move(_144), 172_usize, Move(_172)), ReturnTo(bb173), UnwindUnreachable())
 }
 bb173 = {
-Call(_239 = dump_var(4_usize, 54_usize, Move(_54), 232_usize, Move(_232), 100_usize, Move(_100), 26_usize, Move(_26)), bb174, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 54_usize, Move(_54), 232_usize, Move(_232), 100_usize, Move(_100), 26_usize, Move(_26)), ReturnTo(bb174), UnwindUnreachable())
 }
 bb174 = {
-Call(_239 = dump_var(4_usize, 43_usize, Move(_43), 64_usize, Move(_64), 89_usize, Move(_89), 240_usize, _240), bb175, UnwindUnreachable())
+Call(_239 = dump_var(4_usize, 43_usize, Move(_43), 64_usize, Move(_64), 89_usize, Move(_89), 240_usize, _240), ReturnTo(bb175), UnwindUnreachable())
 }
 bb175 = {
 Return()
@@ -4709,7 +4709,7 @@ _4 = _5;
 Goto(bb10)
 }
 bb10 = {
-Call(_11 = dump_var(5_usize, 5_usize, Move(_5), 2_usize, Move(_2), 12_usize, _12, 12_usize, _12), bb11, UnwindUnreachable())
+Call(_11 = dump_var(5_usize, 5_usize, Move(_5), 2_usize, Move(_2), 12_usize, _12, 12_usize, _12), ReturnTo(bb11), UnwindUnreachable())
 }
 bb11 = {
 Return()
@@ -4754,7 +4754,7 @@ _6 = _5.0;
 _3.0.0.1.1 = !_6.1.1;
 _3.0.0 = (_5.0.0, _4.1);
 _8 = [false,true,true,true,false,true];
-Call(_6.1.0 = fn7(_4.1, _4.1.0, _3.0.0, _3.0.0.1.0), bb1, UnwindUnreachable())
+Call(_6.1.0 = fn7(_4.1, _4.1.0, _3.0.0, _3.0.0.1.0), ReturnTo(bb1), UnwindUnreachable())
 }
 bb1 = {
 _5.3 = -_5.0.1.2;
@@ -4779,7 +4779,7 @@ _5.0.1.0 = !_6.1.0;
 _12 = _13 | _13;
 _4.1.2 = _3.0.0.1.2 + _5.3;
 _4.1.2 = -_3.0.3;
-Call(_3.0.0 = fn8(_12, _5, _5.0, _5.0.1.0, _12, _12), bb2, UnwindUnreachable())
+Call(_3.0.0 = fn8(_12, _5, _5.0, _5.0.1.0, _12, _12), ReturnTo(bb2), UnwindUnreachable())
 }
 bb2 = {
 _7 = (-5869433370664129824_i64) as u8;
@@ -4814,7 +4814,7 @@ _3.0.0.1.1 = _5.1 as usize;
 Goto(bb3)
 }
 bb3 = {
-Call(_19 = dump_var(6_usize, 7_usize, Move(_7), 15_usize, Move(_15), 1_usize, Move(_1), 16_usize, Move(_16)), bb4, UnwindUnreachable())
+Call(_19 = dump_var(6_usize, 7_usize, Move(_7), 15_usize, Move(_15), 1_usize, Move(_1), 16_usize, Move(_16)), ReturnTo(bb4), UnwindUnreachable())
 }
 bb4 = {
 Return()
@@ -4841,7 +4841,7 @@ _6 = (-8301937464849592095_i64) | (-912250594596117213_i64);
 Goto(bb1)
 }
 bb1 = {
-Call(_7 = dump_var(7_usize, 2_usize, Move(_2), 8_usize, _8, 8_usize, _8, 8_usize, _8), bb2, UnwindUnreachable())
+Call(_7 = dump_var(7_usize, 2_usize, Move(_2), 8_usize, _8, 8_usize, _8, 8_usize, _8), ReturnTo(bb2), UnwindUnreachable())
 }
 bb2 = {
 Return()
@@ -4860,7 +4860,7 @@ RET = (_3.0, _3.1);
 Goto(bb1)
 }
 bb1 = {
-Call(_7 = dump_var(8_usize, 5_usize, Move(_5), 4_usize, Move(_4), 8_usize, _8, 8_usize, _8), bb2, UnwindUnreachable())
+Call(_7 = dump_var(8_usize, 5_usize, Move(_5), 4_usize, Move(_4), 8_usize, _8, 8_usize, _8), ReturnTo(bb2), UnwindUnreachable())
 }
 bb2 = {
 Return()
@@ -4894,14 +4894,14 @@ RET.0 = (_3.0.0.0, _3.0.0.1);
 _3.0.0.0 = RET.0.0 << _5;
 _3.0.0 = (RET.0.0, RET.0.1);
 RET.1 = _3.0.1 >> _3.0.1;
-Call(_3.0.3 = core::intrinsics::fmaf64(_7.0, RET.3, RET.0.1.2), bb1, UnwindUnreachable())
+Call(_3.0.3 = core::intrinsics::fmaf64(_7.0, RET.3, RET.0.1.2), ReturnTo(bb1), UnwindUnreachable())
 }
 bb1 = {
 RET.2 = [RET.1,_3.0.1,_3.0.1,RET.1,RET.1,_3.0.1,RET.1];
 Goto(bb2)
 }
 bb2 = {
-Call(_16 = dump_var(9_usize, 6_usize, Move(_6), 4_usize, Move(_4), 5_usize, Move(_5), 17_usize, _17), bb3, UnwindUnreachable())
+Call(_16 = dump_var(9_usize, 6_usize, Move(_6), 4_usize, Move(_4), 5_usize, Move(_5), 17_usize, _17), ReturnTo(bb3), UnwindUnreachable())
 }
 bb3 = {
 Return()
@@ -4936,7 +4936,7 @@ _15.fld0.0 = _10.2;
 Goto(bb1)
 }
 bb1 = {
-Call(_16 = dump_var(10_usize, 9_usize, Move(_9), 2_usize, Move(_2), 17_usize, _17, 17_usize, _17), bb2, UnwindUnreachable())
+Call(_16 = dump_var(10_usize, 9_usize, Move(_9), 2_usize, Move(_2), 17_usize, _17, 17_usize, _17), ReturnTo(bb2), UnwindUnreachable())
 }
 bb2 = {
 Return()
@@ -4994,7 +4994,7 @@ RET = core::ptr::addr_of!(_11.1);
 _15.fld6.0.1.0 = -_12.0;
 _15.fld1.0.0.1 = _12;
 _15.fld6.2 = -9223372036854775807_isize;
-Call((*RET) = fn12(_15.fld1.0.0.1.0, _3, _15.fld1.0.0.1.2, _11.0.1.2, _12.0, _1.1.0, _7, _10, _12, _7.1.0, _5.0.0, _7.0, _5.0.1, _9, _9), bb1, UnwindUnreachable())
+Call((*RET) = fn12(_15.fld1.0.0.1.0, _3, _15.fld1.0.0.1.2, _11.0.1.2, _12.0, _1.1.0, _7, _10, _12, _7.1.0, _5.0.0, _7.0, _5.0.1, _9, _9), ReturnTo(bb1), UnwindUnreachable())
 }
 bb1 = {
 _9 = _12.2 + _1.1.2;
@@ -5018,7 +5018,7 @@ _5.0.1 = (_12.0, _7.1.1, _10);
 _1.0 = _11.0.0;
 _11.0.0 = _13;
 RET = core::ptr::addr_of!((*RET));
-Call(_14 = core::intrinsics::bswap(_15.fld6.1), bb2, UnwindUnreachable())
+Call(_14 = core::intrinsics::bswap(_15.fld6.1), ReturnTo(bb2), UnwindUnreachable())
 }
 bb2 = {
 _11.0.1 = _1.1;
@@ -5070,7 +5070,7 @@ _5.0.1 = (_12.0, _7.1.1, _10);
 _1.0 = _11.0.0;
 _11.0.0 = _13;
 RET = core::ptr::addr_of!((*RET));
-Call(_14 = core::intrinsics::bswap(_15.fld6.1), bb2, UnwindUnreachable())
+Call(_14 = core::intrinsics::bswap(_15.fld6.1), ReturnTo(bb2), UnwindUnreachable())
 }
 bb4 = {
 Return()
@@ -5165,7 +5165,7 @@ _24.fld0 = [_15.fld1.1.1,_15.fld1.1.1,_21,_21,_21,_15.fld1.1.1];
 _15.fld1.0.0 = (_2, _12);
 _15.fld7 = core::ptr::addr_of!((*RET));
 _35 = _5.0.1.0;
-Call(_15.fld2 = core::intrinsics::bswap(_15.fld6.1), bb14, UnwindUnreachable())
+Call(_15.fld2 = core::intrinsics::bswap(_15.fld6.1), ReturnTo(bb14), UnwindUnreachable())
 }
 bb14 = {
 _36.1 = _15.fld1.1.0 as i32;
@@ -5192,10 +5192,10 @@ _15.fld6.0.1 = _1.1;
 Goto(bb15)
 }
 bb15 = {
-Call(_40 = dump_var(11_usize, 20_usize, Move(_20), 3_usize, Move(_3), 31_usize, Move(_31), 4_usize, Move(_4)), bb16, UnwindUnreachable())
+Call(_40 = dump_var(11_usize, 20_usize, Move(_20), 3_usize, Move(_3), 31_usize, Move(_31), 4_usize, Move(_4)), ReturnTo(bb16), UnwindUnreachable())
 }
 bb16 = {
-Call(_40 = dump_var(11_usize, 21_usize, Move(_21), 14_usize, Move(_14), 18_usize, Move(_18), 2_usize, Move(_2)), bb17, UnwindUnreachable())
+Call(_40 = dump_var(11_usize, 21_usize, Move(_21), 14_usize, Move(_14), 18_usize, Move(_18), 2_usize, Move(_2)), ReturnTo(bb17), UnwindUnreachable())
 }
 bb17 = {
 Return()
@@ -5296,7 +5296,7 @@ _21.1 = _19.0;
 _7.1 = (_25.0, _2, _8);
 _20 = '\u{b929b}';
 _9 = (_13.0, _16.0.1.1, _4);
-Call(_9.0 = fn13(_1, _7.1.1, _25.2, _15, _15, _15, _6), bb3, UnwindUnreachable())
+Call(_9.0 = fn13(_1, _7.1.1, _25.2, _15, _15, _15, _6), ReturnTo(bb3), UnwindUnreachable())
 }
 bb3 = {
 _9.1 = _16.0.1.1 << _2;
@@ -5334,7 +5334,7 @@ _19.0 = 146459982806395026503887893330374871140_i128 as u64;
 _37 = _30 | _30;
 _13 = (_25.0, _16.0.1.1, _16.0.1.2);
 _38 = _37 << _12;
-Call(_34.fld0.3 = fn14(_9.1, _12, _1, _16.3, _7.1.0, _30, _30), bb6, UnwindUnreachable())
+Call(_34.fld0.3 = fn14(_9.1, _12, _1, _16.3, _7.1.0, _30, _30), ReturnTo(bb6), UnwindUnreachable())
 }
 bb6 = {
 _4 = (-23971613097504706378262881431947900522_i128) as f64;
@@ -5421,7 +5421,7 @@ _19.0 = 146459982806395026503887893330374871140_i128 as u64;
 _37 = _30 | _30;
 _13 = (_25.0, _16.0.1.1, _16.0.1.2);
 _38 = _37 << _12;
-Call(_34.fld0.3 = fn14(_9.1, _12, _1, _16.3, _7.1.0, _30, _30), bb6, UnwindUnreachable())
+Call(_34.fld0.3 = fn14(_9.1, _12, _1, _16.3, _7.1.0, _30, _30), ReturnTo(bb6), UnwindUnreachable())
 }
 bb12 = {
 _40.0.0 = _1 as u8;
@@ -5474,7 +5474,7 @@ _19.0 = 146459982806395026503887893330374871140_i128 as u64;
 _37 = _30 | _30;
 _13 = (_25.0, _16.0.1.1, _16.0.1.2);
 _38 = _37 << _12;
-Call(_34.fld0.3 = fn14(_9.1, _12, _1, _16.3, _7.1.0, _30, _30), bb6, UnwindUnreachable())
+Call(_34.fld0.3 = fn14(_9.1, _12, _1, _16.3, _7.1.0, _30, _30), ReturnTo(bb6), UnwindUnreachable())
 }
 bb16 = {
 _9.1 = _16.0.1.1 << _2;
@@ -5492,7 +5492,7 @@ _19.0 = 146459982806395026503887893330374871140_i128 as u64;
 _37 = _30 | _30;
 _13 = (_25.0, _16.0.1.1, _16.0.1.2);
 _38 = _37 << _12;
-Call(_34.fld0.3 = fn14(_9.1, _12, _1, _16.3, _7.1.0, _30, _30), bb6, UnwindUnreachable())
+Call(_34.fld0.3 = fn14(_9.1, _12, _1, _16.3, _7.1.0, _30, _30), ReturnTo(bb6), UnwindUnreachable())
 }
 bb18 = {
 _47.fld1 = (_16, _21);
@@ -5518,13 +5518,13 @@ _16.0.1.1 = _47.fld1.1.1 as usize;
 Goto(bb19)
 }
 bb19 = {
-Call(_58 = dump_var(12_usize, 30_usize, Move(_30), 29_usize, Move(_29), 21_usize, Move(_21), 26_usize, Move(_26)), bb20, UnwindUnreachable())
+Call(_58 = dump_var(12_usize, 30_usize, Move(_30), 29_usize, Move(_29), 21_usize, Move(_21), 26_usize, Move(_26)), ReturnTo(bb20), UnwindUnreachable())
 }
 bb20 = {
-Call(_58 = dump_var(12_usize, 23_usize, Move(_23), 41_usize, Move(_41), 38_usize, Move(_38), 32_usize, Move(_32)), bb21, UnwindUnreachable())
+Call(_58 = dump_var(12_usize, 23_usize, Move(_23), 41_usize, Move(_41), 38_usize, Move(_38), 32_usize, Move(_32)), ReturnTo(bb21), UnwindUnreachable())
 }
 bb21 = {
-Call(_58 = dump_var(12_usize, 20_usize, Move(_20), 51_usize, Move(_51), 19_usize, Move(_19), 11_usize, Move(_11)), bb22, UnwindUnreachable())
+Call(_58 = dump_var(12_usize, 20_usize, Move(_20), 51_usize, Move(_51), 19_usize, Move(_19), 11_usize, Move(_11)), ReturnTo(bb22), UnwindUnreachable())
 }
 bb22 = {
 Return()
@@ -5554,7 +5554,7 @@ bb1 = {
 RET = 113_u8 as i8;
 RET = 144854234551015930223781041358627064116_i128 as i8;
 _4 = -_5;
-Call(_4 = core::intrinsics::fmaf64(_6, _3, _3), bb2, UnwindUnreachable())
+Call(_4 = core::intrinsics::fmaf64(_6, _3, _3), ReturnTo(bb2), UnwindUnreachable())
 }
 bb2 = {
 _4 = _3;
@@ -5592,7 +5592,7 @@ _6 = _4;
 Goto(bb4)
 }
 bb4 = {
-Call(_14 = dump_var(13_usize, 1_usize, Move(_1), 7_usize, Move(_7), 15_usize, _15, 15_usize, _15), bb5, UnwindUnreachable())
+Call(_14 = dump_var(13_usize, 1_usize, Move(_1), 7_usize, Move(_7), 15_usize, _15, 15_usize, _15), ReturnTo(bb5), UnwindUnreachable())
 }
 bb5 = {
 Return()
@@ -5631,7 +5631,7 @@ _10 = ((-15237_i16),);
 Goto(bb1)
 }
 bb1 = {
-Call(_11 = dump_var(14_usize, 1_usize, Move(_1), 7_usize, Move(_7), 10_usize, Move(_10), 6_usize, Move(_6)), bb2, UnwindUnreachable())
+Call(_11 = dump_var(14_usize, 1_usize, Move(_1), 7_usize, Move(_7), 10_usize, Move(_10), 6_usize, Move(_6)), ReturnTo(bb2), UnwindUnreachable())
 }
 bb2 = {
 Return()
@@ -5660,7 +5660,7 @@ _6 = (_5, 1_usize, _7);
 Goto(bb1)
 }
 bb1 = {
-Call(_10 = dump_var(15_usize, 5_usize, Move(_5), 4_usize, Move(_4), 11_usize, _11, 11_usize, _11), bb2, UnwindUnreachable())
+Call(_10 = dump_var(15_usize, 5_usize, Move(_5), 4_usize, Move(_4), 11_usize, _11, 11_usize, _11), ReturnTo(bb2), UnwindUnreachable())
 }
 bb2 = {
 Return()
@@ -5760,7 +5760,7 @@ _1.2 = _1.0 as f64;
 Goto(bb11)
 }
 bb11 = {
-Call(_15 = dump_var(16_usize, 6_usize, Move(_6), 4_usize, Move(_4), 2_usize, Move(_2), 16_usize, _16), bb12, UnwindUnreachable())
+Call(_15 = dump_var(16_usize, 6_usize, Move(_6), 4_usize, Move(_4), 2_usize, Move(_2), 16_usize, _16), ReturnTo(bb12), UnwindUnreachable())
 }
 bb12 = {
 Return()
@@ -5831,10 +5831,10 @@ RET = [_13.0.1,_13.0.1,_13.0.1,_13.0.1,_13.0.1,_13.0.1,_13.0.1];
 Goto(bb2)
 }
 bb2 = {
-Call(_25 = dump_var(17_usize, 7_usize, Move(_7), 9_usize, Move(_9), 12_usize, Move(_12), 17_usize, Move(_17)), bb3, UnwindUnreachable())
+Call(_25 = dump_var(17_usize, 7_usize, Move(_7), 9_usize, Move(_9), 12_usize, Move(_12), 17_usize, Move(_17)), ReturnTo(bb3), UnwindUnreachable())
 }
 bb3 = {
-Call(_25 = dump_var(17_usize, 14_usize, Move(_14), 6_usize, Move(_6), 26_usize, _26, 26_usize, _26), bb4, UnwindUnreachable())
+Call(_25 = dump_var(17_usize, 14_usize, Move(_14), 6_usize, Move(_6), 26_usize, _26, 26_usize, _26), ReturnTo(bb4), UnwindUnreachable())
 }
 bb4 = {
 Return()
@@ -5868,7 +5868,7 @@ _3.0 = _5.1.0 | _5.1.0;
 Goto(bb1)
 }
 bb1 = {
-Call(_7 = dump_var(18_usize, 2_usize, Move(_2), 8_usize, _8, 8_usize, _8, 8_usize, _8), bb2, UnwindUnreachable())
+Call(_7 = dump_var(18_usize, 2_usize, Move(_2), 8_usize, _8, 8_usize, _8, 8_usize, _8), ReturnTo(bb2), UnwindUnreachable())
 }
 bb2 = {
 Return()
@@ -5958,7 +5958,7 @@ _9.0 = -_6;
 Goto(bb10)
 }
 bb10 = {
-Call(_17 = dump_var(19_usize, 11_usize, Move(_11), 1_usize, Move(_1), 18_usize, _18, 18_usize, _18), bb11, UnwindUnreachable())
+Call(_17 = dump_var(19_usize, 11_usize, Move(_11), 1_usize, Move(_1), 18_usize, _18, 18_usize, _18), ReturnTo(bb11), UnwindUnreachable())
 }
 bb11 = {
 Return()
