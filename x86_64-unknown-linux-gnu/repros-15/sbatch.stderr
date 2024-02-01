@@ -1,0 +1,330 @@
+Fuzzing on 052a29d9793e182183b13add31c4b9190d593da9
+warning: unused import: `warn`
+  --> difftest/src/main.rs:12:31
+   |
+12 | use log::{debug, error, info, warn};
+   |                               ^^^^
+   |
+   = note: `#[warn(unused_imports)]` on by default
+
+warning: methods `generate_storage_live`, `generate_storage_dead`, and `generate_deinit` are never used
+   --> generate/src/generation/mod.rs:475:8
+    |
+440 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+475 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+485 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+495 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: method `make_choice_mut` is never used
+    --> generate/src/generation/mod.rs:1127:8
+     |
+1047 | impl GenerationCtx {
+     | ------------------ method in this implementation
+...
+1127 |     fn make_choice_mut<T, F, R>(
+     |        ^^^^^^^^^^^^^^^
+
+warning: method `size` is never used
+  --> generate/src/mem/mod.rs:45:12
+   |
+39 | impl Run {
+   | -------- method in this implementation
+...
+45 |     pub fn size(&self) -> Size {
+   |            ^^^^
+
+warning: method `same_run` is never used
+  --> generate/src/mem/mod.rs:56:12
+   |
+55 | impl RunAndOffset {
+   | ----------------- method in this implementation
+56 |     pub fn same_run(&self, other: &Self) -> bool {
+   |            ^^^^^^^^
+
+warning: methods `runs_and_sizes` and `run` are never used
+  --> generate/src/mem/mod.rs:77:8
+   |
+76 | impl Allocation {
+   | --------------- methods in this implementation
+77 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+   |        ^^^^^^^^^^^^^^
+...
+83 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run {
+   |        ^^^
+
+warning: method `place_count` is never used
+   --> generate/src/ptable.rs:891:12
+    |
+149 | impl PlaceTable {
+    | --------------- method in this implementation
+...
+891 |     pub fn place_count(&self) -> usize {
+    |            ^^^^^^^^^^^
+
+warning: method `is_local` is never used
+   --> generate/src/ptable.rs:960:12
+    |
+902 | impl PlacePath {
+    | -------------- method in this implementation
+...
+960 |     pub fn is_local(&self) -> bool {
+    |            ^^^^^^^^
+
+warning: `difftest` (bin "difftest") generated 1 warning (run `cargo fix --bin "difftest"` to apply 1 suggestion)
+warning: `generate` (bin "generate") generated 7 warnings
+    Finished release [optimized] target(s) in 0.65s
+[2023-12-24T22:25:21Z ERROR difftest] /scratch/tmp.41824356.wangqian/2875610.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 636764786162114047
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 6870844988772321582
+    cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 743267406675107753
+    
+parallel: Warning: No more file handles. 
+parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
+[2023-12-25T12:34:40Z ERROR difftest] /scratch/tmp.41824356.wangqian/3361280.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 14918509913734764719
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 8824700551918186831
+    
+[2023-12-25T19:29:07Z ERROR difftest] /scratch/tmp.41824356.wangqian/3600116.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 14894394333550495682
+    miri-unchecked, cranelift-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 12537760916132351612
+    
+[2023-12-25T21:48:34Z ERROR difftest] /scratch/tmp.41824356.wangqian/3682854.rs didn't pass:
+    llvm-opt-only produced the following output:
+    status: signal: 11 (SIGSEGV)
+    stdout:
+    ================
+    stderr:
+    warning: the feature `custom_mir` is internal to the compiler or standard library
+     --> /scratch/tmp.41824356.wangqian/3682854.rs:2:16
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                ^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+      = note: `#[warn(internal_features)]` on by default
+    
+    warning: the feature `core_intrinsics` is internal to the compiler or standard library
+     --> /scratch/tmp.41824356.wangqian/3682854.rs:2:28
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                            ^^^^^^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+    
+    warning: field `fld2` is never read
+        --> /scratch/tmp.41824356.wangqian/3682854.rs:5659:1
+         |
+    5656 | pub struct Adt59 {
+         |            ----- field in this struct
+    ...
+    5659 | fld2: Adt58,
+         | ^^^^
+         |
+         = note: `Adt59` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+         = note: `#[warn(dead_code)]` on by default
+    
+    warning: field `fld4` is never read
+        --> /scratch/tmp.41824356.wangqian/3682854.rs:5720:1
+         |
+    5715 | pub struct Adt63 {
+         |            ----- field in this struct
+    ...
+    5720 | fld4: Adt58,
+         | ^^^^
+         |
+         = note: `Adt63` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+    
+    error: rustc interrupted by SIGSEGV, printing backtrace
+    
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0xdfb1a3)[0x2b3a2ff731a3]
+    /lib64/libc.so.6(+0x36400)[0x2b3a39d59400]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0x2333681)[0x2b3a314ab681]
+    
+    ### cycle encountered after 3 frames with period 4
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0x233388d)[0x2b3a314ab88d]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0x233388d)[0x2b3a314ab88d]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0x233388d)[0x2b3a314ab88d]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0x233388d)[0x2b3a314ab88d]
+    ### recursed 63 times
+    
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0x233388d)[0x2b3a314ab88d]
+    
+    note: rustc unexpectedly overflowed its stack! this is a bug
+    note: maximum backtrace depth reached, frames may have been lost
+    note: we would appreciate a report at https://github.com/rust-lang/rust
+    ================
+    cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 8012293054177043729
+    llvm-opt produced the following output:
+    status: signal: 11 (SIGSEGV)
+    stdout:
+    ================
+    stderr:
+    warning: the feature `custom_mir` is internal to the compiler or standard library
+     --> /scratch/tmp.41824356.wangqian/3682854.rs:2:16
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                ^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+      = note: `#[warn(internal_features)]` on by default
+    
+    warning: the feature `core_intrinsics` is internal to the compiler or standard library
+     --> /scratch/tmp.41824356.wangqian/3682854.rs:2:28
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                            ^^^^^^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+    
+    warning: field `fld2` is never read
+        --> /scratch/tmp.41824356.wangqian/3682854.rs:5659:1
+         |
+    5656 | pub struct Adt59 {
+         |            ----- field in this struct
+    ...
+    5659 | fld2: Adt58,
+         | ^^^^
+         |
+         = note: `Adt59` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+         = note: `#[warn(dead_code)]` on by default
+    
+    warning: field `fld4` is never read
+        --> /scratch/tmp.41824356.wangqian/3682854.rs:5720:1
+         |
+    5715 | pub struct Adt63 {
+         |            ----- field in this struct
+    ...
+    5720 | fld4: Adt58,
+         | ^^^^
+         |
+         = note: `Adt63` has a derived impl for the trait `Debug`, but this is intentionally ignored during dead code analysis
+    
+    error: rustc interrupted by SIGSEGV, printing backtrace
+    
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0xdfb1a3)[0x2b98a076c1a3]
+    /lib64/libc.so.6(+0x36400)[0x2b98aa552400]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0x2333681)[0x2b98a1ca4681]
+    
+    ### cycle encountered after 3 frames with period 4
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0x233388d)[0x2b98a1ca488d]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0x233388d)[0x2b98a1ca488d]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0x233388d)[0x2b98a1ca488d]
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0x233388d)[0x2b98a1ca488d]
+    ### recursed 63 times
+    
+    /cluster/scratch/wangqian/rust/build/x86_64-unknown-linux-gnu/stage1/bin/../lib/librustc_driver-c6e5f449d1f2b04f.so(+0x233388d)[0x2b98a1ca488d]
+    
+    note: rustc unexpectedly overflowed its stack! this is a bug
+    note: maximum backtrace depth reached, frames may have been lost
+    note: we would appreciate a report at https://github.com/rust-lang/rust
+    ================
+    
+[2023-12-26T04:11:35Z ERROR difftest] /scratch/tmp.41824356.wangqian/3907024.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 13400795521060311854
+    miri-unchecked, cranelift-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 6812278411793844686
+    
+[2023-12-26T12:43:06Z ERROR difftest] /scratch/tmp.41824356.wangqian/4210247.rs didn't pass:
+    cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 17483289144337159301
+    llvm-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 508804876876858909
+    
+[2023-12-26T16:50:39Z ERROR difftest] /scratch/tmp.41824356.wangqian/4362153.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 357967242051813802
+    cranelift-opt-only, llvm-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 17440504471226005123
+    
+slurmstepd: error: _handle_stat_jobacct: Took usec=674380910, which is more than MessageTimeout (40s). The result won't be delivered
+[2023-12-27T00:21:11Z ERROR difftest] /scratch/tmp.41824356.wangqian/4636645.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt-only produced the following output:
+    stdout:
+    hash: 13077107702577020522
+    llvm-opt produced the following output:
+    stdout:
+    hash: 1542740121312763639
+    
+[2023-12-27T13:01:36Z ERROR difftest] /scratch/tmp.41824356.wangqian/5096066.rs didn't pass:
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 6932951716021650972
+    llvm-opt produced the following output:
+    stdout:
+    hash: 15350452179290292781
+    
+slurmstepd: error: _handle_stat_jobacct: Took usec=941216121, which is more than MessageTimeout (40s). The result won't be delivered
+[2023-12-27T19:50:04Z ERROR difftest] /scratch/tmp.41824356.wangqian/5333301.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 7972259343449888734
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 9539679444248682035
+    
+[2023-12-28T08:15:45Z ERROR difftest] /scratch/tmp.41824356.wangqian/5690004.rs didn't pass:
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 14320939983767908091
+    llvm-opt produced the following output:
+    stdout:
+    hash: 6770619579056203994
+    
+[2023-12-28T10:08:01Z ERROR difftest] /scratch/tmp.41824356.wangqian/5734451.rs didn't pass:
+    miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 10608735062511641343
+    llvm-opt, llvm-opt-only produced the following output:
+    stdout:
+    hash: 7941389181962195165
+    
+[2023-12-28T15:15:10Z ERROR difftest] /scratch/tmp.41824356.wangqian/5844498.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 6283215728827351653
+    cranelift-opt-only, llvm-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 17125979934193153980
+    
+[2023-12-29T14:07:21Z ERROR difftest] /scratch/tmp.41824356.wangqian/6251681.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 10021473545093911739
+    llvm-opt, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 3906767412379006315
+    
+slurmstepd: error: *** JOB 41824356 ON eu-g5-033-1 CANCELLED AT 2023-12-29T21:55:51 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 41824356 STEPD TERMINATED ON eu-g5-033-1 AT 2023-12-29T22:01:21 DUE TO JOB NOT ENDING WITH SIGNALS ***
