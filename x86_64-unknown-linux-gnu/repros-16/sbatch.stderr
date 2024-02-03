@@ -1,0 +1,630 @@
+Fuzzing on 3b0c5a7ff4e620c1c41f8c086be198dfca71af75
+warning: methods `generate_storage_live`, `generate_storage_dead`, and `generate_deinit` are never used
+   --> generate/src/generation/mod.rs:491:8
+    |
+456 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+491 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+501 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+511 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: method `make_choice_mut` is never used
+    --> generate/src/generation/mod.rs:1142:8
+     |
+1062 | impl GenerationCtx {
+     | ------------------ method in this implementation
+...
+1142 |     fn make_choice_mut<T, F, R>(
+     |        ^^^^^^^^^^^^^^^
+
+warning: methods `size`, `below`, `first_shared`, and `remove_all_below` are never used
+   --> generate/src/mem/mod.rs:68:12
+    |
+61  | impl Run {
+    | -------- methods in this implementation
+...
+68  |     pub fn size(&self) -> Size {
+    |            ^^^^
+...
+87  |     pub fn below(&self, offset: Size, len: Size, tag: Tag) -> Vec<Tag> {
+    |            ^^^^^
+...
+98  |     pub fn first_shared(&self, offset: Size, len: Size) -> Option<Tag> {
+    |            ^^^^^^^^^^^^
+...
+134 |     pub fn remove_all_below(&mut self, offset: Size, len: Size, tag: Tag) -> Vec<Tag> {
+    |            ^^^^^^^^^^^^^^^^
+
+warning: methods `runs_and_sizes` and `run` are never used
+   --> generate/src/mem/mod.rs:185:8
+    |
+184 | impl Allocation {
+    | --------------- methods in this implementation
+185 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+    |        ^^^^^^^^^^^^^^
+...
+191 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run {
+    |        ^^^
+
+warning: methods `remove_tag`, `remove_tags_below`, and `first_shared` are never used
+   --> generate/src/mem/mod.rs:393:12
+    |
+292 | impl BasicMemory {
+    | ---------------- methods in this implementation
+...
+393 |     pub fn remove_tag(&mut self, tag: Tag) {
+    |            ^^^^^^^^^^
+...
+439 |     pub fn remove_tags_below(&mut self, tag: Tag, run_ptr: RunPointer) -> Vec<Tag> {
+    |            ^^^^^^^^^^^^^^^^^
+...
+466 |     pub fn first_shared(&self, run_ptr: RunPointer) -> Option<Tag> {
+    |            ^^^^^^^^^^^^
+
+warning: method `place_count` is never used
+    --> generate/src/ptable.rs:1014:12
+     |
+170  | impl PlaceTable {
+     | --------------- method in this implementation
+...
+1014 |     pub fn place_count(&self) -> usize {
+     |            ^^^^^^^^^^^
+
+warning: methods `projection_indices` and `is_local` are never used
+    --> generate/src/ptable.rs:1144:12
+     |
+1120 | impl PlacePath {
+     | -------------- methods in this implementation
+...
+1144 |     pub fn projection_indices<'pt>(&'pt self) -> impl Iterator<Item = ProjectionIndex> + 'pt {
+     |            ^^^^^^^^^^^^^^^^^^
+...
+1186 |     pub fn is_local(&self) -> bool {
+     |            ^^^^^^^^
+
+warning: `generate` (bin "generate") generated 7 warnings
+    Finished release [optimized] target(s) in 0.77s
+[2024-02-02T00:37:58Z ERROR difftest] /scratch/tmp.46975205.wangqian/10241.rs didn't pass:
+    cranelift-opt-only, llvm-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 11646034396099718804
+    llvm-opt produced the following output:
+    stdout:
+    hash: 3332510982065064048
+    
+[2024-02-02T00:44:17Z ERROR difftest] /scratch/tmp.46975205.wangqian/15467.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 17337740903334792869
+    llvm-opt produced the following output:
+    stdout:
+    hash: 17186976273460841922
+    
+parallel: Warning: No more file handles. 
+parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
+[2024-02-02T00:57:52Z ERROR difftest] /scratch/tmp.46975205.wangqian/26493.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 17372491779855255217
+    cranelift-opt-only, llvm-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 5066422238639988327
+    
+[2024-02-02T01:22:01Z ERROR difftest] /scratch/tmp.46975205.wangqian/46044.rs didn't pass:
+    cranelift-opt-only, llvm-opt, miri-unchecked produced the following output:
+    stdout:
+    hash: 17360003109578575508
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 9047385251540291424
+    
+[2024-02-02T02:51:06Z ERROR difftest] /scratch/tmp.46975205.wangqian/119844.rs didn't pass:
+    miri-unchecked, llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 8492779247484477860
+    llvm-opt produced the following output:
+    stdout:
+    hash: 13890325393366340243
+    
+[2024-02-02T04:15:56Z ERROR difftest] /scratch/tmp.46975205.wangqian/197148.rs didn't pass:
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 3935213593196472797
+    llvm-opt, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 13925935535868075739
+    
+[2024-02-02T04:29:26Z ERROR difftest] /scratch/tmp.46975205.wangqian/209459.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt-only produced the following output:
+    stdout:
+    hash: 1275771571187483075
+    llvm-opt produced the following output:
+    stdout:
+    hash: 17579485362706986563
+    
+[2024-02-02T05:43:09Z ERROR difftest] /scratch/tmp.46975205.wangqian/276379.rs didn't pass:
+    miri-unchecked, llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 15537897240040831798
+    llvm-opt produced the following output:
+    stdout:
+    hash: 3008204443711951298
+    
+[2024-02-02T05:52:56Z ERROR difftest] /scratch/tmp.46975205.wangqian/285295.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 5369848251530014092
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 6148932884114813328
+    
+[2024-02-02T06:00:31Z ERROR difftest] /scratch/tmp.46975205.wangqian/292212.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 265463563828152994
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 5159745734714401337
+    
+[2024-02-02T07:15:11Z ERROR difftest] /scratch/tmp.46975205.wangqian/360033.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 7599034598856229602
+    miri-unchecked, llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 13708997522602357868
+    
+[2024-02-02T08:22:25Z ERROR difftest] /scratch/tmp.46975205.wangqian/420903.rs didn't pass:
+    cranelift-opt-only, llvm-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 12019324875139432426
+    llvm-opt produced the following output:
+    stdout:
+    hash: 9775221586374916844
+    
+slurmstepd: error: _handle_stat_jobacct: Took usec=198814009, which is more than MessageTimeout (60s). The result won't be delivered
+[2024-02-02T10:18:57Z ERROR difftest] /scratch/tmp.46975205.wangqian/526291.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt-only produced the following output:
+    stdout:
+    hash: 14546348587973979958
+    llvm-opt produced the following output:
+    stdout:
+    hash: 13597433298253690732
+    
+[2024-02-02T11:42:27Z ERROR difftest] /scratch/tmp.46975205.wangqian/602037.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 12426993166638155885
+    llvm-opt produced the following output:
+    stdout:
+    hash: 1544964760886461544
+    
+[2024-02-02T12:01:21Z ERROR difftest] /scratch/tmp.46975205.wangqian/619293.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt-only produced the following output:
+    stdout:
+    hash: 12585305608123582337
+    llvm-opt produced the following output:
+    stdout:
+    hash: 9007789355395790603
+    
+[2024-02-02T12:38:28Z ERROR difftest] /scratch/tmp.46975205.wangqian/653051.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 6951216071243051208
+    llvm-opt produced the following output:
+    stdout:
+    hash: 15671232659014559943
+    
+[2024-02-02T13:42:27Z ERROR difftest] /scratch/tmp.46975205.wangqian/711217.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 10941927344312095070
+    miri-unchecked, llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 5588322881541955529
+    
+[2024-02-02T16:21:58Z ERROR difftest] /scratch/tmp.46975205.wangqian/857964.rs didn't pass:
+    miri-unchecked, llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 15045313933308065422
+    llvm-opt produced the following output:
+    stdout:
+    hash: 2423662116444358513
+    
+[2024-02-02T17:39:47Z ERROR difftest] /scratch/tmp.46975205.wangqian/929244.rs didn't pass:
+    llvm-opt, miri-unchecked, llvm-opt-only produced the following output:
+    stdout:
+    hash: 738152893460364614
+    cranelift-opt-only produced the following output:
+    status: exit status: 101
+    stdout:
+    ================
+    stderr:
+    warning: the feature `custom_mir` is internal to the compiler or standard library
+     --> /scratch/tmp.46975205.wangqian/929244.rs:2:16
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                ^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+      = note: `#[warn(internal_features)]` on by default
+    
+    warning: the feature `core_intrinsics` is internal to the compiler or standard library
+     --> /scratch/tmp.46975205.wangqian/929244.rs:2:28
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                            ^^^^^^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+    
+    warning: mutable reference of mutable static is discouraged
+      --> /scratch/tmp.46975205.wangqian/929244.rs:20:23
+       |
+    20 |             val0.hash(&mut H);
+       |                       ^^^^^^ mutable reference of mutable static
+       |
+       = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+       = note: reference of mutable static is a hard error from 2024 edition
+       = note: mutable statics can be written to by multiple threads: aliasing violations or data races will cause undefined behavior
+       = note: `#[warn(static_mut_ref)]` on by default
+    help: mutable references are dangerous since if there's any other pointer or reference used for that static while the reference lives, that's UB; use `addr_of_mut!` instead to create a raw pointer
+       |
+    20 |             val0.hash(addr_of_mut!(H));
+       |                       ~~~~~~~~~~~~~~~
+    
+    warning: mutable reference of mutable static is discouraged
+      --> /scratch/tmp.46975205.wangqian/929244.rs:21:23
+       |
+    21 |             val1.hash(&mut H);
+       |                       ^^^^^^ mutable reference of mutable static
+       |
+       = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+       = note: reference of mutable static is a hard error from 2024 edition
+       = note: mutable statics can be written to by multiple threads: aliasing violations or data races will cause undefined behavior
+    help: mutable references are dangerous since if there's any other pointer or reference used for that static while the reference lives, that's UB; use `addr_of_mut!` instead to create a raw pointer
+       |
+    21 |             val1.hash(addr_of_mut!(H));
+       |                       ~~~~~~~~~~~~~~~
+    
+    warning: mutable reference of mutable static is discouraged
+      --> /scratch/tmp.46975205.wangqian/929244.rs:22:23
+       |
+    22 |             val2.hash(&mut H);
+       |                       ^^^^^^ mutable reference of mutable static
+       |
+       = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+       = note: reference of mutable static is a hard error from 2024 edition
+       = note: mutable statics can be written to by multiple threads: aliasing violations or data races will cause undefined behavior
+    help: mutable references are dangerous since if there's any other pointer or reference used for that static while the reference lives, that's UB; use `addr_of_mut!` instead to create a raw pointer
+       |
+    22 |             val2.hash(addr_of_mut!(H));
+       |                       ~~~~~~~~~~~~~~~
+    
+    warning: mutable reference of mutable static is discouraged
+      --> /scratch/tmp.46975205.wangqian/929244.rs:23:23
+       |
+    23 |             val3.hash(&mut H);
+       |                       ^^^^^^ mutable reference of mutable static
+       |
+       = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+       = note: reference of mutable static is a hard error from 2024 edition
+       = note: mutable statics can be written to by multiple threads: aliasing violations or data races will cause undefined behavior
+    help: mutable references are dangerous since if there's any other pointer or reference used for that static while the reference lives, that's UB; use `addr_of_mut!` instead to create a raw pointer
+       |
+    23 |             val3.hash(addr_of_mut!(H));
+       |                       ~~~~~~~~~~~~~~~
+    
+    thread '<unnamed>' panicked at /cluster/home/wangqian/.cargo/registry/src/index.crates.io-6f17d22bba15001f/cranelift-codegen-0.104.0/src/machinst/lower.rs:766:21:
+    should be implemented in ISLE: inst = `v669 = smulhi.i8 v171, v171`, type = `Some(types::I8)`
+    stack backtrace:
+       0:     0x2aca71d2ff86 - std::backtrace_rs::backtrace::libunwind::trace::h514ead2753e1782f
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/../../backtrace/src/backtrace/libunwind.rs:104:5
+       1:     0x2aca71d2ff86 - std::backtrace_rs::backtrace::trace_unsynchronized::hbc462e8372651887
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/../../backtrace/src/backtrace/mod.rs:66:5
+       2:     0x2aca71d2ff86 - std::sys_common::backtrace::_print_fmt::he3092ef183bdd613
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/sys_common/backtrace.rs:68:5
+       3:     0x2aca71d2ff86 - <std::sys_common::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::h908f80a389799910
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/sys_common/backtrace.rs:44:22
+       4:     0x2aca71d82880 - core::fmt::rt::Argument::fmt::ha9f3d8b02e25296c
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/core/src/fmt/rt.rs:142:9
+       5:     0x2aca71d82880 - core::fmt::write::hef880bc86bd63d4b
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/core/src/fmt/mod.rs:1120:17
+       6:     0x2aca71d2394f - std::io::Write::write_fmt::h780869503f755b5a
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/io/mod.rs:1810:15
+       7:     0x2aca71d2fd64 - std::sys_common::backtrace::_print::h52cc78326ec17ac5
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/sys_common/backtrace.rs:47:5
+       8:     0x2aca71d2fd64 - std::sys_common::backtrace::print::h44b4c057fd1c7c3f
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/sys_common/backtrace.rs:34:9
+       9:     0x2aca71d32af7 - std::panicking::default_hook::{{closure}}::h99cbf699c09f8685
+      10:     0x2aca71d32859 - std::panicking::default_hook::hbc89d54398681576
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/panicking.rs:292:9
+      11:     0x2aca74bc8cec - std[1d0ea5b5e602c844]::panicking::update_hook::<alloc[d84df3010862da1b]::boxed::Box<rustc_driver_impl[2078f68ece4ea2b8]::install_ice_hook::{closure#0}>>::{closure#0}
+      12:     0x2aca71d33246 - <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call::h99950b3f8a1ddee8
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/alloc/src/boxed.rs:2029:9
+      13:     0x2aca71d33246 - std::panicking::rust_panic_with_hook::he160495ec53b11e6
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/panicking.rs:785:13
+      14:     0x2aca71d32f92 - std::panicking::begin_panic_handler::{{closure}}::ha86f6320ad4cac49
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/panicking.rs:659:13
+      15:     0x2aca71d30486 - std::sys_common::backtrace::__rust_end_short_backtrace::h19c3911246e5b7ea
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/sys_common/backtrace.rs:171:18
+      16:     0x2aca71d32ce4 - rust_begin_unwind
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/panicking.rs:647:5
+      17:     0x2aca71d7ef85 - core::panicking::panic_fmt::hd869deda4756f0c1
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/core/src/panicking.rs:72:14
+      18:     0x2aca8227ade8 - cranelift_codegen::machinst::lower::Lower<I>::lower::hf5680db6e8da6825
+      19:     0x2aca8215dc29 - cranelift_codegen::machinst::compile::compile::h5311fd7207db3d5c
+      20:     0x2aca8221abe5 - <cranelift_codegen::isa::x64::X64Backend as cranelift_codegen::isa::TargetIsa>::compile_function::h590f11e5c6d2c4ff
+      21:     0x2aca8229144b - cranelift_codegen::context::Context::compile_stencil::h96dc3cd783467e94
+      22:     0x2aca82291127 - cranelift_codegen::context::Context::compile_and_emit::h593fc7e7957fe7fc
+      23:     0x2aca820213ba - <cranelift_object::backend::ObjectModule as cranelift_module::module::Module>::define_function_with_control_plane::hc9ac75d45c4de148
+      24:     0x2aca81f6c3b3 - cranelift_module::module::Module::define_function::hb378a4ac6a6da2a5
+      25:     0x2aca81ff727d - rustc_codegen_cranelift::base::compile_fn::he5118887952ffc76
+      26:     0x2aca81fb3d9b - std::sys_common::backtrace::__rust_begin_short_backtrace::h37b57af66c3e318c
+      27:     0x2aca81fb0af4 - core::ops::function::FnOnce::call_once{{vtable.shim}}::hb385e8dc4fe3342d
+      28:     0x2aca71d3c835 - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::hba0b80fd74ce5417
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/alloc/src/boxed.rs:2015:9
+      29:     0x2aca71d3c835 - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::h0ab2d213dcdff51c
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/alloc/src/boxed.rs:2015:9
+      30:     0x2aca71d3c835 - std::sys::pal::unix::thread::Thread::new::thread_start::h7eeca5a8e186b7ad
+                                   at /rustc/e7bbe8ce933123a8e327c79e38bcb790595e6a65/library/std/src/sys/pal/unix/thread.rs:108:17
+      31:     0x2aca78166ea5 - start_thread
+      32:     0x2aca78479b0d - clone
+      33:                0x0 - <unknown>
+    
+    error: the compiler unexpectedly panicked. this is a bug.
+    
+    note: using internal features is not supported and expected to cause internal compiler errors when used incorrectly
+    
+    note: please attach the file at `/cluster/home/wangqian/rustlantis/rustc-ice-2024-02-02T17_39_42-75191.txt` to your bug report
+    
+    note: compiler flags: -C panic=abort -Z panic-abort-tests -Z codegen-backend=/cluster/home/wangqian/rustc_codegen_cranelift/dist/lib/librustc_codegen_cranelift.so -C opt-level=3 -Z mir-opt-level=0
+    
+    query stack during panic:
+    end of query stack
+    warning: 6 warnings emitted
+    
+    ================
+    
+[2024-02-02T17:47:32Z ERROR difftest] /scratch/tmp.46975205.wangqian/936393.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 11796687268503135716
+    cranelift-opt-only, miri-unchecked, llvm-opt-only produced the following output:
+    stdout:
+    hash: 83444698464039031
+    
+[2024-02-02T19:04:04Z ERROR difftest] /scratch/tmp.46975205.wangqian/1005777.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt-only produced the following output:
+    stdout:
+    hash: 12605628414627259962
+    llvm-opt produced the following output:
+    stdout:
+    hash: 10279563065629417762
+    
+[2024-02-02T20:35:25Z ERROR difftest] /scratch/tmp.46975205.wangqian/1088424.rs didn't pass:
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 14421839888017950429
+    llvm-opt produced the following output:
+    stdout:
+    hash: 17208435401589102605
+    
+[2024-02-02T20:56:11Z ERROR difftest] /scratch/tmp.46975205.wangqian/1107249.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 15033699743867629499
+    cranelift-opt-only, llvm-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 2421008398084689535
+    
+[2024-02-02T21:49:38Z ERROR difftest] /scratch/tmp.46975205.wangqian/1155820.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 12453716271449016508
+    llvm-opt produced the following output:
+    stdout:
+    hash: 1744385796639956383
+    
+[2024-02-02T22:54:24Z ERROR difftest] /scratch/tmp.46975205.wangqian/1214269.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 14787192224084425262
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 13694926882178026473
+    
+[2024-02-02T22:57:09Z ERROR difftest] /scratch/tmp.46975205.wangqian/1216750.rs didn't pass:
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 11123004721740273465
+    llvm-opt produced the following output:
+    stdout:
+    hash: 15649717529588721452
+    
+[2024-02-02T23:02:59Z ERROR difftest] /scratch/tmp.46975205.wangqian/1221992.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 8536117462200559414
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 18414820299950652690
+    
+[2024-02-02T23:23:46Z ERROR difftest] /scratch/tmp.46975205.wangqian/1240713.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 502451606200339900
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 16146384986486797581
+    
+[2024-02-02T23:31:34Z ERROR difftest] /scratch/tmp.46975205.wangqian/1247715.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 9093782208834820976
+    llvm-opt produced the following output:
+    stdout:
+    hash: 10654710594366198770
+    
+[2024-02-02T23:55:15Z ERROR difftest] /scratch/tmp.46975205.wangqian/1268960.rs didn't pass:
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 13010010322562172131
+    llvm-opt produced the following output:
+    stdout:
+    hash: 16655360771123641803
+    
+[2024-02-03T00:18:30Z ERROR difftest] /scratch/tmp.46975205.wangqian/1289876.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 2326231969699977465
+    llvm-opt produced the following output:
+    stdout:
+    hash: 9668231882829287719
+    
+[2024-02-03T01:08:22Z ERROR difftest] /scratch/tmp.46975205.wangqian/1334829.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 10405674852034560791
+    llvm-opt produced the following output:
+    stdout:
+    hash: 8139218565968372201
+    
+[2024-02-03T01:10:07Z ERROR difftest] /scratch/tmp.46975205.wangqian/1336421.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 5639251725556880783
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 11865692218885410080
+    
+[2024-02-03T01:30:35Z ERROR difftest] /scratch/tmp.46975205.wangqian/1354849.rs didn't pass:
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 10807436196944946873
+    llvm-opt produced the following output:
+    stdout:
+    hash: 9734838914195423525
+    
+[2024-02-03T04:55:28Z ERROR difftest] /scratch/tmp.46975205.wangqian/1538830.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 10863350168872342905
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 5266057735553001147
+    
+[2024-02-03T05:13:02Z ERROR difftest] /scratch/tmp.46975205.wangqian/1554592.rs didn't pass:
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 5245505098950608164
+    llvm-opt produced the following output:
+    stdout:
+    hash: 873744221538004181
+    
+[2024-02-03T05:37:21Z ERROR difftest] /scratch/tmp.46975205.wangqian/1576542.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 15813926811034876463
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 11372223120982083293
+    
+[2024-02-03T05:39:57Z ERROR difftest] /scratch/tmp.46975205.wangqian/1578871.rs didn't pass:
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 11886840398602957043
+    llvm-opt produced the following output:
+    stdout:
+    hash: 4306962525266486968
+    
+[2024-02-03T05:57:51Z ERROR difftest] /scratch/tmp.46975205.wangqian/1595036.rs didn't pass:
+    miri-unchecked, llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 17158775158066956497
+    llvm-opt produced the following output:
+    stdout:
+    hash: 10454385337607845690
+    
+[2024-02-03T06:02:36Z ERROR difftest] /scratch/tmp.46975205.wangqian/1599253.rs didn't pass:
+    llvm-opt-only, miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 13335425293454184739
+    llvm-opt produced the following output:
+    stdout:
+    hash: 10000190244966063515
+    
+[2024-02-03T07:07:53Z ERROR difftest] /scratch/tmp.46975205.wangqian/1657907.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 10376292859608210799
+    miri-unchecked, llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 9477962315595543928
+    
+[2024-02-03T07:42:48Z ERROR difftest] /scratch/tmp.46975205.wangqian/1689279.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 5174477540986148687
+    cranelift-opt-only, llvm-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 1164365816643456184
+    
+[2024-02-03T07:51:08Z ERROR difftest] /scratch/tmp.46975205.wangqian/1696785.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 13537943817350395404
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 17946889082772151423
+    
+[2024-02-03T08:06:14Z ERROR difftest] /scratch/tmp.46975205.wangqian/1710338.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 8292087179093874403
+    miri-unchecked, cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 15446938265750779399
+    
+[2024-02-03T08:14:16Z ERROR difftest] /scratch/tmp.46975205.wangqian/1717541.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 18087704276894164155
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 6072753170705229096
+    
+[2024-02-03T08:57:20Z ERROR difftest] /scratch/tmp.46975205.wangqian/1756033.rs didn't pass:
+    cranelift-opt-only, llvm-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 7966716338418146625
+    llvm-opt produced the following output:
+    stdout:
+    hash: 14186461337661420893
+    
+[2024-02-03T09:18:05Z ERROR difftest] /scratch/tmp.46975205.wangqian/1774629.rs didn't pass:
+    llvm-opt-only, cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 4189563643554072895
+    llvm-opt produced the following output:
+    stdout:
+    hash: 7414758563024533062
+    
+[2024-02-03T10:54:27Z ERROR difftest] /scratch/tmp.46975205.wangqian/1860770.rs didn't pass:
+    cranelift-opt-only, miri-unchecked, llvm-opt-only produced the following output:
+    stdout:
+    hash: 6110249698026020334
+    llvm-opt produced the following output:
+    stdout:
+    hash: 18104927851860617246
+    
+slurmstepd: error: *** JOB 46975205 ON eu-a2p-386 CANCELLED AT 2024-02-03T12:49:24 ***
+slurmstepd: error: _handle_stat_jobacct: Took usec=502465104, which is more than MessageTimeout (60s). The result won't be delivered
+slurmstepd: error: *** JOB 46975205 STEPD TERMINATED ON eu-a2p-386 AT 2024-02-03T12:54:54 DUE TO JOB NOT ENDING WITH SIGNALS ***
