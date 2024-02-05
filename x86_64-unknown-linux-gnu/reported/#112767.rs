@@ -1,4 +1,4 @@
-#![recursion_limit = "256"]
+#![recursion_limit = "1024"]
     #![feature(custom_mir, core_intrinsics, const_hash)]
     #![allow(unused_parens, unused_assignments, overflowing_literals)]
     extern crate core;
