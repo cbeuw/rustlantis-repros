@@ -1,7 +1,22 @@
 #!/usr/bin/env bash
-
 set -eu
 
-TRIPLE=$(rustc -vV | sed -n 's|host: ||p')
+export TRIPLE=$(rustc -vV | sed -n 's|host: ||p')
+
 mkdir -p $TRIPLE/solved
-ls $TRIPLE/repros-*/*.rs | xargs -I{} -P4 sh -c 'echo {}; timeout 20 difftest {} 2> /dev/null || exit;  echo "{} solved"; mv {} solved'
+
+check_repo() {
+  timeout 20 difftest $1 2> /dev/null
+  CODE=$?
+  if [ $CODE == 0 ]; then
+    echo "$1 fixed"
+    mv $1 $TRIPLE/solved/
+  elif [ $CODE == 124 ]; then
+    echo "$1 timed out"
+  else
+    echo "$1 still buggy"
+  fi
+}
+
+export -f check_repo
+ls $TRIPLE/repros-*/*.rs | xargs -I{} -P4 bash -c 'check_repo {}'
