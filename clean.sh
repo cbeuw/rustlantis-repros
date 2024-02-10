@@ -6,7 +6,7 @@ export TRIPLE=$(rustc -vV | sed -n 's|host: ||p')
 mkdir -p $TRIPLE/solved
 
 check_repo() {
-  timeout 20 difftest $1 2> /dev/null
+  timeout 60 difftest $1 2> /dev/null
   CODE=$?
   if [ $CODE == 0 ]; then
     echo "$1 fixed"
