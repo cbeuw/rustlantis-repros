@@ -1,0 +1,114 @@
+Fuzzing on b5e0312c119154bc5860e00faf93b3013be1f381
+warning: methods `generate_storage_live`, `generate_storage_dead`, and `generate_deinit` are never used
+   --> generate/src/generation/mod.rs:493:8
+    |
+458 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+493 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+503 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+513 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: method `make_choice_mut` is never used
+    --> generate/src/generation/mod.rs:1163:8
+     |
+1083 | impl GenerationCtx {
+     | ------------------ method in this implementation
+...
+1163 |     fn make_choice_mut<T, F, R>(
+     |        ^^^^^^^^^^^^^^^
+
+warning: methods `size`, `below_first_shared`, and `remove_all_above` are never used
+   --> generate/src/mem/mod.rs:69:12
+    |
+62  | impl Run {
+    | -------- methods in this implementation
+...
+69  |     pub fn size(&self) -> Size {
+    |            ^^^^
+...
+116 |     pub fn below_first_shared(&self, offset: Size, len: Size) -> Vec<Tag> {
+    |            ^^^^^^^^^^^^^^^^^^
+...
+129 |     pub fn remove_all_above(&mut self, offset: Size, len: Size, tag: Tag) -> Vec<Tag> {
+    |            ^^^^^^^^^^^^^^^^
+
+warning: methods `runs_and_sizes` and `run` are never used
+   --> generate/src/mem/mod.rs:225:8
+    |
+224 | impl Allocation {
+    | --------------- methods in this implementation
+225 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+    |        ^^^^^^^^^^^^^^
+...
+231 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run {
+    |        ^^^
+
+warning: method `len` is never used
+   --> generate/src/mem/mod.rs:311:12
+    |
+294 | impl RunPointer {
+    | --------------- method in this implementation
+...
+311 |     pub fn len(&self) -> Size {
+    |            ^^^
+
+warning: methods `remove_tag` and `remove_tags_above` are never used
+   --> generate/src/mem/mod.rs:439:12
+    |
+340 | impl BasicMemory {
+    | ---------------- methods in this implementation
+...
+439 |     pub fn remove_tag(&mut self, tag: Tag) {
+    |            ^^^^^^^^^^
+...
+485 |     pub fn remove_tags_above(&mut self, tag: Tag, run_ptr: RunPointer) -> Vec<Tag> {
+    |            ^^^^^^^^^^^^^^^^^
+
+warning: methods `arguments_ok`, `place_count`, and `will_write_invalidate` are never used
+    --> generate/src/ptable.rs:206:12
+     |
+170  | impl PlaceTable {
+     | --------------- methods in this implementation
+...
+206  |     pub fn arguments_ok(&self, args: &[Operand], return_dest: &Place) -> bool {
+     |            ^^^^^^^^^^^^
+...
+1132 |     pub fn place_count(&self) -> usize {
+     |            ^^^^^^^^^^^
+...
+1137 |     fn will_write_invalidate(&self, dest: RunPointer, tag: Tag) -> bool {
+     |        ^^^^^^^^^^^^^^^^^^^^^
+
+warning: `generate` (bin "generate") generated 7 warnings
+    Finished release [optimized] target(s) in 0.69s
+parallel: Warning: No more file handles. 
+parallel: Warning: Raising ulimit -n or /etc/security/limits.conf may help.
+[2024-03-04T05:28:32Z ERROR difftest] /scratch/tmp.49925326.wangqian/5792280.rs didn't pass:
+    llvm-opt, llvm-opt-only produced the following output:
+    stdout:
+    hash: 15737552855146966403
+    cranelift-opt-only, miri-unchecked produced the following output:
+    stdout:
+    hash: 5945244022710966834
+    
+[2024-03-04T11:23:54Z ERROR difftest] /scratch/tmp.49925326.wangqian/6073875.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 4577928630963054786
+    llvm-opt-only produced the following output:
+    stdout:
+    hash: 15819888496246515171
+    miri-unchecked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 9934964572060016970
+    
+slurmstepd: error: *** JOB 49925326 ON eu-g9-014-4 CANCELLED AT 2024-03-04T17:01:00 DUE TO NODE FAILURE, SEE SLURMCTLD LOG FOR DETAILS ***
+slurmstepd: error: *** JOB 49925326 STEPD TERMINATED ON eu-g9-014-4 AT 2024-03-04T17:06:29 DUE TO JOB NOT ENDING WITH SIGNALS ***
