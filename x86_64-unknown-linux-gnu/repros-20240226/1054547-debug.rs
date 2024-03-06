@@ -278,7 +278,6 @@ bb12 = {
 _4.3.2 = _8;
 _12 = -_9;
 _4.3.0.0 = [_9,_9];
-SetDiscriminant(_4.3.1, 0);
 place!(Field::<Adt30>(Variant(_4.3.1, 0), 4)).fld2 = !8_u8;
 _4.2.0 = _3.0;
 place!(Field::<Adt30>(Variant(_4.3.1, 0), 4)).fld6.0 = _4.3.0.0;
@@ -315,7 +314,6 @@ _4.3 = (_13.3.0, Move(_13.3.1), _8);
 _10 = 72_u8;
 _13.3.2 = Field::<bool>(Variant(_4.3.1, 2), 0) as u32;
 _3.0 = _15.0;
-SetDiscriminant(_4.3.1, 0);
 place!(Field::<(char,)>(Variant(_4.3.1, 0), 0)) = _15;
 place!(Field::<([i16; 2],)>(Variant(_4.3.1, 0), 1)) = _4.3.0;
 place!(Field::<Adt30>(Variant(_4.3.1, 0), 4)).fld6 = (_13.3.0.0,);
@@ -5665,7 +5663,6 @@ _15 = 7159392824043852210_usize << _6[_15];
 _7 = _5;
 (*_1) = !_5;
 RET = _2;
-SetDiscriminant(_22, 0);
 Goto(bb15)
 }
 bb15 = {
