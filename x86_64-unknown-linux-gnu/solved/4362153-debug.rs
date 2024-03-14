@@ -3776,7 +3776,6 @@ place!(Field::<(u64, i8, i16)>(Variant(_105, 1), 6)).1 = !Field::<(u64, i8, i16)
 place!(Field::<((u64, i8, i16), u8)>(Variant(RET, 1), 1)).0.1 = Field::<u16>(Variant(_55, 2), 2) as i8;
 _65 = _33.1;
 _18 = _88;
-SetDiscriminant(Field::<Adt58>(Variant(_105, 1), 1), 2);
 _14 = Field::<((u64, i8, i16), u8)>(Variant(_105, 1), 4).1 as i128;
 match Field::<u128>(Variant(_55, 2), 4) {
 0 => bb37,
@@ -3866,7 +3865,6 @@ place!(Field::<(u64, i8, i16)>(Variant(_55, 1), 2)) = Field::<((u64, i8, i16), u
 _15 = _21 as isize;
 _72 = core::ptr::addr_of_mut!(place!(Field::<Adt50>(Variant(_86, 3), 1)).fld0);
 _115.0 = [_82,_82];
-SetDiscriminant(_59, 0);
 place!(Field::<[u64; 4]>(Variant(place!(Field::<Adt58>(Variant(_105, 1), 1)), 2), 0)) = _67;
 _103.fld0.0 = (_40, _121.0.1, _84);
 place!(Field::<Adt50>(Variant(_86, 3), 1)) = Adt50 { fld0: _53.fld0,fld1: _103.fld0.0.1 };
@@ -4006,7 +4004,6 @@ _14 = -_76;
 SetDiscriminant(_99, 2);
 place!(Field::<Adt58>(Variant(_105, 1), 1)) = Adt58::Variant1 { fld0: (*_72).0.0,fld1: _26,fld2: Field::<((u64, i8, i16), u8)>(Variant(RET, 1), 1),fld3: _4.3 };
 _46 = core::ptr::addr_of_mut!((*_46));
-SetDiscriminant(Field::<Adt58>(Variant(_105, 1), 1), 2);
 _53.fld0 = ((*_72).0, Field::<Adt50>(Variant(_86, 3), 1).fld0.1);
 place!(Field::<((u64, i8, i16), u8)>(Variant(_105, 1), 4)).1 = _75.1.0;
 _53.fld0.0 = (Field::<Adt50>(Variant(_86, 3), 1).fld0.0.0, Field::<Adt50>(Variant(_86, 3), 1).fld0.0.1, _118.1.0);
@@ -4185,7 +4182,6 @@ _22 = Adt63::Variant1 { fld0: _69 };
 _115 = ((*_68).0, (*_72).0.1, (*_94).2);
 place!(Field::<[i32; 8]>(Variant(_99, 2), 4)) = [Field::<i32>(Variant(_93, 0), 5),_20,_29,Field::<i32>(Variant(_93, 0), 5),Field::<i32>(Variant(_93, 0), 5),Field::<i32>(Variant(_36, 2), 5),_20,_29];
 place!(Field::<[i64; 2]>(Variant(place!(Field::<Adt58>(Variant(_105, 1), 1)), 2), 6)) = [Field::<i64>(Variant(_93, 0), 6),Field::<i64>(Variant(_93, 0), 6)];
-SetDiscriminant(_50, 1);
 _81 = _121.0.0;
 _135 = core::ptr::addr_of_mut!(_66);
 _118.2 = Field::<([i32; 3], (u8,), u128, u32)>(Variant(_93, 0), 3).2 | Field::<([i32; 3], (u8,), u128, u32)>(Variant(_93, 0), 3).2;

@@ -3164,7 +3164,6 @@ _45 = _41.2;
 _45 = [(-654743582_i32),(-264778845_i32)];
 _63 = Field::<u16>(Variant(RET, 1), 1);
 _40 = (-19_i8) as f32;
-SetDiscriminant(_12, 0);
 place!(Field::<(*mut [u32; 5], i8)>(Variant(_12, 0), 6)).1 = (-2001_i16) as i8;
 place!(Field::<(*mut [u32; 5], i8)>(Variant(_12, 0), 6)) = (_9, (-29_i8));
 Goto(bb48)
@@ -3828,7 +3827,6 @@ _7 = !_17.0;
 _56 = [_42.fld3.0.1,_45.0.1,_45.0.1];
 _14.1 = [_42.fld3.0.3,_42.fld3.0.3,_45.0.3,_42.fld3.0.3,_45.0.3];
 _42.fld3.0 = (_50, _45.0.1, _23, _42.fld0.2, _32);
-SetDiscriminant(_24, 2);
 _40 = (_20, _29);
 _63 = 9160006681487626306_i64 << _33.1;
 _42.fld2 = (_8, _33.1, _25, _33.3);
@@ -3971,7 +3969,6 @@ place!(Field::<*const *mut [u32; 5]>(Variant(_24, 2), 3)) = core::ptr::addr_of!(
 _32 = _16.fld1 as u128;
 _42.fld1 = Move(_36);
 place!(Field::<(char, u16, [i32; 2], u32, u128)>(Variant(_24, 2), 1)).4 = _12 as u128;
-SetDiscriminant(Field::<Adt51>(Variant(_24, 2), 2), 0);
 match _42.fld3.0.3 {
 0 => bb22,
 1 => bb19,
@@ -4006,12 +4003,10 @@ _64 = _46;
 _42.fld0.3 = core::ptr::addr_of_mut!(_75.1);
 _41 = _12;
 place!(Field::<(char, [u32; 5])>(Variant(_24, 2), 0)) = (Field::<(char, u16, [i32; 2], u32, u128)>(Variant(_24, 2), 1).0, _37);
-SetDiscriminant(_42.fld1, 0);
 place!(Field::<Adt51>(Variant(_24, 2), 2)) = Adt51::Variant2 { fld0: _40,fld1: _17.3,fld2: _40.1 };
 _15 = [_16.fld1,_16.fld1,_16.fld1,_16.fld1];
 place!(Field::<(*mut (u32,),)>(Variant(_24, 2), 5)) = (_55,);
 _46 = Field::<[i8; 7]>(Variant(_24, 2), 6);
-SetDiscriminant(Field::<Adt51>(Variant(_24, 2), 2), 0);
 _73.fld0 = (_16.fld2, _42.fld3.0.4, _42.fld3.0.3, _16.fld2);
 _7 = _42.fld2.0 ^ _42.fld2.0;
 _67.0.2 = _45.0.2;
@@ -4040,7 +4035,6 @@ place!(Field::<([i32; 2], f64)>(Variant(_73.fld1, 2), 0)).1 = _42.fld3.0.3 as f6
 _73.fld2 = (_4, _42.fld2.1, _17.2, _19);
 _73.fld2.2 = -_43;
 _58 = (_45.0.0, Field::<(char, [u32; 5])>(Variant(_24, 2), 0).1);
-SetDiscriminant(_73.fld1, 0);
 Goto(bb50)
 }
 bb50 = {
@@ -4190,7 +4184,6 @@ Goto(bb58)
 bb58 = {
 _42.fld0.0 = _73.fld0.0;
 place!(Field::<(*mut [u32; 5], i8)>(Variant(_42.fld1, 0), 6)).1 = Field::<(*mut [u32; 5], i8)>(Variant(_62, 1), 0).1;
-SetDiscriminant(Field::<Adt46>(Variant(_42.fld1, 0), 0), 2);
 _91.fld3.0.0 = _87.0.0;
 _91.fld3.0.3 = _31.0;
 _81 = -Field::<(bool, u64, f64, f32)>(Variant(_62, 1), 2).2;

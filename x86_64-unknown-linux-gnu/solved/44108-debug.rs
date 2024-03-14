@@ -2250,7 +2250,6 @@ _48 = _30 * _30;
 _72.2 = _66 as u128;
 _41 = _51;
 _69 = [_48,_48,_2,_48,_48,_30,_30];
-SetDiscriminant(_7, 1);
 _3 = _62 * _71;
 _73 = _53;
 place!(Field::<((f32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), u8)>(Variant(_7, 1), 0)).0.0 = -_59;
@@ -2315,7 +2314,6 @@ _21 = _14;
 _24.0 = [_11.0];
 place!(Field::<*mut u128>(Variant(_23, 0), 0)) = core::ptr::addr_of_mut!(_5);
 _44.2.1 = !_39.0.0;
-SetDiscriminant(_7, 1);
 _28.1 = _34.1;
 Goto(bb53)
 }
@@ -2556,7 +2554,6 @@ _94.1.1 = core::ptr::addr_of!(_39);
 _8 = _54 >> _65;
 _94.2 = (*_76) + (*_76);
 _44.0 = _55.0;
-SetDiscriminant(_56, 1);
 _25.3 = _28.0;
 Goto(bb69)
 }
@@ -2727,7 +2724,6 @@ _20.1 = _118.1;
 place!(Field::<f32>(Variant(_110, 0), 4)) = (*_76);
 _140 = _29 | _105;
 _72 = _15;
-SetDiscriminant(_148, 0);
 _132 = -_36;
 _123 = Adt56::Variant3 { fld0: _84.0 };
 _8 = _122;
@@ -2771,7 +2767,6 @@ bb81 = {
 _1 = _39.0.1 + _44.2.0;
 _102 = !_30;
 _7 = Adt52::Variant2 { fld0: Field::<[i16; 3]>(Variant(_123, 0), 5),fld1: _41,fld2: _80,fld3: _34.1,fld4: _94.1.1 };
-SetDiscriminant(_7, 1);
 _11.2.2 = !_84.2.2;
 _57 = _29;
 _25.0 = _39.0.2 as i128;
@@ -3099,7 +3094,6 @@ _160.0 = !_155.1;
 Goto(bb100)
 }
 bb100 = {
-SetDiscriminant(_56, 1);
 _198.1 = _11.0 as i64;
 place!(Field::<i32>(Variant(_23, 0), 3)) = _11.1 & _82;
 _21 = _187.2 as usize;
@@ -3246,7 +3240,6 @@ _132 = _201 - _111;
 _118.1 = [(*_100)];
 _72.0 = _171 as i128;
 _53 = [(*_169),(*_169)];
-SetDiscriminant(_56, 1);
 _74.2 = _21 as i16;
 _198.1 = _98;
 Call(place!(Field::<u64>(Variant(_108, 1), 3)) = core::intrinsics::bswap(Field::<u64>(Variant(_81, 1), 0)), ReturnTo(bb110), UnwindUnreachable())
@@ -3431,7 +3424,6 @@ _185 = Adt52::Variant0 { fld0: _55,fld1: _117,fld2: Field::<((f32, *const ((i128
 _130 = [_48,Field::<u8>(Variant(_108, 1), 2),Field::<u8>(Variant(_108, 1), 2),Field::<u8>(Variant(_148, 1), 2),Field::<u8>(Variant(_108, 1), 2),_48,Field::<u8>(Variant(_148, 1), 2)];
 _205 = _98 as isize;
 _193 = _164;
-SetDiscriminant(_185, 1);
 Goto(bb121)
 }
 bb121 = {
@@ -3785,7 +3777,6 @@ _164 = Field::<(u16, i64, i16)>(Variant(Field::<Adt49>(Variant(_116, 0), 2), 0),
 place!(Field::<Adt53>(Variant(_123, 1), 0)).fld0.2 = _25.2;
 place!(Field::<Adt53>(Variant(_123, 1), 0)).fld1.1 = (_94.1.0, Field::<Adt53>(Variant(_123, 1), 0).fld2.0.1);
 _182 = _301.1 as u128;
-SetDiscriminant(_108, 0);
 SetDiscriminant(_56, 1);
 _172.2 = core::ptr::addr_of_mut!(_282);
 SetDiscriminant(_185, 0);
@@ -3806,7 +3797,6 @@ _333 = core::ptr::addr_of!(_270);
 SetDiscriminant(_189, 3);
 _195 = _283 as isize;
 _274.0 = _211 > Field::<Adt53>(Variant(_131, 1), 1).fld1.2;
-SetDiscriminant(_231, 2);
 Goto(bb142)
 }
 bb142 = {
@@ -3987,7 +3977,6 @@ _239 = !_109;
 place!(Field::<([usize; 2], (u32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), f32, [i16; 2])>(Variant(_335, 2), 2)).2 = _155.2 as f32;
 _210 = Field::<((f32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), u8)>(Variant(_231, 2), 1).0;
 _352.3 = _145;
-SetDiscriminant(Field::<Adt52>(Variant(_108, 0), 3), 1);
 _196.3 = _31;
 _106 = !Field::<u64>(Variant(_110, 0), 2);
 place!(Field::<((f32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), u8)>(Variant(place!(Field::<Adt52>(Variant(_108, 0), 3)), 1), 0)).1 = _89 as u8;
@@ -4304,7 +4293,6 @@ SetDiscriminant(_277, 1);
 Goto(bb178)
 }
 bb178 = {
-SetDiscriminant(_231, 2);
 place!(Field::<*const bool>(Variant(_277, 1), 1)) = core::ptr::addr_of!(_140);
 place!(Field::<([usize; 2], (u32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), f32, [i16; 2])>(Variant(_131, 1), 0)).1.0 = _239;
 _396.2.3 = _63;
@@ -4373,7 +4361,6 @@ _337.2 = (_194.0, _153);
 _401 = _191;
 _303.3 = [_401.2,_234.1];
 _58 = [_214.2,Field::<Adt53>(Variant(_123, 1), 0).fld4,_350];
-SetDiscriminant(_307, 2);
 place!(Field::<i32>(Variant(_231, 2), 5)) = _294 as i32;
 _339.2 = core::ptr::addr_of!(_363);
 _282 = (_229.0.0, _257.0, _107, _15.3);
@@ -4518,7 +4505,6 @@ place!(Field::<Adt53>(Variant(_131, 1), 1)).fld0.2 = !_139.2;
 _254 = _52;
 _435.2 = _39.0.2;
 (*_356) = !_284;
-SetDiscriminant(Field::<Adt52>(Variant(_335, 2), 5), 1);
 place!(Field::<Adt53>(Variant(_131, 1), 1)).fld3 = (_155, Field::<*mut u128>(Variant(_116, 0), 0), Field::<([usize; 2], (u32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), f32, [i16; 2])>(Variant(_131, 1), 0).1.1, Field::<Adt53>(Variant(_123, 1), 0).fld3.3);
 place!(Field::<Adt53>(Variant(_123, 1), 0)).fld3.2 = Field::<Adt53>(Variant(_131, 1), 1).fld2.0.1;
 _24 = Field::<([i8; 1], i16, (u16, i128))>(Variant(_280, 0), 0);
@@ -5043,7 +5029,6 @@ place!(Field::<u64>(Variant(_148, 1), 3)) = !_106;
 place!(Field::<[u128; 8]>(Variant(_147, 0), 1)) = [_242,_5,_259.2,_155.2,_88,_253.2.2,_363.0.2,Field::<u128>(Variant(_108, 0), 0)];
 (*_445).0.2 = _88;
 place!(Field::<(i128, u16, u128, char)>(Variant(place!(Field::<Adt50>(Variant(_123, 0), 2)), 0), 2)) = Field::<Adt53>(Variant(_131, 1), 1).fld3.0;
-SetDiscriminant(_540, 3);
 _529.fld3.0.0 = !_361.1;
 _130 = [Field::<Adt53>(Variant(_131, 1), 1).fld2.1,Field::<((f32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), u8)>(Variant(_231, 2), 1).1,_48,Field::<((f32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), u8)>(Variant(_231, 2), 1).1,_167,_400,_167];
 _280 = Move(_398);
@@ -5072,7 +5057,6 @@ _337.2 = (_470.0, _196.0);
 _388 = -_144;
 _39.2 = core::ptr::addr_of_mut!(_253.2);
 _186 = core::ptr::addr_of_mut!(_87);
-SetDiscriminant(_280, 1);
 place!(Field::<*mut [char; 1]>(Variant(_231, 2), 2)) = core::ptr::addr_of_mut!(_403);
 place!(Field::<[i16; 3]>(Variant(_56, 2), 0)) = [_163,_298.1,_122];
 _405 = core::ptr::addr_of!(_24.2);
@@ -5607,7 +5591,6 @@ _365 = Field::<Adt53>(Variant(_131, 1), 1).fld3;
 SetDiscriminant(Field::<Adt52>(Variant(_469, 2), 5), 3);
 _164.0 = _581 as u16;
 _529.fld1.1.0 = _97 & Field::<([usize; 2], (u32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), f32, [i16; 2])>(Variant(_469, 2), 2).1.0;
-SetDiscriminant(_264, 0);
 Goto(bb260)
 }
 bb260 = {
@@ -6155,7 +6138,6 @@ bb293 = {
 _551 = !_493.1;
 _578 = _629.3;
 _262.1 = _229.1;
-SetDiscriminant(_185, 1);
 _435 = (_430.2.0, _172.0.1, Field::<((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))>(Variant(Field::<Adt57>(Variant(_353, 3), 0), 2), 4).0.2, _196.3);
 _663.1.1 = core::ptr::addr_of!((*_574));
 _89 = !_396.0;
@@ -6183,7 +6165,6 @@ _713.2.3 = _72.3;
 _704.1 = _80 + _214.1;
 place!(Field::<*mut f32>(Variant(_185, 1), 1)) = core::ptr::addr_of_mut!(_137);
 _206 = (_183,);
-SetDiscriminant(_7, 1);
 _565.2 = (_629.0.0, _74.0, _155.2, (*_507).3);
 _191 = ((*_405).0, _194.1, _301.2);
 _428 = !_11.1;
@@ -6899,7 +6880,6 @@ _489 = (_53,);
 _320 = _529.fld1.2;
 _529.fld0 = (_703.fld3.0.0, _526.0, _626.2, Field::<(char, [char; 1])>(Variant(Field::<Adt55>(Variant(_499, 0), 5), 1), 0).0);
 place!(Field::<u128>(Variant(place!(Field::<Adt61>(Variant(_692, 0), 2)), 0), 0)) = _743.2.2 + _626.2;
-SetDiscriminant(Field::<Adt52>(Variant(_499, 0), 3), 1);
 _430.1 = _84.1 | _750.1;
 _808.0.1 = core::ptr::addr_of!(_172);
 _830 = !_84.2.2;
@@ -7097,7 +7077,6 @@ _732 = !_671;
 _487.0 = _430.0 ^ Field::<i8>(Variant(Field::<Adt49>(Variant(_264, 0), 2), 1), 0);
 SetDiscriminant(_436, 1);
 SetDiscriminant(_525, 1);
-SetDiscriminant(_7, 1);
 place!(Field::<Adt53>(Variant(_131, 0), 5)).fld4 = !_766.2;
 place!(Field::<(i128, u16, u128, char)>(Variant(_692, 0), 5)).0 = _102 as i128;
 _326 = -_111;
@@ -7160,7 +7139,6 @@ _709 = _687.0;
 place!(Field::<*const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))>(Variant(place!(Field::<Adt50>(Variant(_748, 0), 2)), 1), 0)) = core::ptr::addr_of!(place!(Field::<((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))>(Variant(_324, 0), 4)));
 SetDiscriminant(_692, 0);
 place!(Field::<Adt61>(Variant(_692, 0), 2)) = Adt61::Variant1 { fld0: _565.2.0,fld1: _160.1,fld2: _400,fld3: _60,fld4: (*_333),fld5: _646 };
-SetDiscriminant(Field::<Adt61>(Variant(_692, 0), 2), 0);
 place!(Field::<i8>(Variant(_436, 1), 0)) = _440 as i8;
 _794.2.0 = _155.1 as i128;
 _832 = (_70, _574);
@@ -7230,7 +7208,6 @@ bb363 = {
 _733.1 = (*_445).0.2 as i128;
 _548 = [_644.2,_234.1];
 place!(Field::<i64>(Variant(_185, 1), 3)) = _135 as i64;
-SetDiscriminant(_508, 3);
 _396.2.1 = _296;
 _567.0 = -Field::<Adt53>(Variant(_563, 1), 1).fld3.0.0;
 _516.3 = _161;
@@ -7648,7 +7625,6 @@ Goto(bb390)
 }
 bb390 = {
 _175 = _639 as isize;
-SetDiscriminant(_742, 1);
 (*_76) = _583;
 _850 = (Field::<((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))>(Variant(Field::<Adt57>(Variant(_353, 3), 0), 2), 4).0.3, _28.1);
 Goto(bb391)
@@ -7866,7 +7842,6 @@ _899.2.1 = _74.2 as i128;
 _515 = [_769,_393.2];
 _962 = (Field::<i8>(Variant(_436, 1), 0), _656, _516);
 _818 = _773;
-SetDiscriminant(_148, 0);
 Goto(bb404)
 }
 bb404 = {
@@ -8034,7 +8009,6 @@ _299 = _217;
 SetDiscriminant(Field::<Adt49>(Variant(_913, 0), 2), 3);
 _703.fld0.1 = !_84.2.1;
 _417 = _283 as i8;
-SetDiscriminant(_670, 1);
 place!(Field::<Adt53>(Variant(_805, 2), 1)).fld2.0 = (_370, Field::<((f32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), u8)>(Variant(_7, 1), 0).0.1);
 _44.2.1 = _529.fld0.0;
 _777 = _175 ^ _300;
@@ -8181,7 +8155,6 @@ _8 = _899.1;
 _432 = core::ptr::addr_of_mut!(_703.fld1.2);
 _912 = _492 & _175;
 _70 = (*_617) + _694.0.0;
-SetDiscriminant(Field::<Adt64>(Variant(_508, 3), 1), 2);
 Goto(bb422)
 }
 bb422 = {
@@ -8318,7 +8291,6 @@ bb433 = {
 _730.1 = !_155.1;
 _993 = _217 ^ _702;
 _278 = _440;
-SetDiscriminant(_348, 2);
 _282.2 = _305 as u128;
 Goto(bb434)
 }
@@ -8753,7 +8725,6 @@ _606 = core::ptr::addr_of!((*_678));
 place!(Field::<Adt53>(Variant(_748, 1), 0)).fld3.3 = -_144;
 place!(Field::<usize>(Variant(_264, 1), 4)) = _270 + _305;
 place!(Field::<((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))>(Variant(_667, 2), 4)).0.3 = _228;
-SetDiscriminant(_499, 0);
 _224 = !_577;
 _995 = [_250.2,_1034,_735.1];
 _781 = _433;
@@ -8908,7 +8879,6 @@ place!(Field::<(u16, i64, i16)>(Variant(_436, 0), 0)) = (_933.1, _1041.1, _337.1
 Goto(bb468)
 }
 bb468 = {
-SetDiscriminant(_900, 0);
 _853.0 = (*_273).0.1 - _25.1;
 _330 = [(*_169),(*_333)];
 _214.2 = _529.fld4;
@@ -9137,7 +9107,6 @@ _1141.2.1 = Field::<i128>(Variant(Field::<Adt49>(Variant(_81, 0), 2), 1), 2);
 _343.2.1 = (*_168).0;
 place!(Field::<i16>(Variant(_650, 1), 4)) = _54 >> Field::<Adt53>(Variant(_805, 2), 1).fld3.0.2;
 place!(Field::<Adt53>(Variant(_748, 1), 0)).fld3 = (_1103.0, _897, Field::<(f32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char)))>(Variant(Field::<Adt55>(Variant(_710, 2), 3), 2), 1).1, _641);
-SetDiscriminant(_1176, 0);
 _487.2.2 = _66 as u128;
 (*_680).3 = (*_690);
 SetDiscriminant(Field::<Adt52>(Variant(_353, 0), 0), 1);
@@ -9152,7 +9121,6 @@ _490 = Adt61::Variant1 { fld0: _339.0.0,fld1: _346,fld2: _694.1,fld3: _106,fld4:
 _790 = _870;
 place!(Field::<(i128, u16, u128, char)>(Variant(_635, 0), 5)).2 = _430.2.2;
 _487.1 = _493.1 | _530.1;
-SetDiscriminant(_742, 1);
 _864 = [_808.1,_96,Field::<Adt53>(Variant(_453, 1), 1).fld2.1,_971,_1104,_882,_2];
 place!(Field::<((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))>(Variant(_667, 2), 4)).2 = core::ptr::addr_of_mut!(place!(Field::<Adt53>(Variant(_419, 2), 1)).fld3.0);
 place!(Field::<Adt61>(Variant(_635, 0), 2)) = Adt61::Variant0 { fld0: (*_170),fld1: _582.0,fld2: _872,fld3: Move(_518),fld4: _645,fld5: Move(Field::<Adt55>(Variant(_1176, 0), 5)),fld6: _1047 };
@@ -9174,7 +9142,6 @@ place!(Field::<(u16, i64, i16)>(Variant(_825, 0), 0)) = (_899.2.0, _1043, _456.1
 Goto(bb484)
 }
 bb484 = {
-SetDiscriminant(_533, 1);
 _474 = _337.1;
 place!(Field::<([usize; 2], (u32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), f32, [i16; 2])>(Variant(place!(Field::<Adt55>(Variant(_148, 0), 5)), 2), 2)) = Field::<([usize; 2], (u32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), f32, [i16; 2])>(Variant(_525, 1), 1);
 place!(Field::<Adt53>(Variant(_748, 1), 0)).fld1.1 = Field::<(u32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char)))>(Variant(_650, 1), 0);
@@ -9257,7 +9224,6 @@ _1178 = _216 as isize;
 SetDiscriminant(_889, 3);
 _530.0 = _962.0 & _343.0;
 _800 = _267;
-SetDiscriminant(_490, 0);
 SetDiscriminant(_264, 1);
 Goto(bb489)
 }
@@ -9417,7 +9383,6 @@ Goto(bb496)
 bb496 = {
 _165 = (*_1094).3;
 _681 = _282;
-SetDiscriminant(_307, 2);
 _662.1 = core::ptr::addr_of_mut!(place!(Field::<((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))>(Variant(place!(Field::<Adt52>(Variant(_353, 0), 0)), 1), 2)).0.2);
 place!(Field::<Adt53>(Variant(place!(Field::<Adt55>(Variant(_75, 2), 3)), 1), 1)).fld1 = (Field::<[usize; 2]>(Variant(_598, 0), 6), Field::<([usize; 2], (u32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))), f32, [i16; 2])>(Variant(Field::<Adt55>(Variant(_108, 0), 5), 2), 2).1, _647, Field::<[i16; 2]>(Variant(_872, 3), 0));
 place!(Field::<bool>(Variant(_667, 2), 0)) = !_763;
@@ -9813,7 +9778,6 @@ Goto(bb519)
 }
 bb519 = {
 _493.2.3 = _1165.3;
-SetDiscriminant(_108, 0);
 place!(Field::<((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))>(Variant(_533, 1), 2)).0.0 = Field::<((i128, u16, u128, char), *mut u128, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u128, char)), f64)>(Variant(_358, 1), 5).0.0 << _1034;
 _1040 = _1103.0.2 as f32;
 place!(Field::<((i128, u16, u128, char), f32, *mut (i128, u16, u128, char))>(Variant(_742, 1), 2)) = ((*_867), _141, Field::<*mut (i128, u16, u128, char)>(Variant(_635, 0), 0));
@@ -10499,7 +10463,6 @@ place!(Field::<((f32, *const ((i128, u16, u128, char), f32, *mut (i128, u16, u12
 Goto(bb559)
 }
 bb559 = {
-SetDiscriminant(_889, 1);
 _468.2 = !Field::<(i128, u16, u128, char)>(Variant(Field::<Adt55>(Variant(_108, 0), 5), 2), 0).2;
 (*_584) = !_5;
 _132 = -_500;

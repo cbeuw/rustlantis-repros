@@ -1904,7 +1904,6 @@ _19 = 72_i8 as f64;
 Call(_10.1 = fn7(_8, _6, Field::<([isize; 7], [u32; 7])>(Variant(_14, 0), 0), Field::<([isize; 7], [u32; 7])>(Variant(_14, 0), 0).0), ReturnTo(bb14), UnwindUnreachable())
 }
 bb14 = {
-SetDiscriminant(_14, 1);
 _23 = !_6.fld0;
 _10.2 = 12390416014544867060_u64;
 _26.fld2.1 = _24 * _17.fld0;
@@ -3637,7 +3636,6 @@ _21.fld2 = (-180734437_i32) as u128;
 _21.fld1 = core::ptr::addr_of!(_19);
 _21.fld0.fld2 = [_16,_16,_16,_23,_23,_16,_16];
 _3 = _8;
-SetDiscriminant(_20, 0);
 Goto(bb12)
 }
 bb12 = {

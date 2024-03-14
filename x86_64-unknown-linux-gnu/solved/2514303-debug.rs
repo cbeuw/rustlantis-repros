@@ -3862,7 +3862,6 @@ Call(_12 = core::intrinsics::bswap(13106518394402053218_usize), ReturnTo(bb11), 
 }
 bb11 = {
 _15 = _16 as i64;
-SetDiscriminant(_10, 0);
 _2 = _16 + _16;
 place!(Field::<Adt47>(Variant(_10, 0), 2)).fld0 = 7705484510662021702_u64;
 _13.3 = (_8, 59418631116447066403234578051354497590_u128, true);

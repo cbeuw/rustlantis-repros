@@ -1720,7 +1720,6 @@ _38 = _7;
 _39 = _16.fld1 as u64;
 _51 = _43.0 & _31.0;
 _21.0 = [_52.1,Field::<(u32, u64, isize)>(Variant(_16.fld5, 0), 0).1,Field::<(u32, u64, isize)>(Variant(_16.fld5, 0), 0).1,Field::<(u32, u64, isize)>(Variant(_15, 0), 0).1,Field::<(u32, u64, isize)>(Variant(_15, 0), 0).1,Field::<u64>(Variant(_13, 0), 2),Field::<(u32, u64, isize)>(Variant(_15, 0), 0).1,Field::<(u32, u64, isize)>(Variant(_15, 0), 0).1];
-SetDiscriminant(_15, 1);
 _52.2 = !_24;
 _21.2 = -_16.fld3;
 place!(Field::<((char,),)>(Variant(_15, 1), 0)).0 = (_45,);

@@ -2437,7 +2437,6 @@ _19 = 6138634590035599785_i64 as f32;
 RET = -_17.0;
 _13.1 = [Field::<usize>(Variant(_8, 2), 0),Field::<usize>(Variant(_18, 2), 0),Field::<usize>(Variant(_8, 2), 0),Field::<usize>(Variant(_18, 2), 0)];
 _6 = _1.0;
-SetDiscriminant(_18, 0);
 _12.0.0 = _1.0 << _3.1;
 _17.1 = -_17.0;
 _7 = _19 as f64;
@@ -5035,7 +5034,6 @@ _122 = core::ptr::addr_of!(_231.0.3);
 _137 = Adt58::Variant0 { fld0: _29.fld6.0,fld1: _74,fld2: _48,fld3: _72.0.0.3 };
 _188.fld0 = Field::<bool>(Variant(Field::<Adt60>(Variant(_20, 1), 0), 1), 0);
 _214 = _175;
-SetDiscriminant(Field::<Adt60>(Variant(_20, 1), 0), 0);
 _233 = !_181;
 _190 = (_63, (*_81).1);
 _28 = Adt64::Variant1 { fld0: _155,fld1: _142,fld2: _231,fld3: Move(_137) };
@@ -5163,7 +5161,6 @@ _190 = (_185.fld0.1, _151.1);
 place!(Field::<u128>(Variant(place!(Field::<Adt49>(Variant(_188.fld1, 1), 3)), 3), 0)) = !_129;
 place!(Field::<Adt49>(Variant(place!(Field::<Adt58>(Variant(_28, 1), 3)), 0), 1)) = Adt49::Variant0 { fld0: Field::<Adt56>(Variant(Field::<Adt60>(Variant(_20, 1), 0), 0), 2).fld0,fld1: Field::<i64>(Variant(Field::<Adt49>(Variant(_77, 1), 3), 0), 1),fld2: _54.0.0,fld3: _116,fld4: _68,fld5: _203.0 };
 _78 = _187;
-SetDiscriminant(Field::<Adt56>(Variant(Field::<Adt60>(Variant(_20, 1), 0), 0), 2).fld1, 0);
 Call((*_120) = core::intrinsics::transmute(Field::<i64>(Variant(Field::<Adt49>(Variant(Field::<Adt58>(Variant(_28, 1), 3), 0), 1), 0), 1)), ReturnTo(bb110), UnwindUnreachable())
 }
 bb110 = {
@@ -5198,7 +5195,6 @@ _165.0 = _17.0 & (*_169);
 Goto(bb112)
 }
 bb112 = {
-SetDiscriminant(Field::<Adt58>(Variant(_28, 1), 3), 1);
 (*_120) = Field::<(((*mut char, i16, f64, u64),),)>(Variant(_188.fld1, 1), 2).0.0.3 << _185.fld0.1;
 place!(Field::<((isize, u128), isize, i16, [usize; 4])>(Variant(_66, 0), 0)) = (Field::<(((isize, u128), isize, i16, [usize; 4]), [i32; 5], *mut char)>(Variant(Field::<Adt49>(Variant(_188.fld1, 1), 3), 3), 2).0.0, _231.0.0.0, _185.fld0.2, _48.3);
 _123 = Field::<f32>(Variant(_188.fld1, 1), 1) - _179;
@@ -5382,7 +5378,6 @@ place!(Field::<Adt49>(Variant(_188.fld1, 1), 3)) = Adt49::Variant1 { fld0: _122,
 place!(Field::<Adt49>(Variant(_188.fld1, 1), 3)) = Adt49::Variant2 { fld0: _125 };
 _218 = !_92;
 _95 = !_33;
-SetDiscriminant(_107, 0);
 place!(Field::<(((isize, u128), isize, i16, [usize; 4]), [i32; 5], *mut char)>(Variant(_28, 1), 2)).0.2 = _195 as i16;
 Goto(bb122)
 }

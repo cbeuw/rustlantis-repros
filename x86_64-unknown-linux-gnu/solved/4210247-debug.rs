@@ -5446,7 +5446,6 @@ place!(Field::<bool>(Variant(_1, 1), 0)) = _10;
 place!(Field::<(*const i16,)>(Variant(_1, 1), 1)).0 = core::ptr::addr_of!(RET);
 _21 = Adt59::Variant1 { fld0: _13.1,fld1: _13.3,fld2: _17.2.0,fld3: RET };
 (*_2) = Field::<i128>(Variant(_1, 1), 2) as i64;
-SetDiscriminant(_1, 0);
 _13.0 = [Field::<u128>(Variant(_21, 1), 1),_13.3,Field::<u128>(Variant(_21, 1), 1)];
 match Field::<i16>(Variant(_21, 1), 3) {
 0 => bb1,

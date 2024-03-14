@@ -189,7 +189,6 @@ _28 = [_7,_7,_7,_7,_7];
 _2 = _17.3;
 _32 = _3 * _20;
 _22 = (_28,);
-SetDiscriminant(_19, 0);
 _5 = !9566_i16;
 _8 = (-63505813616735913762281834680874324050_i128) + (-56726381015426244243107043679440745334_i128);
 _8 = 99006001462400829297274601774901486334_i128 >> _9;
@@ -1913,7 +1912,6 @@ _45 = [Field::<u32>(Variant(Field::<Adt41>(Variant(_21.fld0, 0), 6), 0), 0),Fiel
 _23 = Field::<Adt40>(Variant(_21.fld0, 0), 7);
 _30 = [Field::<u8>(Variant(Field::<Adt40>(Variant(_21.fld0, 0), 7), 1), 1),Field::<u8>(Variant(Field::<Adt40>(Variant(_21.fld0, 0), 7), 1), 1),Field::<u8>(Variant(_23, 1), 1),Field::<u8>(Variant(_23, 1), 1),Field::<u8>(Variant(_19, 1), 1),Field::<u8>(Variant(_23, 1), 1)];
 _27.fld3 = [3471004382139291991_u64,1155041227139059517_u64];
-SetDiscriminant(_19, 0);
 Goto(bb11)
 }
 bb11 = {
@@ -2280,7 +2278,6 @@ _39.0.0 = _8.fld1 as i16;
 _44.1.3 = _18.3;
 _33 = [_25,_25];
 _34.1 = _8.fld1 as u16;
-SetDiscriminant(_27, 0);
 _39.0.6.3 = _39.0.1.3;
 _34.2 = core::ptr::addr_of_mut!(_44);
 _39.0.1 = (_39.0.6.4, _32.7.0, Move(_34.2), _32.6.3, _32.1.4);
@@ -2469,7 +2466,6 @@ place!(Field::<u8>(Variant(_2, 1), 1)) = Field::<u8>(Variant(_7, 1), 1);
 RET = -_4.fld1;
 place!(Field::<i64>(Variant(_7, 1), 2)) = !Field::<i64>(Variant(_2, 1), 2);
 _2 = Adt40::Variant1 { fld0: Field::<[u32; 7]>(Variant(_7, 1), 0),fld1: Field::<u8>(Variant(_7, 1), 1),fld2: Field::<i64>(Variant(_7, 1), 2),fld3: Field::<*const [u64; 2]>(Variant(_7, 1), 3),fld4: Field::<*const i128>(Variant(_7, 1), 4),fld5: Field::<u32>(Variant(_7, 1), 5) };
-SetDiscriminant(_2, 0);
 Call(_4.fld0 = fn10(Field::<i64>(Variant(_7, 1), 2), _10, _4.fld2, _8, _8, _6, _8, _7, _8), ReturnTo(bb1), UnwindUnreachable())
 }
 bb1 = {
@@ -2527,7 +2523,6 @@ _22 = &place!(Field::<i64>(Variant(_7, 1), 2));
 Goto(bb4)
 }
 bb4 = {
-SetDiscriminant(_2, 0);
 _20 = _4.fld0;
 RET = 233926389872357106801028236416321247305_u128 as i32;
 _2 = _7;
@@ -2608,7 +2603,6 @@ Goto(bb13)
 bb13 = {
 _17 = 104_i8;
 _44 = _12 + _12;
-SetDiscriminant(_2, 0);
 _30 = &place!(Field::<i64>(Variant(_7, 1), 2));
 place!(Field::<[u64; 2]>(Variant(_2, 0), 6)) = _28;
 _24 = [Field::<u32>(Variant(_7, 1), 5),Field::<u32>(Variant(_7, 1), 5),Field::<u32>(Variant(_7, 1), 5),Field::<u32>(Variant(_7, 1), 5),Field::<u32>(Variant(_7, 1), 5),Field::<u32>(Variant(_7, 1), 5),Field::<u32>(Variant(_7, 1), 5)];
@@ -2619,7 +2613,6 @@ _41 = [Field::<u8>(Variant(_7, 1), 1),Field::<u8>(Variant(_7, 1), 1),Field::<u8>
 _42 = (_5,);
 _47 = _4.fld2;
 place!(Field::<char>(Variant(_2, 0), 1)) = _11;
-SetDiscriminant(_7, 0);
 _8 = _47 & _19;
 _15 = [3215206727_u32,153146399_u32,1614604117_u32,3637531654_u32,2581747908_u32,573478713_u32];
 place!(Field::<[u8; 6]>(Variant(_2, 0), 7)) = [35_u8,100_u8,51_u8,146_u8,215_u8,166_u8];
@@ -2722,7 +2715,6 @@ _14.1 = 33071_u16;
 Call(_12.2.1 = fn11(_9, _3, _8, _7, _6, _8, Move(_12.2.0), _7, _1, _2, Move(_12.4.1), _8, _3), ReturnTo(bb6), UnwindUnreachable())
 }
 bb6 = {
-SetDiscriminant(_8, 0);
 _17 = -_1;
 place!(Field::<[u64; 2]>(Variant(_8, 0), 6)) = [441480971773944711_u64,7924967503406858542_u64];
 _12.4.2 = _17 <= _17;
@@ -2925,7 +2917,6 @@ _2 = Field::<i64>(Variant(_1, 1), 2) & Field::<i64>(Variant(_1, 1), 2);
 place!(Field::<i64>(Variant(_1, 1), 2)) = _3 as i64;
 _3 = _5;
 _2 = Field::<i64>(Variant(_1, 1), 2);
-SetDiscriminant(_1, 0);
 place!(Field::<[u8; 6]>(Variant(_1, 0), 7)) = [RET,RET,RET,RET,RET,RET];
 _11.fld3 = [_7,_7];
 _11.fld1 = _4;
@@ -3052,7 +3043,6 @@ _1.fld0 = [Field::<u8>(Variant(_2, 1), 1),Field::<u8>(Variant(_2, 1), 1),Field::
 _4.0.7.0 = 23177_u16;
 _4.0.3 = RET;
 _1.fld2 = (-9223372036854775808_isize);
-SetDiscriminant(_2, 0);
 _4.0.7.0 = (-849_i16) as u16;
 _4.0.1.3 = !2680880024_u32;
 _3 = (RET,);
@@ -3962,7 +3952,6 @@ _18 = [18192004386006267509_u64,5350574314626361600_u64];
 _15.fld0 = [160_u8,165_u8,11_u8,150_u8,199_u8,58_u8];
 _19 = [3573308864_u32,2602792982_u32,2503471273_u32,2778806445_u32,3429376294_u32,4232874730_u32,2410513491_u32];
 _4.fld1 = -_15.fld1;
-SetDiscriminant(_12, 2);
 _10 = _4.fld1 - _4.fld1;
 _16 = 16832_i16 - 5050_i16;
 _18 = [10276280698572686035_u64,12525445061808502904_u64];

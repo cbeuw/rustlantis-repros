@@ -1349,7 +1349,6 @@ _7 = _4.fld3;
 RET = _5.1;
 _1 = Adt46::Variant2 { fld0: _2 };
 _21.4 = _9.4;
-SetDiscriminant(_1, 1);
 Goto(bb4)
 }
 bb4 = {
@@ -2687,7 +2686,6 @@ _5.fld0 = !_3.fld0;
 _16.fld0 = false;
 _16.fld4.1 = _16.fld4.0;
 _26 = _16.fld4.4 + _16.fld2;
-SetDiscriminant(_20, 2);
 _2 = !_7;
 _15 = 5_usize as u64;
 Call(place!(Field::<(usize, [i8; 2], bool)>(Variant(_20, 2), 4)).0 = core::intrinsics::bswap(18331448745197333732_usize), ReturnTo(bb13), UnwindUnreachable())
@@ -2809,7 +2807,6 @@ _47.fld0 = -_28;
 _61 = [3405788670_u32,2736544583_u32,3569657062_u32,2998678962_u32];
 _40.0 = (*_37);
 _16.fld3 = (_9,);
-SetDiscriminant(_20, 2);
 _44.3 = !_12;
 _5 = _24;
 _60.3 = _44.0 as i128;
@@ -3512,7 +3509,6 @@ _10.1 = [Field::<i128>(Variant(_14, 0), 0),Field::<i128>(Variant(_14, 0), 0),Fie
 place!(Field::<i128>(Variant(_14, 0), 0)) = (-83911551795624262317636362200877891677_i128);
 _20.1 = 5383_i16 * (-18417_i16);
 _5 = Adt45 { fld0: _4 };
-SetDiscriminant(_14, 1);
 place!(Field::<(char, char, i16, u16, f64)>(Variant(_14, 1), 1)).2 = _20.1 - _20.1;
 _12 = core::ptr::addr_of_mut!(place!(Field::<(char, char, i16, u16, f64)>(Variant(_14, 1), 1)));
 place!(Field::<[u16; 5]>(Variant(_14, 1), 0)) = [_4,_5.fld0,_5.fld0,_5.fld0,_5.fld0];
@@ -4303,7 +4299,6 @@ _7 = _4 >> _10;
 _16.2 = !_6;
 RET = _20.fld6.0;
 _20.fld4 = [204670469336158784496618484519449157160_u128,18228694408621273023648422559774548226_u128,28698452548765826111078729447232571259_u128];
-SetDiscriminant(_17, 0);
 _21.0 = _16.0 + Field::<(usize, i8, i128, i128)>(Variant(_18.fld2, 1), 0).0;
 _30.1 = Field::<char>(Variant(_18.fld2, 1), 1);
 place!(Field::<[u16; 5]>(Variant(_17, 0), 1)) = [_4,_2,_11,_7,_10];
@@ -4312,7 +4307,6 @@ place!(Field::<(usize, [i8; 2], bool)>(Variant(_17, 0), 4)).1 = [Field::<(usize,
 _30.1 = Field::<char>(Variant(_18.fld2, 1), 1);
 _22.0 = [_20.fld6.3,_20.fld6.2,_20.fld6.3,_20.fld6.2,_18.fld4];
 _30.2 = -(-2436_i16);
-SetDiscriminant(_18.fld2, 2);
 _30.1 = '\u{bfcae}';
 match _20.fld6.1 {
 0 => bb1,
@@ -4847,7 +4841,6 @@ _33.0 = _22.0;
 _24.2 = _18 & _27;
 _27 = _20.3 < _11;
 _33.0 = _19.0;
-SetDiscriminant(_21, 2);
 place!(Field::<(([i128; 5], i16), ([u16; 5],))>(Variant(_21, 2), 6)).0.1 = -_8;
 _33 = _22;
 _24.1 = [_13,_13];

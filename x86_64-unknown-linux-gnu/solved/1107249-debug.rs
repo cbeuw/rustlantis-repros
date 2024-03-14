@@ -420,7 +420,6 @@ Goto(bb26)
 }
 bb26 = {
 _5 = !_18;
-SetDiscriminant(_42.fld3, 2);
 place!(Field::<(i64, isize, i128)>(Variant(_42.fld3, 2), 2)).0 = _42.fld2.0;
 place!(Field::<*mut u32>(Variant(_42.fld3, 2), 0)) = core::ptr::addr_of_mut!(_12);
 _11 = 33922_u16;
@@ -698,7 +697,6 @@ place!(Field::<(*const f64, (*const i128, i8), f32, usize)>(Variant(RET, 2), 0))
 _72.0 = core::ptr::addr_of!(_2);
 _95 = _42.fld2.2 - _85.2;
 _66 = Adt54::Variant1 { fld0: _52 };
-SetDiscriminant(_66, 0);
 place!(Field::<*const i128>(Variant(RET, 2), 3)) = Field::<(*const f64, (*const i128, i8), f32, usize)>(Variant(RET, 2), 0).1.0;
 place!(Field::<*const (*const i128, i8)>(Variant(_42.fld3, 2), 3)) = Field::<*const (*const i128, i8)>(Variant(RET, 2), 7);
 place!(Field::<Adt50>(Variant(_66, 0), 4)).fld2.fld2.1 = _42.fld2.0 as isize;

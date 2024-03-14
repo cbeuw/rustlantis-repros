@@ -1929,8 +1929,6 @@ _87 = _78.2 << _15;
 _16.6 = -_85;
 place!(Field::<([usize; 4], (bool, char, u8), bool, u64, isize, usize)>(Variant(_93, 1), 0)).4 = _129;
 _99 = -_73;
-SetDiscriminant(_83, 3);
-SetDiscriminant(_93, 0);
 _109.0 = _16.6 >> _97.1;
 _25 = _92;
 place!(Field::<([u64; 7], [i8; 6], i8, (f32, bool, char, i32, [u64; 7], bool, i8, bool, i32, i16), (bool, char, u8))>(Variant(_83, 3), 4)).3.2 = _16.2;
@@ -4323,7 +4321,6 @@ Return()
 bb47 = {
 _47.fld3.3.9 = _19.fld3.3.7 as i16;
 _34 = [Field::<(i8, (u64,), i64)>(Variant(_36, 0), 2).0,_44];
-SetDiscriminant(_32, 2);
 _38.2.4 = [_28.0,_28.0,_28.0,_47.fld4.0,_26,_47.fld4.0,_19.fld4.0];
 _47.fld3.0 = [_43.3,_43.3,_19.fld4.0,Field::<([usize; 4], (bool, char, u8), bool, u64, isize, usize)>(Variant(_25, 1), 1).3,_33,_28.0,_28.0];
 place!(Field::<(i8, (u64,), i64)>(Variant(_36, 0), 2)).2 = _30 + _30;
@@ -4522,7 +4519,6 @@ Call(place!(Field::<([usize; 4], (bool, char, u8), bool, u64, isize, usize)>(Var
 bb58 = {
 _11 = _28.2 as isize;
 _7 = _68 as isize;
-SetDiscriminant(_32, 2);
 _59 = _73;
 _11 = _73;
 place!(Field::<f64>(Variant(_36, 1), 4)) = -_57;

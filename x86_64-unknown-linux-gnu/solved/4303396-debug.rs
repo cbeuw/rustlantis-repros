@@ -2682,7 +2682,6 @@ _13.fld4.fld2 = _13.fld5 as u16;
 _5 = Field::<([usize; 5],)>(Variant(_20, 0), 3);
 _4 = _3;
 _13.fld4.fld4 = Field::<*const i16>(Variant(_20, 0), 1);
-SetDiscriminant(_20, 1);
 place!(Field::<([i128; 3], (bool,), i8, *const u16, u32, (bool,))>(Variant(_20, 1), 2)).0 = [(-121085393316634027482901033730229703330_i128),96042490718517364807215766487789534257_i128,140606264509216243330270777122634182704_i128];
 place!(Field::<([i128; 3], (bool,), i8, *const u16, u32, (bool,))>(Variant(_20, 1), 2)).1.0 = !_13.fld4.fld0;
 place!(Field::<([i128; 3], (bool,), i8, *const u16, u32, (bool,))>(Variant(_20, 1), 2)).2 = -_15;

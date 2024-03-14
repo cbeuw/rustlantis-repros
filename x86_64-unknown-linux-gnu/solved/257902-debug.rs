@@ -2952,7 +2952,6 @@ _26.fld2 = [Field::<usize>(Variant(_4.fld1.fld0, 3), 1),_6.fld1.fld3];
 _33.0 = _6.fld1.fld1.2;
 _2.1 = (_21.1.0, Field::<(i16, [isize; 7])>(Variant(_25, 2), 0).1);
 _2.0 = _26.fld3.1.2.0 as f64;
-SetDiscriminant(_25, 0);
 Goto(bb18)
 }
 bb18 = {

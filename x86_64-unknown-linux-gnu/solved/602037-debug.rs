@@ -1045,7 +1045,6 @@ Goto(bb7)
 }
 bb7 = {
 _4 = (-59_i8);
-SetDiscriminant(_1, 0);
 place!(Field::<Adt53>(Variant(_1, 0), 2)) = Adt53::Variant0 { fld0: true };
 _7.0 = 1080071780_u32;
 _13 = _10;

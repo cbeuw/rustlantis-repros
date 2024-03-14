@@ -3618,7 +3618,6 @@ _21.fld1 = [_7];
 _9.2 = _1.2;
 _15.fld1 = 17633_i16;
 _9.1 = [Field::<u32>(Variant(_15.fld0, 2), 0),Field::<u32>(Variant(_15.fld0, 2), 0),Field::<u32>(Variant(_15.fld0, 2), 0),Field::<u32>(Variant(_15.fld0, 2), 0),Field::<u32>(Variant(_15.fld0, 2), 0),Field::<u32>(Variant(_15.fld0, 2), 0),Field::<u32>(Variant(_15.fld0, 2), 0)];
-SetDiscriminant(_15.fld0, 0);
 _21.fld3 = RET;
 place!(Field::<(i8, (u128, i8, i8))>(Variant(_15.fld0, 0), 3)).1.2 = _5;
 place!(Field::<u8>(Variant(_15.fld0, 0), 4)) = _11 ^ _11;

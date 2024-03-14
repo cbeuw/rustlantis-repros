@@ -1108,7 +1108,6 @@ place!(Field::<*mut u128>(Variant(_4, 2), 0)) = _3;
 Goto(bb1)
 }
 bb1 = {
-SetDiscriminant(_4, 1);
 place!(Field::<[u16; 6]>(Variant(_4, 1), 4)) = _15.0;
 _1 = 1_usize as u8;
 place!(Field::<(char, *mut u128, *mut i64, *mut u16, f64, i128)>(Variant(_4, 1), 2)).4 = 794815570_u32 as f64;
@@ -1210,7 +1209,6 @@ _12 = _34 as u8;
 _35 = _1 != _27.fld1;
 _33 = _13;
 _9 = [10538605883933007375_u64,16675826471067560075_u64,15348808037548617521_u64];
-SetDiscriminant(_22, 1);
 _19 = _34 as i128;
 place!(Field::<(char, *mut u128, *mut i64, *mut u16, f64, i128)>(Variant(_22, 1), 2)).1 = _3;
 _21.0 = [41071_u16,16244_u16,47491_u16,58731_u16,3990_u16,22592_u16];
@@ -1758,7 +1756,6 @@ _3 = Adt61::Variant0 { fld0: RET };
 place!(Field::<[u16; 6]>(Variant(_3, 0), 0)) = [51874_u16,6721_u16,64250_u16,51178_u16,51500_u16,45914_u16];
 _4 = _2;
 _4 = !_2;
-SetDiscriminant(_3, 2);
 _4 = !_1;
 place!(Field::<u32>(Variant(_3, 2), 3)) = !3823090820_u32;
 _4 = _1 - _2;
@@ -1777,7 +1774,6 @@ Call(_3 = fn6(_4, _2, RET, _2, _6), ReturnTo(bb1), UnwindUnreachable())
 }
 bb1 = {
 _7 = (-88_isize);
-SetDiscriminant(_3, 2);
 place!(Field::<*const [u64; 3]>(Variant(_3, 2), 0)) = core::ptr::addr_of!(_6);
 place!(Field::<(*mut u16, i64)>(Variant(_3, 2), 4)).1 = (-5210945117786255615_i64) | 4239366587814462785_i64;
 place!(Field::<(*mut u16, i64)>(Variant(_3, 2), 4)).1 = 7809093089701218163_i64 * 3225406213619155876_i64;
@@ -1888,7 +1884,6 @@ _2 = !_4;
 Goto(bb12)
 }
 bb12 = {
-SetDiscriminant(_3, 2);
 _4 = '\u{55cc7}' as u8;
 _7 = 9223372036854775807_isize >> _1;
 _8 = _7 as usize;
@@ -2017,7 +2012,6 @@ _2 = _4;
 _2 = _1;
 _6.0 = [21557_u16,4728_u16,22553_u16,36679_u16,6619_u16,34067_u16];
 RET = Adt61::Variant0 { fld0: _3 };
-SetDiscriminant(RET, 2);
 place!(Field::<u32>(Variant(RET, 2), 3)) = 1367238613_i32 as u32;
 _2 = 6323802941389792339_u64 as u8;
 _3 = [42649_u16,43271_u16,17342_u16,32296_u16,59774_u16,55148_u16];
@@ -6704,7 +6698,6 @@ _8 = _63;
 _16 = _80.0;
 _76 = !_32;
 _56 = (*_74);
-SetDiscriminant(RET, 1);
 RET = Adt48::Variant0 { fld0: _52.2,fld1: _57,fld2: _7,fld3: _74,fld4: _36,fld5: _45.2,fld6: 6365116690163698632_i64,fld7: _37 };
 place!(Field::<f64>(Variant(RET, 0), 1)) = _64 as f64;
 _68 = _48 + _49;

@@ -104,7 +104,6 @@ place!(Field::<i32>(Variant(RET, 0), 0)) = _13 as i32;
 _2 = '\u{ba433}';
 _10 = [Field::<i32>(Variant(RET, 0), 0),Field::<i32>(Variant(RET, 0), 0),Field::<i32>(Variant(RET, 0), 0),_6,_6,Field::<i32>(Variant(RET, 0), 0),Field::<i32>(Variant(RET, 0), 0),Field::<i32>(Variant(RET, 0), 0)];
 _14 = core::ptr::addr_of_mut!(_9.fld0);
-SetDiscriminant(RET, 1);
 place!(Field::<*const i32>(Variant(RET, 1), 7)) = core::ptr::addr_of!(_6);
 place!(Field::<[u128; 2]>(Variant(RET, 1), 1)) = [11064003830033164203803317573523179777_u128,217611197696632355549013720758466620536_u128];
 _6 = (-560760866_i32) & (-1562515857_i32);
@@ -265,7 +264,6 @@ place!(Field::<isize>(Variant(_15, 0), 2)) = _19 - _16;
 Goto(bb8)
 }
 bb14 = {
-SetDiscriminant(RET, 1);
 place!(Field::<*const i32>(Variant(RET, 1), 7)) = core::ptr::addr_of!(place!(Field::<i32>(Variant(_15, 0), 0)));
 _24.fld0 = [_6,_6,Field::<i32>(Variant(_15, 0), 0),_6,Field::<i32>(Variant(_15, 0), 0),_6,Field::<i32>(Variant(_15, 0), 0),_6];
 place!(Field::<u32>(Variant(RET, 1), 0)) = _5;

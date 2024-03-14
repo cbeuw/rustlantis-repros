@@ -1251,7 +1251,6 @@ RET = [_8,_8,_8,_8];
 _2 = [Field::<u32>(Variant(_1, 0), 0),Field::<u32>(Variant(_1, 0), 0),Field::<u32>(Variant(_1, 0), 0),Field::<u32>(Variant(_1, 0), 0)];
 _14 = _16 as f64;
 _16 = _18;
-SetDiscriminant(_1, 2);
 _18 = _16 & _16;
 _24 = _14;
 _9 = 2702679873319885262_usize;

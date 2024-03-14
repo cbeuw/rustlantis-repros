@@ -3286,7 +3286,6 @@ place!(Field::<Adt48>(Variant(_179, 0), 0)).fld0.1 = !_121.1;
 _1 = (_126.0,);
 _261.2 = _208.2;
 _226 = [_71,_71,_71,_149,Field::<(usize, i32)>(Variant(_66, 0), 2).1];
-SetDiscriminant(_225, 0);
 _153 = -_176;
 _50 = (_144.fld3.0,);
 _144.fld2 = core::ptr::addr_of_mut!(_253.fld0);
@@ -3639,7 +3638,6 @@ Goto(bb118)
 bb118 = {
 _305 = -_237;
 _144.fld5.0 = core::ptr::addr_of_mut!(_243);
-SetDiscriminant(_285, 2);
 (*_243) = -_118.1;
 _317 = _243;
 place!(Field::<(u64, f32, [i32; 4])>(Variant(_238, 0), 2)).0 = !_227.0;
@@ -5169,7 +5167,6 @@ _227.1 = _334;
 place!(Field::<usize>(Variant(_285, 0), 2)) = _12 + Field::<usize>(Variant(_134, 1), 0);
 SetDiscriminant(_503, 1);
 _432 = _79;
-SetDiscriminant(_534, 2);
 _183.1 = Field::<(*const f64, usize, [usize; 5])>(Variant(_486, 1), 1).2;
 _511 = Field::<Adt50>(Variant(_225, 1), 0).fld5.0;
 _559 = Field::<([i16; 6],)>(Variant(_300, 1), 4);
@@ -5272,7 +5269,6 @@ Goto(bb212)
 }
 bb212 = {
 place!(Field::<[i16; 6]>(Variant(_179, 0), 5)) = [(*_336),(*_67),Field::<i16>(Variant(_534, 2), 4),_436,_162,(*_73)];
-SetDiscriminant(_557, 1);
 _166 = _249;
 _553 = _204.fld0;
 _409 = _261.2;
@@ -5739,7 +5735,6 @@ Goto(bb240)
 }
 bb240 = {
 _202.fld2 = core::ptr::addr_of_mut!(_254.fld0);
-SetDiscriminant(_339, 2);
 Goto(bb241)
 }
 bb241 = {
@@ -6925,7 +6920,6 @@ _793.1 = _40;
 _629.0 = _431.0;
 _616 = core::ptr::addr_of!((*_45));
 _184 = _593 as f32;
-SetDiscriminant(_285, 2);
 (*_223) = _618 + (*_616);
 _527 = !_318;
 place!(Field::<Adt50>(Variant(_503, 1), 0)) = Adt50 { fld0: _236,fld1: _408.fld4.fld1,fld2: _420,fld3: _319.fld4.fld3,fld4: _443.fld1,fld5: Field::<Adt52>(Variant(_557, 2), 1).fld4.fld5 };
@@ -7081,7 +7075,6 @@ _281.fld0.1 = _178 ^ _445.1;
 place!(Field::<Adt52>(Variant(_557, 2), 1)).fld0 = (_443.fld0.0, _395, _42);
 place!(Field::<Adt50>(Variant(_556, 1), 0)).fld5.0 = _648.fld4.fld5.0;
 _808 = [_40,_549.1,(*_370),_71];
-SetDiscriminant(_430, 0);
 _478.fld0 = Field::<(u64, f32, [i32; 4])>(Variant(_134, 0), 2);
 _79 = core::ptr::addr_of!(place!(Field::<i16>(Variant(_306, 2), 2)));
 _324.0 = [_359.1,_560.1,_40,(*_561),(*_243)];
@@ -7112,9 +7105,7 @@ _319.fld4.fld4 = Field::<Adt50>(Variant(_556, 1), 0).fld4;
 _253.fld4 = core::ptr::addr_of!(place!(Field::<u128>(Variant(_285, 2), 5)));
 _425 = _453;
 _765 = _718 as i16;
-SetDiscriminant(_556, 0);
 place!(Field::<[i16; 6]>(Variant(_172, 0), 5)) = [_162,_107,(*_190),(*_432),_595,_765];
-SetDiscriminant(_807, 2);
 _494 = _674 as isize;
 _436 = !(*_449);
 Goto(bb320)
@@ -7394,7 +7385,6 @@ _413 = _324.0;
 _530 = _167;
 _281.fld0.0 = Field::<Adt61>(Variant(_557, 2), 0).fld3.0 - Field::<Adt50>(Variant(_225, 0), 3).fld2;
 _136 = _489.1;
-SetDiscriminant(_604, 0);
 place!(Field::<([u8; 1],)>(Variant(_555, 2), 1)) = _532;
 Goto(bb337)
 }

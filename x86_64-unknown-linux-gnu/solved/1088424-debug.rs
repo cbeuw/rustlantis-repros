@@ -553,7 +553,6 @@ Goto(bb7)
 }
 bb7 = {
 _12 = [Field::<u128>(Variant(_7, 2), 2)];
-SetDiscriminant(_7, 1);
 place!(Field::<i32>(Variant(_7, 1), 5)) = -1563108016_i32;
 _27 = [_11,_8,_11,_8,_9];
 place!(Field::<*mut f64>(Variant(_7, 1), 6)) = core::ptr::addr_of_mut!(place!(Field::<f64>(Variant(_7, 1), 7)));
@@ -1790,7 +1789,6 @@ _34 = RET;
 _8.fld3 = [_25,_25,_25,_25,_25];
 _19 = _8.fld4 | _8.fld4;
 _41.2 = core::ptr::addr_of_mut!(_15);
-SetDiscriminant(_8.fld1, 2);
 _36 = _8.fld5 - _12;
 _30 = [_24,_24,_24,_24,_24,_24,_24,_24];
 _16 = _9 - _9;

@@ -1869,7 +1869,6 @@ bb11 = {
 _11 = _9;
 _31 = _13 - _13;
 _2 = _3 * _7;
-SetDiscriminant(_17, 1);
 _28.fld0 = _5 as i8;
 Call(_6 = core::intrinsics::transmute(_7), ReturnTo(bb12), UnwindUnreachable())
 }

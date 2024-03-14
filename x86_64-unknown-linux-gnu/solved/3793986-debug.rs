@@ -3772,7 +3772,6 @@ place!(Field::<u8>(Variant(place!(Field::<Adt48>(Variant(RET, 1), 1)), 1), 0)) =
 _41.fld0.3.3 = !_8;
 _17.0.2 = _41.fld0.0 >> _41.fld0.1.0;
 _20.2 = Field::<(i32, bool, u8, [u128; 2])>(Variant(Field::<Adt42>(Variant(RET, 1), 5), 0), 3).1 as u8;
-SetDiscriminant(Field::<Adt48>(Variant(RET, 1), 1), 2);
 _26.0.1.3 = _41.fld1.0;
 _41.fld0.3.0 = _26.2 + _41.fld2.0;
 _46 = [25883036058508741739153845018138419852_u128,329332207357965055916300151887483678758_u128];

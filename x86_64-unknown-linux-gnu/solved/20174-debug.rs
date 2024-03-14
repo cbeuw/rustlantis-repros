@@ -3983,7 +3983,6 @@ SetDiscriminant(_199, 1);
 SetDiscriminant(_199, 1);
 _204 = !_50;
 _32 = (_98.1, _25.fld4.3, _124);
-SetDiscriminant(_199, 2);
 _83.fld3.fld2 = ((*_4), _6);
 _25.fld3.fld0.4 = core::ptr::addr_of_mut!(_19);
 place!(Field::<Adt59>(Variant(_199, 2), 6)).fld3.fld0.0.0 = _25.fld2.0 + _120.fld0.0;

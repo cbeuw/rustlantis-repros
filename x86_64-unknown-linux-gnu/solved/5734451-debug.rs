@@ -2340,7 +2340,6 @@ RET = _1;
 _6 = _1;
 _2 = 9223372036854775807_isize + 9223372036854775807_isize;
 RET = _6;
-SetDiscriminant(_4, 3);
 RET = _6;
 place!(Field::<Adt58>(Variant(_4, 3), 4)).fld2 = [4025088625943107132_usize,2_usize,0_usize,0_usize];
 place!(Field::<[i16; 7]>(Variant(_4, 3), 3)) = [19020_i16,(-10490_i16),(-16657_i16),11486_i16,(-25398_i16),12306_i16,(-8916_i16)];
@@ -6015,7 +6014,6 @@ _8 = _7;
 RET = -(-23593_i16);
 place!(Field::<i128>(Variant(_18, 0), 0)) = _13 as i128;
 place!(Field::<(f32, bool)>(Variant(_8, 0), 0)) = (_3.2, Field::<(f32, bool)>(Variant(_7, 0), 0).1);
-SetDiscriminant(_18, 3);
 _12 = Field::<(f32, bool)>(Variant(_8, 0), 0).1 as u64;
 RET = (-14_isize) as i16;
 _4.1 = _5;
@@ -8389,7 +8387,6 @@ Call(_70.4 = core::intrinsics::bswap(_16.1.4), ReturnTo(bb102), UnwindUnreachabl
 bb102 = {
 (*_159) = _114.0;
 _161 = (_172.0, _172.1);
-SetDiscriminant(_125, 1);
 _86.1 = !_52;
 _152 = _44;
 _165 = (_77.0, _22.1.1, _16.1.2, _38.1.3, _42.4, _40.1.5);

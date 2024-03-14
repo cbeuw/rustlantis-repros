@@ -1049,7 +1049,6 @@ place!(Field::<i8>(Variant(_18, 0), 0)) = -Field::<i8>(Variant(_29, 0), 0);
 _27.fld1.1 = _1.2 as i8;
 _26.0 = _27.fld1.0.0;
 _17 = [10843439877225360602_usize];
-SetDiscriminant(_18, 1);
 _4 = _1.0;
 place!(Field::<usize>(Variant(_18, 1), 1)) = 4_usize;
 Goto(bb12)
@@ -1615,7 +1614,6 @@ _19 = _24 * _24;
 _26.2 = _20.0;
 _20.3 = 22976_u16;
 _12 = Adt46::Variant3 { fld0: _13 };
-SetDiscriminant(_12, 2);
 place!(Field::<[usize; 6]>(Variant(_12, 2), 4)) = [6_usize,8890161953144890450_usize,7_usize,16124720073758126405_usize,3_usize,8455498381425388961_usize];
 _23.0 = !_17;
 place!(Field::<*mut [i64; 4]>(Variant(_12, 2), 3)) = core::ptr::addr_of_mut!(_23.3);

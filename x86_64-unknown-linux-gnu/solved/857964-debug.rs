@@ -1820,7 +1820,6 @@ _7 = _49.1 as isize;
 _22 = _6 as u128;
 _51.fld0 = _6;
 _5 = [_20,_18,_20];
-SetDiscriminant(_25.fld3, 2);
 Goto(bb13)
 }
 bb13 = {

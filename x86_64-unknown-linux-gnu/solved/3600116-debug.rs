@@ -5909,7 +5909,6 @@ _80 = _52.0;
 _9 = _12.1 + _47;
 _75.2 = _37 as i64;
 _90.1 = _79.1 * _66.3;
-SetDiscriminant(_18, 1);
 place!(Field::<*const *const (isize, (i16, u32), *mut u128)>(Variant(_18, 1), 6)) = core::ptr::addr_of!(RET.fld5);
 _77.0.2 = _75.2 << _10;
 RET.fld3 = core::ptr::addr_of!(_79.1);
