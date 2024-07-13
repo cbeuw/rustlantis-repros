@@ -1,0 +1,48 @@
+Fuzzing on 7c07fb098e8b3ff0ccf3ffdc68caee92cacda446
+warning: methods `generate_storage_live`, `generate_storage_dead`, `generate_deinit`, and `generate_set_discriminant` are never used
+   --> generate/src/generation/mod.rs:498:8
+    |
+463 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+498 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+508 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+518 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+...
+526 |     fn generate_set_discriminant(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: methods `runs_and_sizes` and `run` are never used
+   --> generate/src/mem/mod.rs:245:8
+    |
+244 | impl Allocation {
+    | --------------- methods in this implementation
+245 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+    |        ^^^^^^^^^^^^^^
+...
+251 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run {
+    |        ^^^
+
+warning: `generate` (bin "generate") generated 2 warnings
+    Finished `release` profile [optimized] target(s) in 0.74s
+parallel: Warning: No more file handles. 
+parallel: Warning: Try running 'parallel -j0 -N 100 --pipe parallel -j0'
+parallel: Warning: or increasing 'ulimit -n' (try: ulimit -n `ulimit -Hn`)
+parallel: Warning: or increasing 'nofile' in /etc/security/limits.conf
+parallel: Warning: or increasing /proc/sys/fs/file-max
+[2024-07-11T03:14:41Z ERROR difftest] /scratch/tmp.1814809.wangqian/176357.rs didn't pass:
+    llvm-opt-only, miri-checked, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 13998476584758169066
+    llvm-opt produced the following output:
+    stdout:
+    hash: 15124033816954845730
+    
+slurmstepd: error: *** JOB 1814809 ON eu-g9-015-1 CANCELLED AT 2024-07-11T09:12:51 ***
