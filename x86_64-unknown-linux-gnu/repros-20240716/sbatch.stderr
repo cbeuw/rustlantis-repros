@@ -1,0 +1,380 @@
+Fuzzing on 7c07fb098e8b3ff0ccf3ffdc68caee92cacda446
+warning: methods `generate_storage_live`, `generate_storage_dead`, `generate_deinit`, and `generate_set_discriminant` are never used
+   --> generate/src/generation/mod.rs:498:8
+    |
+463 | impl GenerationCtx {
+    | ------------------ methods in this implementation
+...
+498 |     fn generate_storage_live(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+508 |     fn generate_storage_dead(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^
+...
+518 |     fn generate_deinit(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^
+...
+526 |     fn generate_set_discriminant(&self) -> Result<Statement> {
+    |        ^^^^^^^^^^^^^^^^^^^^^^^^^
+    |
+    = note: `#[warn(dead_code)]` on by default
+
+warning: methods `runs_and_sizes` and `run` are never used
+   --> generate/src/mem/mod.rs:245:8
+    |
+244 | impl Allocation {
+    | --------------- methods in this implementation
+245 |     fn runs_and_sizes(&self) -> impl Iterator<Item = (RunId, Size)> + '_ {
+    |        ^^^^^^^^^^^^^^
+...
+251 |     fn run(&self, run_and_offset: RunAndOffset) -> &Run {
+    |        ^^^
+
+warning: `generate` (bin "generate") generated 2 warnings
+    Finished `release` profile [optimized] target(s) in 0.80s
+parallel: Warning: No more file handles. 
+parallel: Warning: Try running 'parallel -j0 -N 100 --pipe parallel -j0'
+parallel: Warning: or increasing 'ulimit -n' (try: ulimit -n `ulimit -Hn`)
+parallel: Warning: or increasing 'nofile' in /etc/security/limits.conf
+parallel: Warning: or increasing /proc/sys/fs/file-max
+parallel: Warning: This job was killed because it timed out:
+parallel: Warning: ./fuzz-one.sh 2791160
+parallel: Warning: This job was killed because it timed out:
+parallel: Warning: ./fuzz-one.sh 3043202
+[2024-07-16T07:46:55Z ERROR difftest] /scratch/tmp.2148321.wangqian/4397276.rs didn't pass:
+    cranelift-opt-only produced the following output:
+    stdout:
+    hash: 11365153945898378419
+    llvm-opt-only, llvm-opt produced the following output:
+    stdout:
+    hash: 5657314071024338621
+    
+parallel: Warning: This job was killed because it timed out:
+parallel: Warning: ./fuzz-one.sh 4481728
+[2024-07-18T02:29:38Z ERROR difftest] /scratch/tmp.2148321.wangqian/7003550.rs didn't pass:
+    llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 8301934516858975986
+    llvm-opt produced the following output:
+    status: signal: 11 (SIGSEGV)
+    stdout:
+    ================
+    stderr:
+    warning: the feature `custom_mir` is internal to the compiler or standard library
+     --> /scratch/tmp.2148321.wangqian/7003550.rs:2:16
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                ^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+      = note: `#[warn(internal_features)]` on by default
+    
+    warning: the feature `core_intrinsics` is internal to the compiler or standard library
+     --> /scratch/tmp.2148321.wangqian/7003550.rs:2:28
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                            ^^^^^^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+    
+    warning: creating a mutable reference to mutable static is discouraged
+      --> /scratch/tmp.2148321.wangqian/7003550.rs:20:23
+       |
+    20 |             val0.hash(&mut H);
+       |                       ^^^^^^ mutable reference to mutable static
+       |
+       = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+       = note: this will be a hard error in the 2024 edition
+       = note: this mutable reference has lifetime `'static`, but if the static gets accessed (read or written) by any other means, or any other reference is created, then any further use of this mutable reference is Undefined Behavior
+       = note: `#[warn(static_mut_refs)]` on by default
+    help: use `addr_of_mut!` instead to create a raw pointer
+       |
+    20 |             val0.hash(addr_of_mut!(H));
+       |                       ~~~~~~~~~~~~~~~
+    
+    warning: creating a mutable reference to mutable static is discouraged
+      --> /scratch/tmp.2148321.wangqian/7003550.rs:21:23
+       |
+    21 |             val1.hash(&mut H);
+       |                       ^^^^^^ mutable reference to mutable static
+       |
+       = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+       = note: this will be a hard error in the 2024 edition
+       = note: this mutable reference has lifetime `'static`, but if the static gets accessed (read or written) by any other means, or any other reference is created, then any further use of this mutable reference is Undefined Behavior
+    help: use `addr_of_mut!` instead to create a raw pointer
+       |
+    21 |             val1.hash(addr_of_mut!(H));
+       |                       ~~~~~~~~~~~~~~~
+    
+    warning: creating a mutable reference to mutable static is discouraged
+      --> /scratch/tmp.2148321.wangqian/7003550.rs:22:23
+       |
+    22 |             val2.hash(&mut H);
+       |                       ^^^^^^ mutable reference to mutable static
+       |
+       = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+       = note: this will be a hard error in the 2024 edition
+       = note: this mutable reference has lifetime `'static`, but if the static gets accessed (read or written) by any other means, or any other reference is created, then any further use of this mutable reference is Undefined Behavior
+    help: use `addr_of_mut!` instead to create a raw pointer
+       |
+    22 |             val2.hash(addr_of_mut!(H));
+       |                       ~~~~~~~~~~~~~~~
+    
+    warning: creating a mutable reference to mutable static is discouraged
+      --> /scratch/tmp.2148321.wangqian/7003550.rs:23:23
+       |
+    23 |             val3.hash(&mut H);
+       |                       ^^^^^^ mutable reference to mutable static
+       |
+       = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+       = note: this will be a hard error in the 2024 edition
+       = note: this mutable reference has lifetime `'static`, but if the static gets accessed (read or written) by any other means, or any other reference is created, then any further use of this mutable reference is Undefined Behavior
+    help: use `addr_of_mut!` instead to create a raw pointer
+       |
+    23 |             val3.hash(addr_of_mut!(H));
+       |                       ~~~~~~~~~~~~~~~
+    
+    error: rustc interrupted by SIGSEGV, printing backtrace
+    
+    /cluster/home/wangqian/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/librustc_driver-b278a08e03547181.so(+0x34511a3)[0x15315a0511a3]
+    /lib/x86_64-linux-gnu/libc.so.6(+0x42520)[0x153156a0a520]
+    /cluster/home/wangqian/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/libLLVM.so.18.1-rust-1.81.0-nightly(+0x5f96d45)[0x153155196d45]
+    
+    ### cycle encountered after 3 frames with period 4
+    /cluster/home/wangqian/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/libLLVM.so.18.1-rust-1.81.0-nightly(+0x6bbdad8)[0x153155dbdad8]
+    /cluster/home/wangqian/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/libLLVM.so.18.1-rust-1.81.0-nightly(+0x6bbdad8)[0x153155dbdad8]
+    /cluster/home/wangqian/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/libLLVM.so.18.1-rust-1.81.0-nightly(+0x6bbdad8)[0x153155dbdad8]
+    /cluster/home/wangqian/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/libLLVM.so.18.1-rust-1.81.0-nightly(+0x6bbdad8)[0x153155dbdad8]
+    ### recursed 63 times
+    
+    /cluster/home/wangqian/.rustup/toolchains/nightly-x86_64-unknown-linux-gnu/lib/libLLVM.so.18.1-rust-1.81.0-nightly(+0x6bbdad8)[0x153155dbdad8]
+    
+    note: rustc unexpectedly overflowed its stack! this is a bug
+    note: maximum backtrace depth reached, frames may have been lost
+    note: we would appreciate a report at https://github.com/rust-lang/rust
+    help: you can increase rustc's stack size by setting RUST_MIN_STACK=16777216
+    ================
+    
+[2024-07-18T05:13:11Z ERROR difftest] /scratch/tmp.2148321.wangqian/7173699.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 16602814705812993925
+    
+parallel: Warning: This job was killed because it timed out:
+parallel: Warning: ./fuzz-one.sh 7819278
+parallel: Warning: This job was killed because it timed out:
+parallel: Warning: ./fuzz-one.sh 8287565
+[2024-07-19T07:02:23Z ERROR difftest] /scratch/tmp.2148321.wangqian/8743578.rs didn't pass:
+    llvm-opt-only, cranelift-opt-only produced the following output:
+    stdout:
+    hash: 16145411832541544465
+    llvm-opt produced the following output:
+    stdout:
+    
+[2024-07-19T07:16:20Z ERROR difftest] /scratch/tmp.2148321.wangqian/8757965.rs didn't pass:
+    llvm-opt, llvm-opt-only produced the following output:
+    stdout:
+    hash: 13136618788259037726
+    cranelift-opt-only produced the following output:
+    status: exit status: 101
+    stdout:
+    ================
+    stderr:
+    warning: the feature `custom_mir` is internal to the compiler or standard library
+     --> /scratch/tmp.2148321.wangqian/8757965.rs:2:16
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                ^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+      = note: `#[warn(internal_features)]` on by default
+    
+    warning: the feature `core_intrinsics` is internal to the compiler or standard library
+     --> /scratch/tmp.2148321.wangqian/8757965.rs:2:28
+      |
+    2 |     #![feature(custom_mir, core_intrinsics, const_hash)]
+      |                            ^^^^^^^^^^^^^^^
+      |
+      = note: using it is strongly discouraged
+    
+    warning: creating a mutable reference to mutable static is discouraged
+      --> /scratch/tmp.2148321.wangqian/8757965.rs:20:23
+       |
+    20 |             val0.hash(&mut H);
+       |                       ^^^^^^ mutable reference to mutable static
+       |
+       = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+       = note: this will be a hard error in the 2024 edition
+       = note: this mutable reference has lifetime `'static`, but if the static gets accessed (read or written) by any other means, or any other reference is created, then any further use of this mutable reference is Undefined Behavior
+       = note: `#[warn(static_mut_refs)]` on by default
+    help: use `addr_of_mut!` instead to create a raw pointer
+       |
+    20 |             val0.hash(addr_of_mut!(H));
+       |                       ~~~~~~~~~~~~~~~
+    
+    warning: creating a mutable reference to mutable static is discouraged
+      --> /scratch/tmp.2148321.wangqian/8757965.rs:21:23
+       |
+    21 |             val1.hash(&mut H);
+       |                       ^^^^^^ mutable reference to mutable static
+       |
+       = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+       = note: this will be a hard error in the 2024 edition
+       = note: this mutable reference has lifetime `'static`, but if the static gets accessed (read or written) by any other means, or any other reference is created, then any further use of this mutable reference is Undefined Behavior
+    help: use `addr_of_mut!` instead to create a raw pointer
+       |
+    21 |             val1.hash(addr_of_mut!(H));
+       |                       ~~~~~~~~~~~~~~~
+    
+    warning: creating a mutable reference to mutable static is discouraged
+      --> /scratch/tmp.2148321.wangqian/8757965.rs:22:23
+       |
+    22 |             val2.hash(&mut H);
+       |                       ^^^^^^ mutable reference to mutable static
+       |
+       = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+       = note: this will be a hard error in the 2024 edition
+       = note: this mutable reference has lifetime `'static`, but if the static gets accessed (read or written) by any other means, or any other reference is created, then any further use of this mutable reference is Undefined Behavior
+    help: use `addr_of_mut!` instead to create a raw pointer
+       |
+    22 |             val2.hash(addr_of_mut!(H));
+       |                       ~~~~~~~~~~~~~~~
+    
+    warning: creating a mutable reference to mutable static is discouraged
+      --> /scratch/tmp.2148321.wangqian/8757965.rs:23:23
+       |
+    23 |             val3.hash(&mut H);
+       |                       ^^^^^^ mutable reference to mutable static
+       |
+       = note: for more information, see issue #114447 <https://github.com/rust-lang/rust/issues/114447>
+       = note: this will be a hard error in the 2024 edition
+       = note: this mutable reference has lifetime `'static`, but if the static gets accessed (read or written) by any other means, or any other reference is created, then any further use of this mutable reference is Undefined Behavior
+    help: use `addr_of_mut!` instead to create a raw pointer
+       |
+    23 |             val3.hash(addr_of_mut!(H));
+       |                       ~~~~~~~~~~~~~~~
+    
+    warning: unused variable: `bb21`
+        --> /scratch/tmp.2148321.wangqian/8757965.rs:3331:1
+         |
+    3331 | bb21 = {
+         | ^^^^
+         |
+    help: `bb21` is captured in macro and introduced a unused variable
+        --> /scratch/tmp.2148321.wangqian/8757965.rs:2891:1
+         |
+    2891 | / mir! {
+    2892 | | type RET = bool;
+    2893 | | let _1: &'static *const f64;
+    2894 | | let _2: i32;
+    ...    |
+    3844 | |
+    3845 | | }
+         | |_^
+         = note: `#[warn(unused_variables)]` on by default
+         = note: this warning originates in the macro `__internal_declare_basic_blocks` which comes from the expansion of the macro `mir` (in Nightly builds, run with -Z macro-backtrace for more info)
+    
+    warning: unused variable: `bb28`
+        --> /scratch/tmp.2148321.wangqian/8757965.rs:3451:1
+         |
+    3451 | bb28 = {
+         | ^^^^
+         |
+    help: `bb28` is captured in macro and introduced a unused variable
+        --> /scratch/tmp.2148321.wangqian/8757965.rs:2891:1
+         |
+    2891 | / mir! {
+    2892 | | type RET = bool;
+    2893 | | let _1: &'static *const f64;
+    2894 | | let _2: i32;
+    ...    |
+    3844 | |
+    3845 | | }
+         | |_^
+         = note: this warning originates in the macro `__internal_declare_basic_blocks` which comes from the expansion of the macro `mir` (in Nightly builds, run with -Z macro-backtrace for more info)
+    
+    thread 'rustc' panicked at src/concurrency_limiter.rs:85:66:
+    called `Option::unwrap()` on a `None` value
+    stack backtrace:
+       0:     0x1474d158a935 - std::backtrace_rs::backtrace::libunwind::trace::h184e33fa7a4efbe9
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/../../backtrace/src/backtrace/libunwind.rs:116:5
+       1:     0x1474d158a935 - std::backtrace_rs::backtrace::trace_unsynchronized::h4dca295048001c05
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/../../backtrace/src/backtrace/mod.rs:66:5
+       2:     0x1474d158a935 - std::sys::backtrace::_print_fmt::h622e99f1f7a98eb9
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/sys/backtrace.rs:68:5
+       3:     0x1474d158a935 - <std::sys::backtrace::_print::DisplayBacktrace as core::fmt::Display>::fmt::h28f531d3888c6232
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/sys/backtrace.rs:44:22
+       4:     0x1474d15db4bb - core::fmt::rt::Argument::fmt::h253c327f844a6420
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/core/src/fmt/rt.rs:165:63
+       5:     0x1474d15db4bb - core::fmt::write::h2fb7595745e09759
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/core/src/fmt/mod.rs:1168:21
+       6:     0x1474d157f51f - std::io::Write::write_fmt::h552e7a88d935daf5
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/io/mod.rs:1835:15
+       7:     0x1474d158a70e - std::sys::backtrace::_print::h249fbba2cfb2db75
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/sys/backtrace.rs:47:5
+       8:     0x1474d158a70e - std::sys::backtrace::print::hd0736ee82821eb5a
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/sys/backtrace.rs:34:9
+       9:     0x1474d158d149 - std::panicking::default_hook::{{closure}}::h00c814c943d2d674
+      10:     0x1474d158ceec - std::panicking::default_hook::h551f46be220f17f1
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/panicking.rs:292:9
+      11:     0x1474d48c6a6f - std[c3fbaf9a0386b13c]::panicking::update_hook::<alloc[3df32a5d58f536a7]::boxed::Box<rustc_driver_impl[ee4d79150a07c4f8]::install_ice_hook::{closure#0}>>::{closure#0}
+      12:     0x1474d158da4f - <alloc::boxed::Box<F,A> as core::ops::function::Fn<Args>>::call::ha3b0d962ec1ff02b
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/alloc/src/boxed.rs:2076:9
+      13:     0x1474d158da4f - std::panicking::rust_panic_with_hook::h0adf1873cdd8ce86
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/panicking.rs:801:13
+      14:     0x1474d158d643 - std::panicking::begin_panic_handler::{{closure}}::h14e7b85ca1885ac4
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/panicking.rs:660:13
+      15:     0x1474d158adf9 - std::sys::backtrace::__rust_end_short_backtrace::h17e9af05fae71c34
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/sys/backtrace.rs:171:18
+      16:     0x1474d158d324 - rust_begin_unwind
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/panicking.rs:658:5
+      17:     0x1474d15d7a73 - core::panicking::panic_fmt::h273dffa90a45a379
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/core/src/panicking.rs:74:14
+      18:     0x1474d15d7afc - core::panicking::panic::hf430b0f328d1e0c3
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/core/src/panicking.rs:148:5
+      19:     0x1474d15d7869 - core::option::unwrap_failed::h61ead1e1503818e7
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/core/src/option.rs:2011:5
+      20:     0x1474c75ca788 - rustc_codegen_cranelift::concurrency_limiter::ConcurrencyLimiter::finished::h60a64a18cbd75b5d
+      21:     0x1474c751eb56 - rustc_codegen_cranelift::driver::aot::OngoingCodegen::join::h54027e70f98abce9
+      22:     0x1474c75c3888 - <rustc_codegen_cranelift::CraneliftCodegenBackend as rustc_codegen_ssa::traits::backend::CodegenBackend>::join_codegen::hc759b412b529cd61
+      23:     0x1474d665eed7 - <rustc_interface[ad92266d8770ef5]::queries::Linker>::link
+      24:     0x1474d68d17ad - rustc_interface[ad92266d8770ef5]::interface::run_compiler::<core[2498b3506ce20dac]::result::Result<(), rustc_span[72d27a3883823780]::ErrorGuaranteed>, rustc_driver_impl[ee4d79150a07c4f8]::run_compiler::{closure#0}>::{closure#1}
+      25:     0x1474d68b2b09 - std[c3fbaf9a0386b13c]::sys::backtrace::__rust_begin_short_backtrace::<rustc_interface[ad92266d8770ef5]::util::run_in_thread_with_globals<rustc_interface[ad92266d8770ef5]::util::run_in_thread_pool_with_globals<rustc_interface[ad92266d8770ef5]::interface::run_compiler<core[2498b3506ce20dac]::result::Result<(), rustc_span[72d27a3883823780]::ErrorGuaranteed>, rustc_driver_impl[ee4d79150a07c4f8]::run_compiler::{closure#0}>::{closure#1}, core[2498b3506ce20dac]::result::Result<(), rustc_span[72d27a3883823780]::ErrorGuaranteed>>::{closure#0}, core[2498b3506ce20dac]::result::Result<(), rustc_span[72d27a3883823780]::ErrorGuaranteed>>::{closure#0}::{closure#0}, core[2498b3506ce20dac]::result::Result<(), rustc_span[72d27a3883823780]::ErrorGuaranteed>>
+      26:     0x1474d68b28ba - <<std[c3fbaf9a0386b13c]::thread::Builder>::spawn_unchecked_<rustc_interface[ad92266d8770ef5]::util::run_in_thread_with_globals<rustc_interface[ad92266d8770ef5]::util::run_in_thread_pool_with_globals<rustc_interface[ad92266d8770ef5]::interface::run_compiler<core[2498b3506ce20dac]::result::Result<(), rustc_span[72d27a3883823780]::ErrorGuaranteed>, rustc_driver_impl[ee4d79150a07c4f8]::run_compiler::{closure#0}>::{closure#1}, core[2498b3506ce20dac]::result::Result<(), rustc_span[72d27a3883823780]::ErrorGuaranteed>>::{closure#0}, core[2498b3506ce20dac]::result::Result<(), rustc_span[72d27a3883823780]::ErrorGuaranteed>>::{closure#0}::{closure#0}, core[2498b3506ce20dac]::result::Result<(), rustc_span[72d27a3883823780]::ErrorGuaranteed>>::{closure#2} as core[2498b3506ce20dac]::ops::function::FnOnce<()>>::call_once::{shim:vtable#0}
+      27:     0x1474d15978cb - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::h415b3c48feec9148
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/alloc/src/boxed.rs:2062:9
+      28:     0x1474d15978cb - <alloc::boxed::Box<F,A> as core::ops::function::FnOnce<Args>>::call_once::h0d4446e047e96116
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/alloc/src/boxed.rs:2062:9
+      29:     0x1474d15978cb - std::sys::pal::unix::thread::Thread::new::thread_start::h01071f1a69504322
+                                   at /rustc/59e2c01c2217a01546222e4d9ff4e6695ee8a1db/library/std/src/sys/pal/unix/thread.rs:108:17
+      30:     0x1474d133fac3 - <unknown>
+      31:     0x1474d13d1850 - <unknown>
+      32:                0x0 - <unknown>
+    
+    error: the compiler unexpectedly panicked. this is a bug.
+    
+    note: using internal features is not supported and expected to cause internal compiler errors when used incorrectly
+    
+    note: please attach the file at `/cluster/home/wangqian/rustlantis/rustc-ice-2024-07-19T07_16_18-2855422.txt` to your bug report
+    
+    note: compiler flags: -C panic=abort -Z panic-abort-tests -Z codegen-backend=/cluster/home/wangqian/rustc_codegen_cranelift/dist/lib/librustc_codegen_cranelift.so -C opt-level=3 -Z mir-opt-level=0
+    
+    query stack during panic:
+    end of query stack
+    warning: 8 warnings emitted
+    
+    ================
+    
+[2024-07-19T20:28:29Z ERROR difftest] /scratch/tmp.2148321.wangqian/9574527.rs didn't pass:
+    llvm-opt produced the following output:
+    stdout:
+    hash: 4824062154187114108
+    cranelift-opt-only, llvm-opt-only produced the following output:
+    stdout:
+    hash: 17344389843317479050
+    
+slurmstepd: error: *** JOB 2148321 ON eu-g9-001-2 CANCELLED AT 2024-07-20T03:44:26 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 2148321 STEPD TERMINATED ON eu-g9-001-2 AT 2024-07-20T03:49:56 DUE TO JOB NOT ENDING WITH SIGNALS ***
+slurmstepd: error: Detected 1 oom_kill event in StepId=2148321.batch. Some of the step tasks have been OOM Killed.
