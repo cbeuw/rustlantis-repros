@@ -55,6 +55,8 @@ if __name__ == "__main__":
                     continue
                 elif saved.startswith("#"):
                     continue
+                elif saved == end_bb:
+                    continue
 
                 print(line, end='\r')
 
@@ -75,3 +77,4 @@ if __name__ == "__main__":
             working.truncate()
             working.flush()
             print(f"done pass")
+
