@@ -19,4 +19,4 @@ check_repo() {
 }
 
 export -f check_repo
-ls $TRIPLE/repros-*/*.rs | xargs -I{} -P4 bash -c 'check_repo {}'
+find $TRIPLE -name '*.rs' ! -path '*reported*' ! -path '*solved*' | xargs -I{} -P4 bash -c 'check_repo {}'
